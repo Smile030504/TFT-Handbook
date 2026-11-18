@@ -97,7 +97,7 @@ function matched(u) {
 
   const matchRoles =
     ui.roles.length === 0 ||
-    ui.roles.includes(u.role);
+    ui.roles.includes(u.role + '|' + u.damage);
 
   const matchEffects =
     ui.effects.length === 0 ||

@@ -3,8 +3,6 @@ if(!dg.open)dg.showModal()}
 function card(u){const c=el('article','card'),p=el('div','pic'),im=el('img');im.src=imgs[u.id];im.alt=u.name;im.loading='lazy';p.append(im,el('span','cost',u.cost+' VÀNG'));if(u.locked){const lk=el('span','lock');lk.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> KHÓA';p.append(lk)}p.onclick=()=>showCard(u);
 const body=el('div','cardbody');body.append(el('h3','cardname',u.name),el('div','meta',roleVi[u.role]+' · '+(u.damage==='Magic'?'Phép':'Vật lý')));const tl=el('div','traitline');u.traits.forEach(t=>tl.append(traitChip(t)));body.append(tl);if(u.effects.length){const tags=el('div','tags');u.effects.forEach(k=>tags.append(effChip(k)));body.append(tags)}const acts=el('div','actions'),btn=el('button','smallbtn',u.locked?'🔒 XEM CÁCH MỞ KHÓA':'XEM KỸ NĂNG · TỘC/HỆ');btn.onclick=()=>showCard(u);acts.append(btn);body.append(acts);c.append(p,body);return c}
 
-function render() {
-  const arr = roster.filter(matched);
 
 const costLevels = [...new Set(
   roster.map(unit => unit.cost)
@@ -43,7 +41,6 @@ function initCostFilters() {
     button.dataset.cost = String(value);
 
     button.onclick = () => {
-
       if (value === 'all') {
         ui.costs = [];
 
@@ -65,22 +62,24 @@ function initCostFilters() {
 
   addCostButton('all', 'TẤT CẢ');
 
-  costLevels.forEach(cost => {
-    const count = roster.filter(
-      unit => unit.cost === cost
-    ).length;
-
-    addCostButton(
-      cost,
-      `${cost} VÀNG · ${count}`
-    );
-  });
+  
+costLevels.forEach(cost => {
+  addCostButton(
+    cost,
+    `${cost} VÀNG`
+  );
+});
 
   updateCostButtons();
 }
 
 
 initCostFilters();
+
+
+function render() {
+  const arr = roster.filter(matched);
+
 
   $('status').textContent =
     'Đang hiển thị ' + arr.length + ' / ' +
@@ -141,7 +140,7 @@ initCostFilters();
     $('board').append(section);
   }
 
-  if (ui.traits.length > 0) {
+  if (ui.traits.length > 0 && ui.view === 'cost') {
     ui.traits.forEach((trait, index) => {
 
       const members = arr
@@ -226,6 +225,43 @@ function initMultiFilter(selector, stateKey, dataKey) {
   syncMultiButtons(selector, stateKey, dataKey);
 }
 
+
+
+function initRoleFilters() {
+  const container = $('roleFilters');
+
+  const allButton = el('button', 'pill-btn active', 'Tất cả');
+  allButton.type = 'button';
+  allButton.dataset.role = 'all';
+  container.append(allButton);
+
+  roleOrder.forEach(role => {
+    ['Attack', 'Magic'].forEach(damage => {
+      const count = roster.filter(unit =>
+        unit.role === role &&
+        unit.damage === damage
+      ).length;
+
+      if (count === 0) return;
+
+      const damageLabel =
+        damage === 'Magic' ? 'PHÉP' : 'VẬT LÝ';
+
+      const label =
+        `${roleVi[role]} ${damageLabel} · ${count}`;
+
+      const button = el('button', 'pill-btn', label);
+
+      button.type = 'button';
+      button.dataset.role = `${role}|${damage}`;
+
+      container.append(button);
+    });
+  });
+}
+
+
+initRoleFilters();
 
 initMultiFilter('[data-role]', 'roles', 'role');
 initMultiFilter('[data-effect]', 'effects', 'effect');

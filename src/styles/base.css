@@ -60,3 +60,26 @@ body.dark-mode .quicknav .cost-filter-btn.active {
   color: #ffffff;
   border-color: #7660c5;
 }
+
+.row-filter #quicknav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+}
+
+.filter-status {
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.filter-separator {
+  color: #9299aa;
+  margin: 0 4px;
+}
+
+body.dark-mode .filter-status {
+  color: #ececf5;
+}

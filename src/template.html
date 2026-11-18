@@ -1,66 +1,276 @@
-<section aria-label="Bộ lọc" class="filters unit-page-part">
 
-  <div class="filter-top">
-    <button class="btn primary" id="byCost">
-      THEO GIÁ VÀNG
-    </button>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sổ tay TFT mùa 19: 94 tướng, 47 tộc/hệ, kỹ năng tóm tắt, lọc hiệu ứng và sơ đồ mở khóa." />
+  <title>TFT Mùa 19 — 94 tướng | Khóa, Tộc Hệ, Hiệu Ứng</title>
+  <!-- INJECT:CSS:0 -->
+  <!-- INJECT:CSS:1 -->
+</head>
+<body class="dark-mode">
+  <button class="theme-toggle" id="themeToggle" type="button">☀️ Bật sáng</button>
 
-    <button class="btn" id="byRole">
-      THEO VAI TRÒ
-    </button>
+  <div class="app">
+    <header class="hero">
+      <div class="micro">TFT MÙA 19 · PRISMATIC TOUR · HANDBOOK</div>
+      <h1>94 TƯỚNG · 47 TỘC/HỆ</h1>
+      <p>Tra cứu tướng, tộc/hệ, kỹ năng, hiệu ứng đặc biệt và cách mở khóa trong TFT mùa 19.</p>
+      <div class="stats">
+        <span class="stat">94 tướng</span>
+        <span class="stat">🔒 32 tướng cần mở</span>
+        <span class="stat">47 tộc/hệ</span>
+        <span class="stat">5 bộ lọc hiệu ứng</span>
+        <span class="stat">94 kỹ năng tóm tắt</span>
+      </div>
+    </header>
 
-    <button class="btn" id="quiz">
-      ẨN TÊN ĐỂ HỌC
-    </button>
+    <nav class="major-tabs" aria-label="Chọn tab sổ tay">
+      <button class="major-tab active" id="tab-units" type="button">
+        <span class="tab-label">⚔ TƯỚNG</span><span class="tab-number">94</span>
+      </button>
+      <button class="major-tab" id="tab-traits" type="button">
+        <span class="tab-label">♫ TỘC / HỆ</span><span class="tab-number">47</span>
+      </button>
+      <button class="major-tab" id="tab-builder" type="button">
+        <span class="tab-label">♟ TẠO ĐỘI HÌNH</span>
+      </button>
+    </nav>
 
-    <button class="btn ghost" id="reset">
-      XÓA BỘ LỌC
-    </button>
+    <!-- TRANG TƯỚNG -->
+    <section class="filters unit-page-part" aria-label="Bộ lọc">
+      <div class="filter-top">
+        <button class="btn primary" id="byCost" type="button">THEO GIÁ VÀNG</button>
+        <button class="btn" id="byRole" type="button">THEO VAI TRÒ</button>
+        <button class="btn" id="quiz" type="button">ẨN TÊN ĐỂ HỌC</button>
+        <button class="btn ghost" id="reset" type="button">XÓA BỘ LỌC</button>
+        <span class="space"></span>
+        <input class="search" id="search" aria-label="Tìm tướng" type="search" placeholder="Tìm tên tướng..." />
+      </div>
 
-    <span class="space"></span>
+      
+<div
+  class="row-filter"
+  id="roleFilters"
+  aria-label="Lọc theo vai trò"
+>
+  <span class="row-label">VAI TRÒ</span>
+</div>
 
-    <input
-      aria-label="Tìm tướng"
-      class="search"
-      id="search"
-      placeholder="Tìm tên tướng..."
-      type="search"
-    />
+
+      <div class="row-filter" aria-label="Lọc theo hiệu ứng">
+        <span class="row-label">HIỆU ỨNG</span>
+        <button class="pill-btn active" type="button" data-effect="all">Tất cả</button>
+        <button class="pill-btn wound" type="button" data-effect="wound">Giảm hồi máu <em id="n-wound">0</em></button>
+        <button class="pill-btn sunder" type="button" data-effect="sunder">Giảm giáp <em id="n-sunder">0</em></button>
+        <button class="pill-btn shred" type="button" data-effect="shred">Giảm kháng phép <em id="n-shred">0</em></button>
+        <button class="pill-btn stun" type="button" data-effect="stun">Choáng <em id="n-stun">0</em></button>
+        <button class="pill-btn knockup" type="button" data-effect="knockup">Hất tung <em id="n-knockup">0</em></button>
+      </div>
+
+      <div class="row-filter" aria-label="Lọc theo tộc hệ">
+        <span class="row-label">TỘC / HỆ</span>
+        <div class="trait-picker" id="traitPicker">
+          <button class="trait-picker-toggle" id="traitToggle" type="button"
+                  aria-haspopup="true" aria-controls="traitMenu" aria-expanded="false">
+            <span id="traitSelectedLabel">Tất cả tộc/hệ</span><span aria-hidden="true">▾</span>
+          </button>
+          <div class="trait-picker-menu" id="traitMenu" hidden>
+            <div class="trait-picker-grid" id="traitPickerGrid" aria-label="Danh sách tộc hệ"></div>
+          </div>
+        </div>
+        
+
+        <label class="check">
+          <input id="onlyLocked" type="checkbox" />
+          Chỉ tướng cần mở khóa 🔒
+        </label>
+
+        <span class="filter-separator" aria-hidden="true">|</span>
+
+        <strong id="status" class="filter-status">
+          Đang hiển thị 94 / 94 tướng
+        </strong>
+
+        <nav
+          class="quicknav unit-page-part"
+          id="quicknav"
+          aria-label="Lọc theo giá vàng"
+        ></nav>
+      </div>
+    </section>
+
+    <main class="unit-page-part" id="board"></main>
+
+
+    <!-- TRANG TỘC / HỆ -->
+    <section class="traits-page" id="traitsPage" hidden>
+      <div class="traits-hero">
+        <div>
+          <div class="th-eyebrow">BỘ TỪ ĐIỂN TỘC/HỆ · TFT MÙA 19</div>
+          <h2>47 TỘC / HỆ</h2>
+          <p>Tra cứu hiệu ứng, mốc kích hoạt và danh sách tướng thuộc từng tộc/hệ.</p>
+        </div>
+        <div class="traits-summary">14 NHÓM NHẠC · 14 HỆ · 19 ĐỘC NHẤT</div>
+      </div>
+      <div class="traits-controls">
+        <div class="trait-tab-buttons">
+          <button class="trait-kind active" type="button" data-kind="all">TẤT CẢ (47)</button>
+          <button class="trait-kind" type="button" data-kind="band">NHÓM NHẠC (14)</button>
+          <button class="trait-kind" type="button" data-kind="class">HỆ CHIẾN ĐẤU (14)</button>
+          <button class="trait-kind" type="button" data-kind="solo">ĐỘC NHẤT (19)</button>
+        </div>
+        <input id="traitSearch" aria-label="Tìm tộc hệ" type="search" placeholder="Tìm tên tộc/hệ tiếng Anh..." />
+      </div>
+      <div class="traits-info-line"><span id="traitsCount">47 / 47 tộc/hệ</span></div>
+      <div class="traits-grid" id="traitsGrid"></div>
+    </section>
+
+    <!-- TRANG TẠO ĐỘI HÌNH -->
+    <section class="builder-page" id="builderPage" aria-label="Tạo đội hình" hidden>
+      <div class="builder-hero">
+        <div>
+          <div class="th-eyebrow">TFT MÙA 19 · ĐỘI HÌNH CỦA BẠN</div>
+          <h2>TẠO ĐỘI HÌNH</h2>
+          <p>Thêm tướng vào danh sách, xem tộc/hệ đang có và tìm những tướng phù hợp. Không cần sắp xếp vị trí đứng.</p>
+        </div>
+        <div class="builder-hero-actions">
+          <button class="builder-reset" id="builderReset" type="button">XÓA ĐỘI HÌNH</button>
+        </div>
+      </div>
+
+      <div class="builder-layout">
+        <div class="builder-main-column">
+          <section class="builder-panel" aria-labelledby="builderLineupTitle">
+            <div class="builder-panel-heading">
+              <div>
+                <h3 id="builderLineupTitle">ĐỘI HÌNH ĐÃ CHỌN</h3>
+                <p>Chạm vào một tướng để xem gợi ý cùng tộc/hệ; chạm lần nữa để xem gợi ý cho cả đội.</p>
+              </div>
+              <div class="builder-capacity-group" aria-label="Điều chỉnh số suất đội hình">
+                <span>GIỚI HẠN</span>
+                <div class="builder-capacity-controls">
+                  <button id="builderMinus" type="button" aria-label="Giảm một suất" title="Giảm một suất">−</button>
+                  <output id="builderCapacity" aria-live="polite">10</output>
+                  <button id="builderPlus" type="button" aria-label="Tăng một suất" title="Tăng một suất">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="builder-lineup" id="builderBoard" aria-label="Các tướng đã chọn"></div>
+            <div class="builder-lineup-foot">
+              <span id="builderInstruction">Chọn icon trong kho tướng để bắt đầu.</span>
+              <button class="builder-all-button" id="builderFocusAll" type="button" hidden>GỢI Ý CHO CẢ ĐỘI</button>
+            </div>
+            <p class="builder-notice" id="builderNotice" aria-live="polite">
+              Baron Nashor chiếm 2 suất. Bạn có thể tăng hoặc giảm giới hạn đội hình bằng nút + / −.
+            </p>
+          </section>
+
+          <section class="builder-panel" aria-labelledby="builderPoolTitle">
+            <div class="builder-panel-heading">
+              <div>
+                <h3 id="builderPoolTitle">KHO TƯỚNG</h3>
+                <p>Chạm vào icon để thêm. Icon sáng là gợi ý chung tộc/hệ; icon mờ vẫn có thể chọn.</p>
+              </div>
+              <span class="builder-pool-total" id="builderPoolCount">94 TƯỚNG</span>
+            </div>
+            <div class="builder-pool-controls">
+              <input id="builderSearch" type="search" autocomplete="off" placeholder="Tìm tên tướng hoặc tộc/hệ..." aria-label="Tìm tướng cho đội hình" />
+              <div class="builder-costs" aria-label="Lọc theo giá vàng trong kho tướng">
+                <button class="builder-cost-filter active" type="button" data-build-cost="all">TẤT CẢ</button>
+                <button class="builder-cost-filter" type="button" data-build-cost="1">1</button>
+                <button class="builder-cost-filter" type="button" data-build-cost="2">2</button>
+                <button class="builder-cost-filter" type="button" data-build-cost="3">3</button>
+                <button class="builder-cost-filter" type="button" data-build-cost="4">4</button>
+                <button class="builder-cost-filter" type="button" data-build-cost="5">5</button>
+                <button class="builder-cost-filter" type="button" data-build-cost="7">7</button>
+              </div>
+            </div>
+            <div class="builder-pool" id="builderPool" aria-label="Kho tướng"></div>
+            <div class="builder-legend">
+              <span><i class="builder-key builder-key-related"></i> Chung tộc/hệ</span>
+              <span><i class="builder-key builder-key-independent"></i> Độc lập</span>
+              <span><i class="builder-key builder-key-muted"></i> Chưa liên quan</span>
+            </div>
+          </section>
+        </div>
+
+        <aside class="builder-panel builder-synergy-panel" aria-label="Tộc hệ của đội">
+          <div class="builder-panel-heading">
+            <div>
+              <h3>TỘC / HỆ ĐANG CÓ</h3>
+              <p>Đếm số tướng và các mốc kích hoạt trong đội hình.</p>
+            </div>
+          </div>
+          <div class="builder-synergies" id="builderSynergies"></div>
+          <p class="builder-synergy-note">Bấm vào một tộc/hệ để xem danh sách tướng liên quan và thêm vào đội hình.</p>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer" aria-label="Nguồn tham khảo">
+      <strong>Nguồn tham khảo:</strong>
+      <a href="https://tft.ninja/sets/19/units" target="_blank" rel="noopener noreferrer">TFT Ninja</a> ·
+      <a href="https://tactics.tools/info/set-update" target="_blank" rel="noopener noreferrer">Tactics.tools</a> ·
+      <a href="https://mobalytics.gg/tft/set19/unlocks" target="_blank" rel="noopener noreferrer">Mobalytics</a>
+    </footer>
   </div>
 
-  <div class="row-filter" aria-label="Lọc theo vai trò">
+  <!-- CHI TIẾT TƯỚNG -->
+  <dialog id="details" aria-label="Chi tiết tướng">
+    <div class="dialoghead">
+      <img id="dimage" alt="Ảnh tướng" />
+      <div style="flex: 1">
+        <h3 id="dname"></h3>
+        <div class="dtext" id="dmeta"></div>
+        <div id="dlock"></div>
+      </div>
+      <button class="dialogclose" id="close" type="button" aria-label="Đóng">×</button>
+    </div>
+    <section class="unlock-panel" id="unlockPanel" aria-label="Cách mở khóa tướng" hidden></section>
+    <div class="dialogcontent">
+      <div>
+        <div class="dlabel">TỘC / HỆ</div>
+        <div class="chipbox" id="dtraits"></div>
+      </div>
+      <div>
+        <div class="dlabel">HIỆU ỨNG CẦN NHỚ</div>
+        <div class="chipbox" id="deffects"></div>
+        <div class="dtext" id="deffectnote"></div>
+      </div>
+      <section class="skillpanel" aria-label="Kỹ năng tóm tắt">
+        <div class="dlabel">KỸ NĂNG TÓM TẮT</div>
+        <div class="skillinfo"><span class="skillmana" id="dskillmana"></span></div>
+        <p class="skilldescription" id="dskillsummary"></p>
+        <span class="skillkeyword" id="dskillkey"></span>
+      </section>
+    </div>
+    <div class="dialogfooter">
+      <button class="btn" id="done" type="button">ĐÓNG</button>
+    </div>
+  </dialog>
 
-    <span class="row-label">VAI TRÒ</span>
+  <!-- CHI TIẾT TỘC HỆ -->
+  <dialog class="trait-dialog" id="traitDialog" aria-label="Chi tiết tộc hệ">
+    <div class="trait-dialog-top">
+      <span>♫ THÔNG TIN TỘC / HỆ</span>
+      <button class="dialogclose" id="closeTraitDialog" type="button" aria-label="Đóng tộc hệ">×</button>
+    </div>
+    <div class="trait-detail" id="traitDetail"></div>
+    <div class="trait-dialog-bottom">
+      <button class="btn primary" id="doneTraitDialog" type="button">ĐÓNG</button>
+    </div>
+  </dialog>
 
-    <button type="button" class="pill-btn active" data-role="all">
-      Tất cả
-    </button>
-
-    <button type="button" class="pill-btn" data-role="Tank">
-      Đỡ đòn
-    </button>
-
-    <button type="button" class="pill-btn" data-role="Caster">
-      Thuật sư
-    </button>
-
-    <button type="button" class="pill-btn" data-role="Fighter">
-      Đấu sĩ
-    </button>
-
-    <button type="button" class="pill-btn" data-role="Marksman">
-      Xạ thủ
-    </button>
-
-    <button type="button" class="pill-btn" data-role="Specialist">
-      Đặc thù
-    </button>
-
-    <button type="button" class="pill-btn" data-role="Assassin">
-      Sát thủ
-    </button>
-
-  </div>
-
-
-</section>
+  <!-- DỮ LIỆU ĐƯỢC CHÈN KHI BUILD -->
+  <!-- INJECT:DATA:unlockRules -->
+  <!-- INJECT:DATA:skillData -->
+  <!-- INJECT:DATA:rosterData -->
+  <!-- INJECT:DATA:savedData -->
+  <!-- INJECT:DATA:effectDefs -->
+  <!-- INJECT:DATA:traitInfo -->
+  <!-- INJECT:DATA:traitIconData -->
+  <!-- INJECT:JS -->
+</body>
+</html>

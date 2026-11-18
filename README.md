@@ -1,75 +1,70 @@
-# TFT mùa 19 — sổ tay 94 tướng
+# TFT Handbook – Source Code (Refactored)
 
-Website tĩnh viết bằng **HTML + CSS + JavaScript thuần**, phát triển từ file sổ tay hiện tại.
+Đây là **bản phát triển riêng**, chưa thay đổi repository hoặc Vercel của bạn. Website vẫn dùng HTML/CSS/JavaScript thuần, không cần React và không cần Node.js.
 
 ## Cấu trúc
 
 ```text
-tft19-web-source/
-├── index.html     # Toàn bộ mã nguồn (HTML, CSS, JS, dữ liệu, ảnh tướng và icon tộc/hệ đã nhúng)
-├── README.md      # Hướng dẫn
-└── .gitignore
+TFT-Handbook-Refactored/
+├── index.html                  # Bản web được tạo tự động, đầy đủ ảnh, xem offline
+├── build.py                    # Ghép source thành index.html
+├── src/
+│   ├── template.html           # Khung HTML: tab, nút, popup
+│   ├── styles/
+│   │   ├── base.css            # Layout, màu sắc, ô tướng
+│   │   ├── traits.css          # Giao diện tộc/hệ
+│   │   └── unlocks.css         # Popup mở khóa (nếu tách riêng)
+│   ├── js/
+│   │   ├── core.js             # Dữ liệu, trạng thái và helpers
+│   │   ├── units-and-filters.js # Thẻ tướng, bộ lọc, popup kỹ năng
+│   │   ├── unlocks.js          # Sơ đồ mở khóa
+│   │   ├── traits.js           # Tab tộc/hệ, icon
+│   │   └── save.js             # Xuất bản HTML có tùy chỉnh
+│   ├── data/
+│   │   ├── champions.json      # 94 tướng: giá, vai trò, tộc/hệ, hiệu ứng
+│   │   ├── skills.json         # 94 kỹ năng tóm tắt
+│   │   ├── unlocks.json        # 32 điều kiện mở khóa
+│   │   ├── traits.json         # 47 mô tả tộc/hệ
+│   │   ├── effects.json        # Từ điển hiệu ứng
+│   │   ├── champion-images.json # Bảng ánh xạ tướng => file ảnh
+│   │   └── trait-icons.json    # Bảng ánh xạ hệ => icon
+│   └── assets/
+│       ├── champions/          # 94 hình tướng
+│       └── traits/             # 47 icon tộc/hệ
 ```
 
-Không cần cài Node.js, React, chạy `npm install` hay thiết lập API.
+## Chạy thử
 
-## Xem thử trên máy
+**Cách đơn giản nhất:** mở `index.html` bằng Chrome hoặc Edge. Nó đã được tạo sẵn và vẫn sử dụng offline.
 
-Mở `index.html` bằng Chrome hoặc Edge. Nếu muốn dùng một server local trong VS Code, có thể dùng extension **Live Server**. Trang vẫn hiển thị ảnh và icon đã nhúng khi không có mạng.
+**Khi sửa dữ liệu/code:**
 
-## Đưa lên GitHub
+1. Mở thư mục này trong VS Code.
+2. Ví dụ: tìm Tibbers trong `src/data/unlocks.json`, sửa mô tả nếu cần. Để sửa giao diện sơ đồ, xem `src/js/unlocks.js` và `src/styles/unlocks.css`.
+3. Mở terminal trong thư mục và chạy:
 
-1. Tạo repository GitHub, ví dụ `tft19-handbook`.
-2. Tải ZIP mã nguồn và giải nén. **Upload các file bên trong thư mục**, để `index.html` nằm ở thư mục gốc của repository.
-3. Hoặc dùng Git từ thư mục chứa `index.html`:
+   ```bash
+   python build.py
+   ```
 
-```bash
-git init
-git add .
-git commit -m "Initial TFT 19 handbook"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/tft19-handbook.git
-git push -u origin main
-```
+   Nếu Windows chỉ có Python Launcher, dùng `py build.py`.
+4. Mở lại `index.html` và kiểm tra thay đổi.
 
-Thay `YOUR_USERNAME` bằng tài khoản GitHub của bạn và tạo repository trước khi push.
+**Đừng sửa trực tiếp `index.html`**: nó được sinh từ thư mục `src/`, lần build sau sẽ ghi đè.
 
-## Deploy với Vercel
+## GitHub / Vercel – không đụng bản đang chạy
 
-1. Đăng nhập https://vercel.com/ bằng GitHub.
-2. Chọn **Add New → Project**, import repository.
-3. **Framework Preset: Other** (không có framework). Root Directory là thư mục chứa `index.html` (thông thường là `./`).
-4. **Không cần build command** hoặc output directory riêng cho trang HTML tĩnh.
-5. Nhấn **Deploy** để lấy một đường dẫn `*.vercel.app`.
+1. Giữ nguyên `main` để website Vercel Production tiếp tục hoạt động.
+2. Tạo nhánh `dev` trên GitHub từ `main`. Không đưa code mới lên `main` trong lúc thử nghiệm.
+3. Khi muốn đưa bản refactor lên nhánh `dev`, bạn có thể dùng GitHub Desktop: checkout nhánh `dev`, chép **nội dung** thư mục refactor này vào thư mục repo (thay `index.html` và thêm `src/`, `build.py`), rồi commit/push.
+4. Test bản `dev`, sau đó tạo Pull Request `dev -> main` chỉ khi sẵn sàng công bố.
 
-Nếu push commit mới lên nhánh sản xuất, Vercel sẽ tự triển khai bản mới.
+Lưu ý: Vercel có thể tạo một **Preview Deployment** cho nhánh `dev`; bản Production vẫn giữ nguyên cho đến khi merge vào production branch. Đừng dùng `vercel --prod` trong quá trình thử nghiệm.
 
-## Chỉnh sửa dữ liệu trong mã nguồn
+## Nguồn dữ liệu tham khảo
 
-Mã nguồn chứa các thẻ JSON nội tuyến, có thể tìm bằng tên `id`:
+- https://tft.ninja/sets/19/units
+- https://tactics.tools/info/set-update
+- https://mobalytics.gg/tft/set19/unlocks
 
-- `rosterData`: thông tin 94 tướng, tộc/hệ, trạng thái khóa, trang bị và hiệu ứng.
-- `skillData`: mô tả kỹ năng ngắn của mỗi tướng.
-- `traitInfo`: mô tả 47 tộc/hệ bằng tiếng Việt.
-- `unlockRules`: dữ liệu sơ đồ mở khóa.
-- `savedData`: 94 ảnh tướng dưới dạng data URL (base64).
-- `traitIconData`: 47 icon tộc/hệ dưới dạng data URL (base64).
-
-Giao diện CSS và xử lý JavaScript cũng nằm ngay trong `index.html`. Các hình đã nhúng nên không cần tạo thư mục `assets`.
-
-## Lưu ý về chức năng lưu
-
-- Nút **LƯU TÙY CHỈNH** hiện có chức năng **tải xuống một bản HTML** chứa sửa đổi, **không tự cập nhật repository GitHub hay website trên Vercel**.
-- Nếu muốn các thay đổi xuất hiện trên website công khai, cần đưa nội dung của file HTML vừa xuất vào `index.html`, commit/push và chờ Vercel deploy.
-- Không có backend hay cơ sở dữ liệu; trang không đồng bộ thay đổi giữa các thiết bị.
-- Sơ đồ mở khóa và nội dung kỹ năng xuất phát từ thông tin giai đoạn PBE, có thể thay đổi khi game cập nhật.
-- Đây là dự án ghi chú người hâm mộ, không phải website chính thức của Riot Games/Tactics.tools/Mobalytics. Khi xuất bản công khai nên ghi nguồn, tôn trọng quyền sử dụng hình ảnh và tránh giới thiệu như sản phẩm chính thức.
-
-## Cập nhật website sau khi chỉnh giao diện
-
-1. Vào repository `TFT-Handbook` trên GitHub.
-2. Thay **file `index.html` ở thư mục gốc** bằng `index.html` từ bản cập nhật này (không upload nguyên ZIP).
-3. Commit thay đổi trên nhánh deploy. Nếu GitHub không cho sửa file lớn trong trình soạn thảo web, hãy dùng **Add file → Upload files** để upload file thay thế hoặc dùng Git trên máy.
-4. Nếu repo đã kết nối Vercel, deployment mới sẽ tự chạy sau khi commit.
-
-Trang web chỉ hiển thị danh sách nguồn ở cuối trang. Các đoạn hướng dẫn nội bộ về dán ảnh/icon và ghi chú riêng của quá trình làm đã được bỏ khỏi giao diện.
+Mùa 19 có thể có điều chỉnh sau PBE; dữ liệu trong file là snapshot từ lần cập nhật trước.

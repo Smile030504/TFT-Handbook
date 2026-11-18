@@ -1,0 +1,1467 @@
+[
+  {
+    "id": "tft01",
+    "cost": 1,
+    "name": "Elise",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Ionic Spark",
+      "Frontman"
+    ],
+    "locked": false,
+    "effects": [
+      "stun"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft02",
+    "cost": 1,
+    "name": "Gnar",
+    "damage": "Attack",
+    "role": "Specialist",
+    "traits": [
+      "Pentakill",
+      "Trickshot"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft03",
+    "cost": 1,
+    "name": "Katarina",
+    "damage": "Magic",
+    "role": "Fighter",
+    "traits": [
+      "Classical",
+      "Slayer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft04",
+    "cost": 1,
+    "name": "Kayn",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "Heartsteel",
+      "Slayer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft05",
+    "cost": 1,
+    "name": "Kennen",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "True Damage",
+      "Bodyguard"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft06",
+    "cost": 1,
+    "name": "Kobuko",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Hyperpop",
+      "Frontman"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft07",
+    "cost": 1,
+    "name": "Lillia",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "K/DA",
+      "Bodyguard"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft08",
+    "cost": 1,
+    "name": "Neeko",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "K/DA",
+      "Encore",
+      "Prodigy"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft09",
+    "cost": 1,
+    "name": "Olaf",
+    "damage": "Attack",
+    "role": "Tank",
+    "traits": [
+      "Pentakill",
+      "Rock",
+      "Juggernaut"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft10",
+    "cost": 1,
+    "name": "Sett",
+    "damage": "Attack",
+    "role": "Tank",
+    "traits": [
+      "Heartsteel",
+      "Frontman"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft11",
+    "cost": 1,
+    "name": "Taric",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Beach Pop",
+      "Juggernaut"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft12",
+    "cost": 1,
+    "name": "Varus",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "Rock",
+      "Encore"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft13",
+    "cost": 1,
+    "name": "Yunara",
+    "damage": "Attack",
+    "role": "Marksman",
+    "traits": [
+      "Ionic Spark",
+      "Swiftstriker"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft14",
+    "cost": 1,
+    "name": "Ziggs",
+    "damage": "Magic",
+    "role": "Marksman",
+    "traits": [
+      "Hyperpop",
+      "Arcanist",
+      "Swiftstriker"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft15",
+    "cost": 1,
+    "name": "Zoe",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Beach Pop",
+      "Arcanist"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft16",
+    "cost": 2,
+    "name": "Annie",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Ionic Spark",
+      "Arcanist",
+      "Juggernaut"
+    ],
+    "locked": false,
+    "effects": [
+      "wound"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft17",
+    "cost": 2,
+    "name": "Ashe",
+    "damage": "Attack",
+    "role": "Marksman",
+    "traits": [
+      "Beach Pop",
+      "Swiftstriker"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft18",
+    "cost": 2,
+    "name": "Camille",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "Rock",
+      "Slayer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft19",
+    "cost": 2,
+    "name": "Ezreal",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "Heartsteel",
+      "Encore"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft20",
+    "cost": 2,
+    "name": "Gragas",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "K/DA",
+      "Juggernaut"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft21",
+    "cost": 2,
+    "name": "Illaoi",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Illbeats",
+      "Frontman"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft22",
+    "cost": 2,
+    "name": "Jax",
+    "damage": "Magic",
+    "role": "Fighter",
+    "traits": [
+      "EDM",
+      "Bodyguard",
+      "Swiftstriker"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft23",
+    "cost": 2,
+    "name": "Karthus",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Pentakill",
+      "Arcanist"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft24",
+    "cost": 2,
+    "name": "Lucian",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "Jazz",
+      "Hitmaker",
+      "Encore"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft25",
+    "cost": 2,
+    "name": "Lulu",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Hyperpop",
+      "Choreographer"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft26",
+    "cost": 2,
+    "name": "Lux",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Ionic Spark",
+      "Prodigy"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft27",
+    "cost": 2,
+    "name": "Nasus",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Classical",
+      "Bodyguard"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft28",
+    "cost": 2,
+    "name": "Qiyana",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "True Damage",
+      "Renegade"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft29",
+    "cost": 2,
+    "name": "Renata Glasc",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Classical",
+      "Choreographer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft30",
+    "cost": 2,
+    "name": "Renekton",
+    "damage": "Attack",
+    "role": "Tank",
+    "traits": [
+      "Beach Pop",
+      "Frontman"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft31",
+    "cost": 2,
+    "name": "Samira",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "Classical",
+      "Renegade",
+      "Trickshot"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft32",
+    "cost": 2,
+    "name": "Seraphine",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Indie"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft33",
+    "cost": 2,
+    "name": "Tristana",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "Hyperpop",
+      "Hitmaker"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft34",
+    "cost": 3,
+    "name": "Amumu",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Emo"
+    ],
+    "locked": false,
+    "effects": [
+      "stun"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft35",
+    "cost": 3,
+    "name": "Bard",
+    "damage": "Magic",
+    "role": "Marksman",
+    "traits": [
+      "Jazz",
+      "Swiftstriker"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft36",
+    "cost": 3,
+    "name": "Braum",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Illbeats",
+      "Juggernaut"
+    ],
+    "locked": false,
+    "effects": [
+      "stun"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft37",
+    "cost": 3,
+    "name": "Briar",
+    "damage": "Attack",
+    "role": "Assassin",
+    "traits": [
+      "Ionic Spark",
+      "Slayer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft38",
+    "cost": 3,
+    "name": "Draven",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "Illbeats",
+      "Trickshot"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft39",
+    "cost": 3,
+    "name": "Ekko",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "True Damage",
+      "Juggernaut",
+      "Prodigy"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft40",
+    "cost": 3,
+    "name": "Evelynn",
+    "damage": "Magic",
+    "role": "Fighter",
+    "traits": [
+      "K/DA",
+      "Renegade"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft41",
+    "cost": 3,
+    "name": "Galio",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Jazz",
+      "Frontman"
+    ],
+    "locked": false,
+    "effects": [
+      "stun"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft42",
+    "cost": 3,
+    "name": "K'Sante",
+    "damage": "Attack",
+    "role": "Tank",
+    "traits": [
+      "Heartsteel",
+      "Bodyguard"
+    ],
+    "locked": false,
+    "effects": [
+      "stun"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft43",
+    "cost": 3,
+    "name": "Kai'Sa",
+    "damage": "Attack",
+    "role": "Marksman",
+    "traits": [
+      "K/DA",
+      "Trickshot"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft44",
+    "cost": 3,
+    "name": "Malzahar",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Composer",
+      "Prodigy"
+    ],
+    "locked": false,
+    "effects": [
+      "shred"
+    ],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft45",
+    "cost": 3,
+    "name": "Senna",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "True Damage",
+      "Hitmaker"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft46",
+    "cost": 3,
+    "name": "Swain",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Rock",
+      "Arcanist",
+      "Frontman"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft47",
+    "cost": 3,
+    "name": "Syndra",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Beach Pop",
+      "Choreographer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft48",
+    "cost": 3,
+    "name": "Tibbers",
+    "damage": "Attack",
+    "role": "Tank",
+    "traits": [
+      "Ionic Spark",
+      "Bodyguard"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft49",
+    "cost": 3,
+    "name": "Viego",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "Pentakill",
+      "Choreographer",
+      "Slayer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft50",
+    "cost": 4,
+    "name": "Ahri",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "K/DA",
+      "Choreographer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft51",
+    "cost": 4,
+    "name": "Alistar",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Country"
+    ],
+    "locked": true,
+    "effects": [
+      "knockup"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft52",
+    "cost": 4,
+    "name": "Alune",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Heartsteel",
+      "Manager",
+      "Prodigy"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft53",
+    "cost": 4,
+    "name": "Aurora",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Ionic Spark",
+      "Renegade"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft54",
+    "cost": 4,
+    "name": "Garen",
+    "damage": "Attack",
+    "role": "Tank",
+    "traits": [
+      "Synthwave",
+      "Choreographer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft55",
+    "cost": 4,
+    "name": "Graves",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "Beach Pop",
+      "Renegade"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft56",
+    "cost": 4,
+    "name": "Jhin",
+    "damage": "Attack",
+    "role": "Specialist",
+    "traits": [
+      "Classical",
+      "Encore"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft57",
+    "cost": 4,
+    "name": "Jinx",
+    "damage": "Attack",
+    "role": "Marksman",
+    "traits": [
+      "Ionic Spark",
+      "Hitmaker"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft58",
+    "cost": 4,
+    "name": "Kayle",
+    "damage": "Magic",
+    "role": "Marksman",
+    "traits": [
+      "Pentakill",
+      "Swiftstriker"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft59",
+    "cost": 4,
+    "name": "Leona",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "K/DA",
+      "Bodyguard",
+      "Manager"
+    ],
+    "locked": false,
+    "effects": [
+      "shred"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft60",
+    "cost": 4,
+    "name": "Locke",
+    "damage": "Magic",
+    "role": "Assassin",
+    "traits": [
+      "Rock",
+      "Swiftstriker"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft61",
+    "cost": 4,
+    "name": "Mel",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "R&B",
+      "Arcanist"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft62",
+    "cost": 4,
+    "name": "Shyvana",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Ionic Spark",
+      "Frontman"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft63",
+    "cost": 4,
+    "name": "Thresh",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Classical",
+      "Frontman"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft64",
+    "cost": 4,
+    "name": "Vayne",
+    "damage": "Attack",
+    "role": "Marksman",
+    "traits": [
+      "Rock",
+      "Trickshot"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft65",
+    "cost": 4,
+    "name": "Wukong",
+    "damage": "Attack",
+    "role": "Tank",
+    "traits": [
+      "Gu Feng"
+    ],
+    "locked": true,
+    "effects": [
+      "sunder",
+      "shred"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft66",
+    "cost": 4,
+    "name": "Xayah",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "Gu Feng",
+      "Hitmaker"
+    ],
+    "locked": false,
+    "effects": [
+      "sunder"
+    ],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft67",
+    "cost": 4,
+    "name": "Yasuo",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "True Damage",
+      "Slayer"
+    ],
+    "locked": true,
+    "effects": [
+      "knockup"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft68",
+    "cost": 4,
+    "name": "Yone",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "Heartsteel",
+      "Slayer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft69",
+    "cost": 4,
+    "name": "Yorick",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Pentakill",
+      "Juggernaut"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft70",
+    "cost": 4,
+    "name": "Yuumi",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Illbeats",
+      "Encore"
+    ],
+    "locked": false,
+    "effects": [
+      "shred"
+    ],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft71",
+    "cost": 4,
+    "name": "Zac",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Beach Pop",
+      "Juggernaut"
+    ],
+    "locked": true,
+    "effects": [
+      "knockup"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft72",
+    "cost": 5,
+    "name": "Akali (K/DA)",
+    "damage": "Attack",
+    "role": "Assassin",
+    "traits": [
+      "K/DA"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft73",
+    "cost": 5,
+    "name": "Akali (True Damage)",
+    "damage": "Magic",
+    "role": "Fighter",
+    "traits": [
+      "True Damage",
+      "Freestyle"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft74",
+    "cost": 5,
+    "name": "Aphelios",
+    "damage": "Attack",
+    "role": "Marksman",
+    "traits": [
+      "Heartsteel"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft75",
+    "cost": 5,
+    "name": "Dr. Mundo",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "Record Mogul",
+      "Manager"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft76",
+    "cost": 5,
+    "name": "Gwen",
+    "damage": "Magic",
+    "role": "Fighter",
+    "traits": [
+      "Ionic Spark",
+      "Melodic Heart"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft77",
+    "cost": 5,
+    "name": "Janna",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Gu Feng",
+      "Windblessed",
+      "Prodigy"
+    ],
+    "locked": true,
+    "effects": [
+      "knockup"
+    ],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft78",
+    "cost": 5,
+    "name": "Lee Sin",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "Gu Feng"
+    ],
+    "locked": true,
+    "effects": [
+      "knockup"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft79",
+    "cost": 5,
+    "name": "Miss Fortune",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "8-Bit",
+      "Hitmaker"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft80",
+    "cost": 5,
+    "name": "Mordekaiser",
+    "damage": "Magic",
+    "role": "Fighter",
+    "traits": [
+      "Pentakill"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft81",
+    "cost": 5,
+    "name": "Nidalee",
+    "damage": "Magic",
+    "role": "Fighter",
+    "traits": [
+      "Mariachi",
+      "Choreographer"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft82",
+    "cost": 5,
+    "name": "Nunu & Willump",
+    "damage": "Magic",
+    "role": "Specialist",
+    "traits": [
+      "Disco",
+      "Frontman"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft83",
+    "cost": 5,
+    "name": "Pyke",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "Rock",
+      "Renegade"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft84",
+    "cost": 5,
+    "name": "Rell",
+    "damage": "Magic",
+    "role": "Tank",
+    "traits": [
+      "R&B",
+      "Beat Master"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft85",
+    "cost": 5,
+    "name": "Taliyah",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Beach Pop",
+      "Encore"
+    ],
+    "locked": true,
+    "effects": [
+      "knockup"
+    ],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft86",
+    "cost": 5,
+    "name": "Teemo",
+    "damage": "Magic",
+    "role": "Caster",
+    "traits": [
+      "Hyperpop",
+      "Hype Man"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft87",
+    "cost": 5,
+    "name": "Twisted Fate",
+    "damage": "Magic",
+    "role": "Marksman",
+    "traits": [
+      "Tango",
+      "Trickshot"
+    ],
+    "locked": false,
+    "effects": [
+      "wound"
+    ],
+    "items": [
+      "guinsoo"
+    ]
+  },
+  {
+    "id": "tft88",
+    "cost": 5,
+    "name": "Vi",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "EDM",
+      "Juggernaut"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft89",
+    "cost": 5,
+    "name": "Vladimir",
+    "damage": "Magic",
+    "role": "Fighter",
+    "traits": [
+      "Classical",
+      "Arcanist"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft90",
+    "cost": 5,
+    "name": "Zeri",
+    "damage": "Attack",
+    "role": "Caster",
+    "traits": [
+      "Goth",
+      "Swiftstriker"
+    ],
+    "locked": false,
+    "effects": [],
+    "items": [
+      "shojin",
+      "blue"
+    ]
+  },
+  {
+    "id": "tft91",
+    "cost": 7,
+    "name": "Baron Nashor",
+    "damage": "Attack",
+    "role": "Fighter",
+    "traits": [
+      "One Monster Band"
+    ],
+    "locked": true,
+    "effects": [
+      "knockup"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft92",
+    "cost": 7,
+    "name": "Rakan",
+    "damage": "Magic",
+    "role": "Assassin",
+    "traits": [
+      "Boy Band"
+    ],
+    "locked": true,
+    "effects": [
+      "knockup"
+    ],
+    "items": []
+  },
+  {
+    "id": "tft93",
+    "cost": 7,
+    "name": "Smeech",
+    "damage": "Attack",
+    "role": "Specialist",
+    "traits": [
+      "Jazz",
+      "Slayer"
+    ],
+    "locked": true,
+    "effects": [],
+    "items": []
+  },
+  {
+    "id": "tft94",
+    "cost": 7,
+    "name": "Sona",
+    "damage": "Magic",
+    "role": "Specialist",
+    "traits": [
+      "Producer",
+      "Collab"
+    ],
+    "locked": true,
+    "effects": [
+      "stun"
+    ],
+    "items": []
+  }
+]

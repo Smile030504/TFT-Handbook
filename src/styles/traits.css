@@ -1,0 +1,38 @@
+/* Tộc/hệ learning tab */
+[hidden]{display:none!important}
+.major-tabs{display:flex;gap:7px;margin:16px 0 13px;padding:6px;border:1px solid #dcdde9;background:#e9ebf4;border-radius:13px;width:fit-content;max-width:100%}
+.major-tab{border:0;background:transparent;padding:11px 14px;font-size:13px;font-weight:950;color:#505a79;border-radius:9px;display:inline-flex;align-items:center;justify-content:space-between;gap:12px;min-width:174px;white-space:nowrap}.major-tab .tab-label{display:inline-flex;align-items:center;gap:5px}.major-tab .tab-number{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:24px;font-size:12px;line-height:1}
+.major-tab.active{background:#fff;color:#4637a3;box-shadow:0 2px 12px #22325b18}
+.tab-number{padding:2px 7px;border-radius:30px;background:#e6dfff;font-size:11px}
+.traits-page{margin:12px 0 26px}.traits-hero{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:23px 26px;border-radius:16px;color:white;background:linear-gradient(110deg,#1b284b,#5040a3)}
+.th-eyebrow{font-size:10px;letter-spacing:.16em;font-weight:900;color:#d6d2fb}.traits-hero h2{margin:5px 0 4px;font-size:28px;font-weight:950}.traits-hero p{max-width:760px;color:#e3e1ff;margin:0;font-size:13px}.traits-summary{font-weight:900;color:#eee8ff;align-self:center;font-size:12px}
+.traits-controls{display:flex;justify-content:space-between;align-items:center;gap:13px;flex-wrap:wrap;margin:15px 0}.trait-tab-buttons{display:flex;gap:7px;flex-wrap:wrap}.trait-kind{background:#fff;color:#4f5271;border:1px solid #dcdcea;border-radius:9px;padding:9px 12px;font-size:11px;font-weight:850}.trait-kind.active{background:#4f40a7;color:#fff;border-color:#4f40a7}#traitSearch{border:1px solid #dedde9;background:white;border-radius:9px;padding:10px 12px;min-width:240px;font-size:13px}
+.traits-info-line{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;font-size:11px;color:#747e94;margin:13px 0}.traits-info-line span:first-child{font-weight:900;color:#444b73}
+.save-traits{display:inline-flex;margin:2px 0 13px;background:#5140a7;color:white;border:none;font-weight:900;padding:10px 15px;border-radius:9px;box-shadow:0 5px 12px #342b801a}.save-traits:hover{background:#413490}
+.traits-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.trait-card{border:1px solid #dde1ec;background:white;border-radius:14px;overflow:hidden;min-width:0;box-shadow:0 4px 12px #202b4010;transition:box-shadow .12s,border-color .12s}.trait-card.selected{border-color:#8369c9;box-shadow:0 0 0 2px #e8defd}
+.trait-card-main{display:flex;gap:11px;padding:16px;align-items:flex-start}.trait-icon{width:54px;height:54px;flex-shrink:0;border-radius:11px;background:linear-gradient(135deg,#252c50,#59419e);border:1px solid #d7cfee;display:grid;place-items:center;overflow:hidden;position:relative}.trait-icon>img{width:43px;height:43px;object-fit:contain}.trait-icon-fallback{font-size:15px;letter-spacing:.01em;font-weight:900;color:#eee8ff;text-align:center;padding:4px}
+.trait-card-h3{font-size:15px;font-weight:950;margin:0;line-height:1.35}.trait-card-en{font-size:11px;color:#85829b;margin-top:2px}.trait-card-kind{display:inline-flex;font-size:9px;font-weight:850;letter-spacing:.02em;color:#50409a;background:#ece6fa;padding:3px 7px;border-radius:20px;margin:5px 0 0}.trait-card-desc{padding:0 16px 10px;font-size:12px;line-height:1.65;color:#56617a;min-height:63px}.trait-card-levels{border-top:1px solid #eeeef5;padding:9px 16px;color:#4c5670;font-size:11px;background:#fbfbfe;display:flex;align-items:center;justify-content:space-between;gap:8px}.trait-card-levels b{color:#51409c}
+.trait-card-controls{display:flex;gap:6px;padding:10px 12px 12px}.trait-card-controls button,.trait-card-controls a{flex:1;text-align:center;min-width:0;border:1px solid #dedbea;background:#faf8ff;border-radius:7px;color:#4b3c9e;padding:6px 7px;text-decoration:none;font-size:10px;font-weight:900}.trait-card-controls button:hover,.trait-card-controls a:hover{background:#efeaff}
+.trait-quick-members{display:flex;gap:4px;flex-wrap:wrap;padding:0 14px 13px}.trait-mini-img{width:32px;height:32px;object-fit:cover;border-radius:7px;border:2px solid #e6e0f3;cursor:pointer}.trait-mini-img:hover{border-color:#7258bf}
+.trait-detail{margin-top:18px;border:1px solid #d3d0e7;background:#fff;border-radius:18px;padding:20px;box-shadow:0 13px 28px #1e27411a;scroll-margin-top:20px}.trait-detail-header{display:flex;gap:15px;align-items:center}.trait-detail-header .trait-icon{width:76px;height:76px}.trait-detail-header .trait-icon>img{width:58px;height:58px}.trait-detail h3{margin:0;font-size:23px}.trait-detail p{font-size:14px;line-height:1.65;color:#46546e}.trait-detail-members{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:12px}.trait-member{border:1px solid #dfe2ec;border-radius:9px;overflow:hidden;cursor:pointer;background:#fff;padding:0;text-align:left;min-width:0}.trait-member img{display:block;width:100%;height:72px;object-fit:cover}.trait-member span{display:block;font-size:11px;font-weight:900;padding:6px 7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.trait-member small{display:block;color:#7e8595;font-size:10px;margin:-4px 0 5px 7px}
+.trait-help{font-size:12px;background:#eeedf8;border:1px solid #dfd9f0;border-radius:12px;padding:13px 17px;margin:18px 0;color:#4f5574}
+/* Make trait labels in original cards show localized names and glyphs */
+.trait .dot{background:#403774;color:#fff;width:17px;height:17px;vertical-align:middle}.trait .dot img{width:14px;height:14px;object-fit:contain;display:block}
+.trait .dot{min-width:22px}.trait{cursor:pointer}.trait:hover{border-color:#b8a3ed}
+@media(max-width:1080px){.traits-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.major-tabs{width:100%}.major-tab{flex:1;min-width:0;padding:11px 10px;gap:6px;font-size:11px}.major-tab .tab-number{min-width:29px;height:22px;font-size:11px}.traits-hero{padding:18px}.traits-grid{grid-template-columns:1fr}.traits-controls #traitSearch{width:100%;min-width:0}.trait-detail-members{grid-template-columns:repeat(3,minmax(0,1fr))}.trait-card-desc{min-height:0}}
+@media print{.major-tabs,.traits-controls,.trait-card-controls,.trait-help{display:none!important}.traits-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trait-card{break-inside:avoid}.trait-card-desc{min-height:0}.unit-page-part{display:none!important}}
+
+/* Trait detail: same centered popup behavior as champion dialog */
+#traitDialog.trait-dialog{width:min(900px,calc(100vw - 24px));max-height:min(90vh,940px);padding:0;border:1px solid #d5d3e7;border-radius:18px;background:#fff;color:#202748;box-shadow:0 26px 85px #10132899;overflow:auto;overscroll-behavior:contain}
+#traitDialog::backdrop{background:#111426bd;backdrop-filter:blur(4px)}
+.trait-dialog-top{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:2;padding:13px 20px;background:#f4f2fb;border-bottom:1px solid #e3dff3;color:#524398;font-size:12px;letter-spacing:.08em;font-weight:950}
+#traitDialog .trait-detail{border:0;margin:0;padding:21px 24px;box-shadow:none;border-radius:0;scroll-margin:0}
+.trait-dialog-bottom{position:sticky;bottom:0;display:flex;justify-content:flex-end;padding:11px 22px;background:#fff;border-top:1px solid #ebe7f5}
+.trait-card{cursor:pointer}
+.trait-card:focus-visible{outline:3px solid #7058cc;outline-offset:2px}
+@media(max-width:680px){#traitDialog.trait-dialog{max-height:92vh}#traitDialog .trait-detail{padding:16px 13px}.trait-dialog-top{padding:11px 14px}.trait-dialog-bottom{padding:9px 13px}}
+@media print{#traitDialog{display:none!important}}
+
+/* Sơ đồ mở khóa — chỉ dành cho tướng khóa */

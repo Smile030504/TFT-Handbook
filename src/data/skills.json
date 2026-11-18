@@ -1,0 +1,472 @@
+{
+  "tft01": {
+    "mana": "60/120",
+    "summary": "Biến thành nhện, tăng máu và bắn tơ vào kẻ gây sát thương nhiều nhất, gây sát thương phép và làm choáng mục tiêu đầu tiên. Lần dùng sau còn hồi máu.",
+    "key": "Biến hình · Choáng · Hồi máu"
+  },
+  "tft02": {
+    "mana": "0/3 đòn",
+    "summary": "Mỗi đòn đánh thứ ba ném đá gây sát thương vật lý và giúp Gnar tăng tốc độ đánh.",
+    "key": "Đòn đánh thứ 3 · Tăng tốc đánh"
+  },
+  "tft03": {
+    "mana": "0/40",
+    "summary": "Xoay người gây sát thương phép quanh mình, rồi chém mạnh mục tiêu. Kẻ địch trúng chiêu bị Mê Hoặc, hỗ trợ hệ Classical.",
+    "key": "Sát thương vòng · Mê hoặc"
+  },
+  "tft04": {
+    "mana": "0/30",
+    "summary": "Lướt và chém theo đường thẳng gây sát thương vật lý. Khi được nâng cấp Heartsteel, có thể biến thành Sát Thủ Bóng Tối lúc thấp máu.",
+    "key": "Lướt · Chuyển dạng Heartsteel"
+  },
+  "tft05": {
+    "mana": "Không dùng năng lượng",
+    "summary": "Giảm sát thương nhận vào; mỗi giây phóng điện gây sát thương phép lên kẻ địch ở gần.",
+    "key": "Giảm sát thương · Điện lan"
+  },
+  "tft06": {
+    "mana": "40/90",
+    "summary": "Nhận thêm máu theo lượng Hype từ Hyperpop; khi dùng chiêu, tự hồi máu liên tục trong một khoảng thời gian.",
+    "key": "Tích máu · Hồi phục"
+  },
+  "tft07": {
+    "mana": "40/100",
+    "summary": "Tự hồi máu và đánh mục tiêu, gây sát thương phép lan xung quanh; làm suy yếu kẻ địch, khiến chúng gây ít sát thương hơn.",
+    "key": "Hồi máu · Giảm sát thương địch"
+  },
+  "tft08": {
+    "mana": "0/40",
+    "summary": "Bắn nhiều luồng pháo giấy gây sát thương phép. Nếu luồng đó hạ gục mục tiêu, Neeko được cộng SMPT vĩnh viễn.",
+    "key": "Kết liễu · Tích SMPT"
+  },
+  "tft09": {
+    "mana": "Không dùng năng lượng",
+    "summary": "Đánh thường tự hồi máu. Khi đáng lẽ bị hạ gục, Olaf hồi đầy máu và tăng tốc đánh nhưng mất dần máu tối đa mỗi giây.",
+    "key": "Hồi sinh một lần · Đánh nhanh"
+  },
+  "tft10": {
+    "mana": "30/90",
+    "summary": "Nội tại tăng hiệu quả nhận máu tối đa; khi tung chiêu, Sett hồi máu rồi đánh hai đòn vật lý. Bản nâng cấp Heartsteel cho hồi máu định kỳ.",
+    "key": "Máu tối đa · Đánh kép"
+  },
+  "tft11": {
+    "mana": "30/90",
+    "summary": "Tạo lá chắn cho bản thân và một đồng minh gần đó đang mất máu.",
+    "key": "Lá chắn đôi"
+  },
+  "tft12": {
+    "mana": "30/70",
+    "summary": "Bắn mưa tên gây sát thương vật lý lên mục tiêu và các địch liền kề, đồng thời giảm tốc đánh của chúng.",
+    "key": "Đánh lan · Giảm tốc đánh"
+  },
+  "tft13": {
+    "mana": "40/80",
+    "summary": "Sau khi dùng chiêu, mọi đòn đánh còn lại trong giao tranh bắn thêm quả cầu gây sát thương vật lý.",
+    "key": "Cường hóa đòn đánh cả trận"
+  },
+  "tft14": {
+    "mana": "0/50",
+    "summary": "Đòn đánh thường kèm sát thương phép; dùng chiêu ném bom gây sát thương phép lên mục tiêu và kẻ địch cạnh bên.",
+    "key": "Đòn đánh phép · Bom lan"
+  },
+  "tft15": {
+    "mana": "15/90",
+    "summary": "Ném bóng nảy tới kẻ địch xa nhất. Nếu kết liễu mục tiêu, bóng tiếp tục nảy tới đối thủ khác và chuyển sát thương dư.",
+    "key": "Bóng nảy · Kết liễu dây chuyền"
+  },
+  "tft16": {
+    "mana": "20/80",
+    "summary": "Tự tạo lá chắn rồi phun lửa hình nón, gây sát thương phép, thiêu đốt và giảm hồi phục của kẻ địch.",
+    "key": "Lá chắn · Đốt · Giảm hồi máu"
+  },
+  "tft17": {
+    "mana": "20/60",
+    "summary": "Các đòn đánh tiếp theo được tăng tốc đánh và trở thành loạt tên liên tục gây sát thương vật lý.",
+    "key": "Tăng tốc đánh · Bắn nhiều tên"
+  },
+  "tft18": {
+    "mana": "0/40",
+    "summary": "Đá quét trước mặt gây sát thương vật lý; khi mục tiêu chết, móc sang mục tiêu kế tiếp và gây thêm sát thương.",
+    "key": "Quét hình nón · Đu bám chuyển mục tiêu"
+  },
+  "tft19": {
+    "mana": "0/35",
+    "summary": "Phóng đạn đánh dấu mục tiêu rồi kích nổ dấu ấn, gây sát thương vật lý lan. Nâng cấp Heartsteel tăng sát thương và phạm vi sau mỗi ba lần tung chiêu.",
+    "key": "Đánh dấu · Nổ lan"
+  },
+  "tft20": {
+    "mana": "30/80",
+    "summary": "Hồi máu dần và tăng sát thương phép trên đòn đánh. Hiệu quả tăng theo số đồng minh K/DA đạt 3 sao.",
+    "key": "Hồi máu · Hưởng lợi K/DA 3 sao"
+  },
+  "tft21": {
+    "mana": "30/90",
+    "summary": "Hồi máu và gây sát thương phép theo đường thẳng. Tích danh tiếng qua các lần dùng chiêu; khi đủ mốc, tăng chống chịu và nhận vàng.",
+    "key": "Đánh thẳng · Tích danh tiếng"
+  },
+  "tft22": {
+    "mana": "0/30",
+    "summary": "Đập mục tiêu gây sát thương phép, tự hồi máu và tích tốc đánh đến hết giao tranh; khi nâng cấp EDM bắn thêm tia gây sát thương lan.",
+    "key": "Hút máu · Tích tốc đánh"
+  },
+  "tft23": {
+    "mana": "10/50",
+    "summary": "Gây sát thương phép lên mục tiêu sau độ trễ; nếu hạ gục, kỹ năng được thi triển lại với hiệu lực giảm.",
+    "key": "Kết liễu để tung lại"
+  },
+  "tft24": {
+    "mana": "0/20",
+    "summary": "Lướt sang ô gần và bắn hai phát liên tiếp gây sát thương vật lý.",
+    "key": "Lướt · 2 phát bắn"
+  },
+  "tft25": {
+    "mana": "0/50",
+    "summary": "Luân phiên hai phép hỗ trợ: tăng tốc đánh cho đồng minh hoặc tăng máu cho họ; cả hai còn gây sát thương phép.",
+    "key": "Buff tốc đánh / Buff máu"
+  },
+  "tft26": {
+    "mana": "0/40",
+    "summary": "Bắn tia sáng tách đôi gây sát thương phép lên hai kẻ địch. Nếu hạ gục mục tiêu, nhận thêm năng lượng.",
+    "key": "Tia đôi · Hạ gục hồi mana"
+  },
+  "tft27": {
+    "mana": "25/75",
+    "summary": "Tạo vùng vừa hồi máu cho bản thân/đồng minh vừa gây sát thương phép. Kẻ địch ít máu tối đa hơn Nasus bị Mê Hoặc.",
+    "key": "Vùng hồi phục · Mê hoặc"
+  },
+  "tft28": {
+    "mana": "0/40",
+    "summary": "Lướt qua hàng địch gây sát thương vật lý. Vòng nguyên tố đổi màu: tăng sát thương, hồi máu, hoàn năng lượng hoặc thưởng vàng.",
+    "key": "Đổi hiệu ứng theo màu"
+  },
+  "tft29": {
+    "mana": "0/45",
+    "summary": "Gắn độc lên mục tiêu và địch xung quanh, gây sát thương phép theo thời gian; áp dụng Mê Hoặc, hỗ trợ hệ Classical.",
+    "key": "Độc lan · Mê hoặc"
+  },
+  "tft30": {
+    "mana": "60/110",
+    "summary": "Hóa lớn, tăng máu tối đa đến hết giao tranh rồi xoay gây sát thương vật lý quanh mình.",
+    "key": "Tăng máu · Xoay vòng"
+  },
+  "tft31": {
+    "mana": "0/60",
+    "summary": "Chí mạng khiến địch bị Mê Hoặc; kỹ năng xả nhiều viên đạn gây sát thương vật lý vào mục tiêu.",
+    "key": "Chí mạng · Mê hoặc · Xả đạn"
+  },
+  "tft32": {
+    "mana": "0/50",
+    "summary": "Bắn loạt nốt nhạc gây sát thương phép; khi thăng hạng thành Rising Star/Superstar, phạm vi đánh mở rộng dần đến toàn bộ địch.",
+    "key": "Nâng hạng · Đánh rộng dần"
+  },
+  "tft33": {
+    "mana": "0/55",
+    "summary": "Ném bom lên các mục tiêu xung quanh rồi kích nổ gây sát thương vật lý; đợt nổ cuối có sát thương riêng.",
+    "key": "Rải bom · Nổ nhiều đợt"
+  },
+  "tft34": {
+    "mana": "60/120",
+    "summary": "Hồi máu, quăng băng vào các kẻ địch gần nhất, gây sát thương phép và làm choáng.",
+    "key": "Hồi máu · Trói choáng"
+  },
+  "tft35": {
+    "mana": "20/80",
+    "summary": "Được trang bị Sừng Lữ Khách: dùng chiêu sinh kinh nghiệm và đánh thường hồi thêm năng lượng. Tung sóng meep gây sát thương phép xuyên nhiều địch, yếu dần theo đường đi.",
+    "key": "Sinh XP · Sóng xuyên"
+  },
+  "tft36": {
+    "mana": "75/135",
+    "summary": "Tạo lá chắn rồi đập đất, gây sát thương phép và làm choáng những kẻ đứng cạnh.",
+    "key": "Lá chắn · Choáng diện rộng"
+  },
+  "tft37": {
+    "mana": "0/30",
+    "summary": "Hồi máu, lao tới kẻ địch xa và gây sát thương vật lý vùng. Sau đó tăng tốc đánh, biến một số đòn đánh tiếp theo thành các cú chém.",
+    "key": "Lao tới · Hồi máu · Tăng tốc"
+  },
+  "tft38": {
+    "mana": "0/60",
+    "summary": "Ném đĩa xoay gây sát thương vật lý; để lại xoáy gây sát thương theo thời gian trong vùng nhỏ.",
+    "key": "Vùng sát thương vật lý theo thời gian"
+  },
+  "tft39": {
+    "mana": "30/120",
+    "summary": "Hoàn tác một phần sát thương đã chịu; dùng chiêu hồi lại lượng máu đang được hoàn tác rồi gây sát thương phép.",
+    "key": "Hoàn tác sát thương · Hồi máu"
+  },
+  "tft40": {
+    "mana": "0/40",
+    "summary": "Đầu giao tranh dịch chuyển ra sau mục tiêu và tạm khó bị nhắm bắn; dùng chiêu quét phép hình bán nguyệt, xuyên một phần kháng phép.",
+    "key": "Ẩn thân tương đối · Xuyên kháng phép"
+  },
+  "tft41": {
+    "mana": "50/120",
+    "summary": "Nhận lá chắn rồi gọi gió đánh vào kẻ đã gây nhiều sát thương nhất, gây sát thương phép và làm choáng.",
+    "key": "Khống chế chủ lực đối phương"
+  },
+  "tft42": {
+    "mana": "70/140",
+    "summary": "Nhận lá chắn, lao đẩy và làm choáng kẻ địch, rồi khiêu khích vùng gần. Heartsteel tăng giáp/kháng phép và sát thương đánh thường.",
+    "key": "Đẩy · Choáng · Khiêu khích"
+  },
+  "tft43": {
+    "mana": "0/30",
+    "summary": "Định kỳ phóng tên lửa gây sát thương vật lý; dùng chiêu tăng tốc đánh cho phần còn lại của giao tranh.",
+    "key": "Tên lửa định kỳ · Tích tốc đánh"
+  },
+  "tft44": {
+    "mana": "0/50",
+    "summary": "Bắn tia gây sát thương phép theo thời gian, tạo bốn vụ nổ giảm kháng phép và gây sát thương phép lan.",
+    "key": "Sát thương theo thời gian · Giảm kháng phép"
+  },
+  "tft45": {
+    "mana": "0/20",
+    "summary": "Bắn gây sát thương vật lý và gắn dấu. Khi kích nổ dấu hoặc hạ gục mục tiêu đã đánh dấu, nhận khuếch đại sát thương đến hết trận.",
+    "key": "Dấu ấn · Tích tăng sát thương"
+  },
+  "tft46": {
+    "mana": "70/120",
+    "summary": "Biến thành quỷ tăng máu tối đa, đốt phép xung quanh mỗi giây; dùng tiếp kỹ năng để hồi máu và tăng sát thương.",
+    "key": "Biến hình · Đốt gần · Hồi máu"
+  },
+  "tft47": {
+    "mana": "0/30",
+    "summary": "Đập bóng chuyền gây sát thương phép, sau đó bóng nảy sang kẻ đứng phía sau có ít trang bị nhất.",
+    "key": "Bóng nảy · Nhắm địch ít đồ"
+  },
+  "tft48": {
+    "mana": "40/100",
+    "summary": "Khi thấp máu hoặc Annie chủ lực chết, nổi giận tăng máu, SMCK và tốc đánh; dùng chiêu tạo lá chắn, đồng thời làm mới tốc đánh khi đang nổi giận.",
+    "key": "Nổi giận · Lá chắn"
+  },
+  "tft49": {
+    "mana": "0/40",
+    "summary": "Triệu hồi nhiều kiếm đâm mục tiêu gây sát thương vật lý. Mỗi số lần hạ gục nhất định sẽ nhận thêm một thanh kiếm vĩnh viễn.",
+    "key": "Tích kiếm vĩnh viễn"
+  },
+  "tft50": {
+    "mana": "0/30",
+    "summary": "Tích hồ hỏa qua mỗi lần dùng chiêu; phóng hết hồ hỏa gây sát thương phép. Khi tích đủ, vào trạng thái cường hóa và chia hỏa cầu sang nhiều mục tiêu.",
+    "key": "Tích hồ hỏa · Trạng thái cường hóa"
+  },
+  "tft51": {
+    "mana": "55/155",
+    "summary": "Tự hồi máu dựa trên lượng máu đã mất, rồi húc mục tiêu gây sát thương phép và hất tung các kẻ địch xung quanh.",
+    "key": "Hồi máu · Hất tung"
+  },
+  "tft52": {
+    "mana": "20/65",
+    "summary": "Rọi đèn gây sát thương phép lên mục tiêu và địch gần; nếu kết liễu, phần sát thương dư được phân phối tiếp. Heartsteel có đòn phép bổ sung.",
+    "key": "Sát thương dư lan"
+  },
+  "tft53": {
+    "mana": "0/60",
+    "summary": "Biến mất trong thoáng chốc rồi bắn phép theo đường thẳng tối ưu, gây sát thương mạnh lên hai kẻ nhiều máu nhất; sau đó quay về.",
+    "key": "Chọn đường bắn · Địch nhiều máu"
+  },
+  "tft54": {
+    "mana": "30/100",
+    "summary": "Tự hồi máu rồi bắn sóng gây sát thương vật lý, làm suy yếu để địch gây ít sát thương hơn.",
+    "key": "Hồi máu · Làm suy yếu"
+  },
+  "tft55": {
+    "mana": "0/30",
+    "summary": "Tăng tốc đánh, lao theo mục tiêu và xả đạn hình nón ở các đòn tiếp theo; hạ gục sẽ cường hóa thêm một đòn.",
+    "key": "Lao theo · Xả đạn hình nón"
+  },
+  "tft56": {
+    "mana": "4/4 đạn",
+    "summary": "Chuyển tốc đánh cộng thêm thành SMCK; mỗi phát bắn phối hợp đàn violin. Phát thứ tư mạnh hơn, về sau tăng tầm bắn và xuyên nhiều mục tiêu.",
+    "key": "4 phát bắn · Violin · Xuyên mục tiêu"
+  },
+  "tft57": {
+    "mana": "30/90",
+    "summary": "Bắn rất nhanh nhiều tên lửa vào các kẻ địch xung quanh, gây sát thương vật lý.",
+    "key": "Tên lửa liên tiếp"
+  },
+  "tft58": {
+    "mana": "0/50",
+    "summary": "Đòn đánh kèm sát thương phép; bật chiêu để tăng tốc đánh và tầm đánh vô hạn, tích kiếm rồi thả kiếm gây sát thương phép lan.",
+    "key": "Tầm vô hạn · Tích kiếm"
+  },
+  "tft59": {
+    "mana": "40/100",
+    "summary": "Tạo lá chắn, gọi tia sáng gây sát thương phép lên địch gần và giảm kháng phép của chúng.",
+    "key": "Lá chắn · Giảm kháng phép"
+  },
+  "tft60": {
+    "mana": "0/30",
+    "summary": "Phóng ba đinh linh hồn xuyên nhiều địch, đặt dấu ấn rồi dịch chuyển tới mục tiêu xa. Đánh vào kẻ có nhiều dấu gây thêm sát thương phép.",
+    "key": "Dấu ấn · Dịch chuyển"
+  },
+  "tft61": {
+    "mana": "0/40",
+    "summary": "Bắn nhiều đạn phép vào các kẻ địch gần; tích dấu Blues để chiêu sau gây nhiều sát thương hơn.",
+    "key": "Tích dấu · Tăng sát thương"
+  },
+  "tft62": {
+    "mana": "30/100",
+    "summary": "Khi xuống mốc máu, hóa rồng tăng máu và tốc đánh; mỗi ba đòn đánh gây sát thương phép vùng. Dùng chiêu tạo lá chắn.",
+    "key": "Hóa rồng · Lá chắn · Đòn 3"
+  },
+  "tft63": {
+    "mana": "40/100",
+    "summary": "Định kỳ Mê Hoặc kẻ ở xa; dùng chiêu hồi máu, hút máu tối đa của địch gần và tăng khả năng chịu đòn.",
+    "key": "Mê hoặc · Hút máu tối đa"
+  },
+  "tft64": {
+    "mana": "0/50",
+    "summary": "Khi tung chiêu hoặc bị đánh sẽ lộn người tăng chống chịu. Kỹ năng cường hóa các đòn sau, gây sát thương theo SMCK và máu tối đa của mục tiêu.",
+    "key": "Lộn né · Đánh theo % máu"
+  },
+  "tft65": {
+    "mana": "40/100",
+    "summary": "Hồi máu và thả phân thân chạy vòng, vừa gây sát thương vật lý vừa cướp giáp/kháng phép kẻ địch rồi chuyển về cho Wukong.",
+    "key": "Phân thân · Trộm giáp/kháng phép"
+  },
+  "tft66": {
+    "mana": "0/60",
+    "summary": "Gọi lông vũ đâm mục tiêu gây sát thương vật lý và giảm giáp.",
+    "key": "Giảm giáp mục tiêu"
+  },
+  "tft67": {
+    "mana": "0/30",
+    "summary": "Lướt và đâm xuyên hàng địch. Mỗi lần dùng chiêu thứ ba hất tung, chém và gây sát thương vật lý lan.",
+    "key": "Cứ 3 chiêu · Hất tung"
+  },
+  "tft68": {
+    "mana": "0/50",
+    "summary": "Chém liên tục gây sát thương vật lý, tận dụng chỉ số cao hơn giữa SMCK/SMPT; Heartsteel tăng số nhát đánh và xuyên giáp.",
+    "key": "SMCK hoặc SMPT · Chém liên tục"
+  },
+  "tft69": {
+    "mana": "50/100",
+    "summary": "Hồi máu, tạo vùng gây sát thương phép mỗi giây; kết thúc làm chậm tốc đánh kẻ địch trong vùng.",
+    "key": "Vùng gây phép · Giảm tốc đánh"
+  },
+  "tft70": {
+    "mana": "0/20",
+    "summary": "Ném đĩa tích chồng và giảm kháng phép mục tiêu; đủ chồng gây nổ phép lan. Nếu địch chết khi còn đĩa, đĩa chuyển sang kẻ khác.",
+    "key": "Tích đĩa · Giảm kháng phép"
+  },
+  "tft71": {
+    "mana": "60/120",
+    "summary": "Tăng chống chịu và hồi máu trong lúc chuẩn bị, rồi nhảy vào địch gây sát thương phép và hất tung.",
+    "key": "Hồi máu · Hất tung"
+  },
+  "tft72": {
+    "mana": "0/45",
+    "summary": "Trượt ván qua hàng địch, gây sát thương vật lý và sơn ô để khiến chúng chịu nhiều sát thương hơn; mỗi ba lần dùng sẽ đốt toàn bộ vùng sơn.",
+    "key": "Sơn ô · Khuếch đại sát thương"
+  },
+  "tft73": {
+    "mana": "0/50",
+    "summary": "Chém mục tiêu gây sát thương phép lớn (mạnh hơn với tướng đỡ đòn), rồi dịch chuyển và ném bom phép lan. Khi thi triển khó bị đánh; hạ gục đủ lần tăng máu linh thú.",
+    "key": "Xử lý tank · Tăng máu linh thú"
+  },
+  "tft74": {
+    "mana": "40/180",
+    "summary": "Tích luân xa qua các đòn đánh để tăng sát thương; đủ số lượng tăng SMCK và tầm đánh vô hạn. Dùng chiêu bắn loạt đạn xuyên và tăng tốc đánh.",
+    "key": "Tích Chakram · Tầm vô hạn"
+  },
+  "tft75": {
+    "mana": "20/80",
+    "summary": "Khi có nhiều máu tối đa sẽ kích hoạt cường hóa, tăng máu và gây phép trên đòn đánh. Dùng chiêu hồi máu và đốt phép xung quanh.",
+    "key": "Máu càng cao càng khỏe"
+  },
+  "tft76": {
+    "mana": "0/100",
+    "summary": "Đòn thường chém phép hình nón và lướt theo mục tiêu; kỹ năng dùng kéo cắt ngang gây sát thương phép diện rộng, ít mục tiêu sẽ hoàn năng lượng.",
+    "key": "Kéo cắt ngang · Hoàn mana"
+  },
+  "tft77": {
+    "mana": "0/45",
+    "summary": "Bắn rồng gió phép vào địch gần; sau một số lần dùng chiêu, mở bão gây sát thương phép lên tất cả địch theo thời gian.",
+    "key": "Tích chiêu · Bão toàn bản đồ"
+  },
+  "tft78": {
+    "mana": "0/50",
+    "summary": "Combo càng dùng càng thêm đòn: đập rồng, xoáy hất tung rồi đấm vào dấu ấn để gây sát thương chuẩn bổ sung.",
+    "key": "Combo leo thang · Sát thương chuẩn"
+  },
+  "tft79": {
+    "mana": "0/50",
+    "summary": "Bắn viên đạn pinball gây sát thương vật lý rồi nảy qua các địch cạnh bên, giảm dần sát thương qua mỗi lần nảy.",
+    "key": "Đạn nảy nhiều mục tiêu"
+  },
+  "tft80": {
+    "mana": "0/60",
+    "summary": "Kéo kẻ địch gần vào, tung vuốt phép và tăng chống chịu tạm thời; từ đó có hút máu toàn phần, tầm đánh xa và đòn đánh phép lan.",
+    "key": "Kéo địch · Chuyển kiểu đánh"
+  },
+  "tft81": {
+    "mana": "20/45",
+    "summary": "Hai dạng: báo nhảy liên tiếp gây phép tăng dần; dạng người hồi máu, phóng lao và tạo hoa phát nổ gây phép vùng.",
+    "key": "Hai dạng · Nhảy / Hồi + Lao"
+  },
+  "tft82": {
+    "mana": "20/75",
+    "summary": "Tự hồi năng lượng và lăn cầu Disco gây sát thương phép dọc đường; khi kích hoạt sẽ tăng tốc, kích thước và sát thương cầu đến hết trận.",
+    "key": "Cầu càng lúc càng lớn"
+  },
+  "tft83": {
+    "mana": "0/30",
+    "summary": "Tự động lao đến và kết liễu các kẻ địch dưới ngưỡng máu; chiêu thường đánh theo hình chữ X gây sát thương vật lý.",
+    "key": "Kết liễu theo ngưỡng máu"
+  },
+  "tft84": {
+    "mana": "30/100",
+    "summary": "Khi chưa cưỡi, tự tạo lá chắn và gọi loa gây phép định kỳ; khi cưỡi, lao vào nhóm địch gây sát thương phép diện rộng.",
+    "key": "Hai trạng thái · Loa / Lao vào"
+  },
+  "tft85": {
+    "mana": "0/40",
+    "summary": "Bắn nhiều đá phép; sau vài lần thi triển sẽ lướt theo đường thẳng, gây sát thương theo máu tối đa địch và hất tung ngắn.",
+    "key": "Cứ vài chiêu · Hất tung"
+  },
+  "tft86": {
+    "mana": "0/100",
+    "summary": "Đòn đánh lây Viral gây phép theo thời gian; địch chết bị nhiễm sẽ hóa zombie và phát nổ lây bệnh. Dùng chiêu ném nấm lây Viral trên diện rộng.",
+    "key": "Nhiễm bệnh · Lây dây chuyền"
+  },
+  "tft87": {
+    "mana": "0/50",
+    "summary": "Đầu giao tranh có thể tạo phần thưởng từ các lá bài trong cửa hàng. Khi dùng chiêu, 5 đòn tiếp theo biến thành bài gây sát thương phép lan.",
+    "key": "Cửa hàng cho thưởng · 5 lá bài"
+  },
+  "tft88": {
+    "mana": "0/50",
+    "summary": "Tạo lá chắn cho mình và đồng minh gần, rồi đấm liên tục gây sát thương vật lý vùng. EDM tăng thêm đòn và hồi máu.",
+    "key": "Lá chắn đồng đội · Đấm liên tục"
+  },
+  "tft89": {
+    "mana": "0/40",
+    "summary": "Có hút máu toàn phần; địch bị hiệu ứng bất lợi trở thành Mê Hoặc. Tung phép vào địch gần, sau vài lần gọi đèn chùm gây phép toàn vùng.",
+    "key": "Mê hoặc nhờ debuff · Đèn chùm"
+  },
+  "tft90": {
+    "mana": "0/150",
+    "summary": "Lướt rất nhanh quanh sân và bắn loạt laser gây sát thương vật lý, xuyên một phần giáp của mục tiêu.",
+    "key": "Lướt toàn sân · Xuyên giáp"
+  },
+  "tft91": {
+    "mana": "80/120",
+    "summary": "Triệu hồi cả dàn nhạc và Riff Herald, hất tung toàn bộ đối thủ; gây sát thương vật lý lẫn phép phân tán toàn đội địch.",
+    "key": "Dàn nhạc · Hất tung toàn bàn"
+  },
+  "tft92": {
+    "mana": "0/55",
+    "summary": "Lao vào nhóm địch, phóng lông vũ gây sát thương phép quanh mục tiêu và hất tung địch trong vùng gần.",
+    "key": "Lao vào · Hất tung"
+  },
+  "tft93": {
+    "mana": "0/4 nhịp",
+    "summary": "Tích nhịp qua đòn đánh; tung chiêu tạo lá chắn, gây sát thương vật lý diện rộng rồi nện mục tiêu nhiều lần. Đủ nhịp sẽ nhận ấn hệ chưa kích hoạt.",
+    "key": "Tích nhịp · Nhận ấn hệ"
+  },
+  "tft94": {
+    "mana": "0/190",
+    "summary": "Không đánh thường; định kỳ tự hồi năng lượng, gây phép và tạo lá chắn cho đồng minh. Chiêu bắn sóng âm toàn bản đồ gây phép, choáng địch và tạo lá chắn cả đội.",
+    "key": "Không đánh thường · Choáng toàn bàn"
+  }
+}

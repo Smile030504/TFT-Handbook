@@ -1,0 +1,50 @@
+#details.unlock-expanded{width:min(990px,calc(100vw - 26px));max-height:94vh;padding:23px 26px}
+#details.unlock-expanded .dialoghead img{width:142px;height:108px}
+#details.unlock-expanded .dialoghead h3{font-size:27px}
+#details.unlock-expanded .dialogcontent{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:17px}
+#details.unlock-expanded .dialogcontent .skillpanel{grid-column:1 / -1}
+#details.unlock-expanded .dialogcontent>div:last-child{grid-column:1 / -1}
+.unlock-panel{background:#f9f8ff;border:1px solid #d8cef4;border-radius:17px;padding:18px 19px 20px;margin:20px 0 10px}
+.unlock-titleline{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:10px}
+.unlock-eyebrow{font-size:11px;letter-spacing:.13em;color:#6c58b3;font-weight:950}
+.unlock-level{font-weight:900;background:#f0e9ff;color:#51359d;border:1px solid #dccdfa;border-radius:50px;padding:6px 10px;font-size:12px}
+.unlock-statement{margin:0 0 16px;font-size:16px;color:#293252;font-weight:800;line-height:1.55}
+
+.unlock-flow{display:grid;grid-template-columns:minmax(140px,185px) minmax(115px,1fr) minmax(155px,185px);align-items:center;gap:13px;background:#fff;border-radius:14px;padding:17px;border:1px solid #e4e4ef;min-height:196px}
+.unlock-flow.has-multiple{grid-template-columns:minmax(270px,1.7fr) minmax(105px,1fr) minmax(155px,185px)}
+.unlock-flow.has-many{grid-template-columns:minmax(290px,2.1fr) minmax(85px,1fr) minmax(145px,175px)}
+.unlock-start{display:flex;flex-direction:column;justify-content:center;gap:9px;min-width:0}
+.unlock-nodes{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;min-width:0}
+.unlock-node{background:#fcfbff;border:1px solid #e1dcf3;border-radius:11px;min-width:112px;flex:1 1 126px;max-width:175px;overflow:hidden;padding:8px;text-align:center}
+.unlock-flow:not(.has-multiple) .unlock-node{min-width:0;max-width:175px;width:100%}
+.unlock-node-visual{width:100%;height:90px;margin:0 auto 7px;background:linear-gradient(135deg,#242c51,#56439b);border-radius:9px;display:grid;place-items:center;overflow:hidden;color:white;font-size:29px}
+/* The champion's face is generally at the right of the original horizontal splash art. */
+.unlock-node-visual img{width:100%;height:100%;object-fit:cover;object-position:right center;display:block}
+.unlock-node-visual.trait-visual {padding:10px}
+.unlock-node-visual.trait-visual img{width:70px;height:70px;max-width:100%;max-height:100%;object-fit:contain;object-position:center;padding:0;transform:none}
+.unlock-node-name{font-size:12px;font-weight:950;color:#2c3455;line-height:1.32;overflow-wrap:anywhere}
+.unlock-node-stars{display:flex;justify-content:center;gap:2px;margin:4px 0 1px;color:#d89b19;font-size:21px;line-height:1;letter-spacing:1px;text-shadow:0 1px 0 #fff6cc}
+.unlock-join{text-align:center;font-size:10px;font-weight:950;letter-spacing:.04em;color:#7057ab;padding:4px 5px;border-radius:6px;background:#eee9fa}
+.unlock-link{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;width:100%;gap:8px;align-self:center}
+.unlock-arrow-label{max-width:100%;text-align:center;font-size:11px;font-weight:950;line-height:1.45;color:#5a429f;background:#f1edfd;border:1px solid #e2d9fb;border-radius:8px;padding:5px 8px;overflow-wrap:anywhere}
+.unlock-arrow-line{width:100%;display:flex;align-items:center;justify-content:center;height:22px}
+.unlock-arrow-line::before{content:'';height:4px;flex:1;min-width:16px;background:#7b59cf;border-radius:5px 0 0 5px}
+.unlock-arrow-line::after{content:'';width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid #7b59cf}
+.unlock-target{border:2px solid #bca7f0;background:#f4efff;border-radius:13px;text-align:center;min-height:173px;padding:11px;display:grid;justify-items:center;align-content:center;gap:6px}
+.unlock-target img{width:130px;max-width:100%;height:95px;object-fit:cover;object-position:right center;border-radius:9px}
+.unlock-target b{font-size:12px;line-height:1.25}
+.unlock-target span{color:#604ca4;font-weight:900;font-size:10px;letter-spacing:.07em}
+.unlock-help{font-size:11px;line-height:1.55;color:#72718f;margin:11px 0 0}
+.unlock-source{display:inline-block;color:#4d39a3;font-size:11px;font-weight:850;text-decoration:none;margin-top:10px}
+.unlock-source:hover{text-decoration:underline}
+@media(max-width:740px){
+#details.unlock-expanded{padding:16px 13px}#details.unlock-expanded .dialogcontent{grid-template-columns:1fr}
+#details.unlock-expanded .dialogcontent .skillpanel,#details.unlock-expanded .dialogcontent>div:last-child{grid-column:auto}
+.unlock-panel{padding:13px}.unlock-statement{font-size:14px}
+.unlock-flow,.unlock-flow.has-multiple,.unlock-flow.has-many{display:flex;flex-direction:column;gap:8px;padding:12px}
+.unlock-start,.unlock-link,.unlock-target{width:100%}
+.unlock-nodes{justify-content:center}.unlock-node{flex:0 1 142px;max-width:165px}
+.unlock-link{gap:5px;padding:2px 12px 0}.unlock-arrow-line{width:76px;transform:rotate(90deg);margin:15px 0 17px}
+.unlock-target{min-height:0}.unlock-target img{width:130px;height:95px}
+}
+@media print{.unlock-panel{break-inside:avoid}}

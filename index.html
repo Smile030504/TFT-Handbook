@@ -72,6 +72,20 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 
 /* Sơ đồ mở khóa — chỉ dành cho tướng khóa */
 
+/* Danh sách chọn tộc/hệ dạng nhiều cột, dùng icon đã có sẵn trong website. */
+.trait-picker{position:relative;min-width:192px}
+.trait-picker-toggle{display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:192px;padding:8px 11px;background:#fff;color:#34415f;border:1px solid #deddea;border-radius:10px;font-size:12px;font-weight:850;text-align:left}
+.trait-picker-toggle:hover,.trait-picker-toggle[aria-expanded="true"]{border-color:#9b86d9;background:#f9f7ff}
+.trait-picker-menu{position:absolute;top:calc(100% + 9px);left:0;z-index:55;width:min(840px,calc(100vw - 70px));max-height:min(510px,66vh);overflow:auto;background:linear-gradient(155deg,#20292d,#0b141a);border:1px solid #748078;border-radius:14px;padding:15px;box-shadow:0 18px 42px #11172b75}
+.trait-picker-grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(12,auto);grid-template-columns:repeat(4,minmax(0,1fr));column-gap:6px;row-gap:3px}
+.trait-picker-choice{border:0;border-left:2px solid transparent;background:transparent;min-width:0;display:flex;align-items:center;gap:9px;text-align:left;color:#dfc896;font-size:12px;font-weight:650;border-radius:6px;padding:6px 4px;line-height:1.3}
+.trait-picker-choice:hover,.trait-picker-choice.selected{color:#fff0c3;background:#ffffff16;border-left-color:#d4bb79}
+.trait-picker-choice span:last-child{overflow-wrap:anywhere}
+.trait-picker-icon{width:26px;height:26px;flex:0 0 26px;display:grid;place-items:center;background:#111c26;border:1px solid #414b55;border-radius:6px;color:#f3d58a;font-size:16px}
+.trait-picker-icon img{width:22px;height:22px;object-fit:contain}
+@media(max-width:700px){.trait-picker-menu{width:min(530px,calc(100vw - 34px));max-height:58vh}.trait-picker-grid{grid-template-rows:repeat(24,auto);grid-template-columns:repeat(2,minmax(0,1fr))}.trait-picker-choice{font-size:11px;gap:6px}}
+@media(max-width:430px){.trait-picker-menu{width:calc(100vw - 52px)}.trait-picker-grid{grid-auto-flow:row;grid-template-columns:1fr;grid-template-rows:none}}
+
 #details.unlock-expanded{width:min(990px,calc(100vw - 26px));max-height:94vh;padding:23px 26px}
 #details.unlock-expanded .dialoghead img{width:142px;height:108px}
 #details.unlock-expanded .dialoghead h3{font-size:27px}
@@ -122,15 +136,122 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 .unlock-target{min-height:0}.unlock-target img{width:130px;height:95px}
 }
 @media print{.unlock-panel{break-inside:avoid}}
+
+.builder-page{margin:12px 0 28px}
+.builder-hero{display:flex;gap:15px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:23px 26px;border-radius:16px;color:#fff;background:linear-gradient(113deg,#17213a,#473697 64%,#6550b3)}
+.builder-hero h2{font-size:28px;font-weight:950;line-height:1.2;margin:5px 0 6px}.builder-hero p{max-width:680px;margin:0;color:#e7e1ff;font-size:12px}
+.builder-hero-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.builder-reset{border:1px solid #ffffff83;background:#ffffff1c;color:#fff;border-radius:10px;padding:10px 11px;font-weight:900;font-size:11px}
+.builder-reset:hover{background:#ffffff36}
+.builder-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,280px);gap:15px;align-items:start;margin-top:15px}
+.builder-main-column{display:grid;gap:15px;min-width:0}
+.builder-panel{background:#fff;border:1px solid #e0dfed;border-radius:16px;padding:18px;box-shadow:0 5px 19px #1928460c;min-width:0}
+.builder-panel-heading{display:flex;gap:12px;justify-content:space-between;align-items:start;margin-bottom:14px}
+.builder-panel-heading h3{color:#39335e;font-size:13px;letter-spacing:.07em;font-weight:950;margin:0}
+.builder-panel-heading p{color:#798199;font-size:11px;line-height:1.55;margin:4px 0 0;max-width:520px}
+.builder-pool-total{white-space:nowrap;background:#eeeaf9;color:#5945aa;font-size:10px;font-weight:950;padding:5px 9px;border-radius:15px}
+.builder-capacity-group{display:grid;gap:4px;text-align:center;flex-shrink:0}
+.builder-capacity-group>span{font-size:9px;letter-spacing:.07em;color:#7a7691;font-weight:900}
+.builder-capacity-controls{display:flex;align-items:center;gap:0;border:1px solid #d9d3eb;border-radius:9px;overflow:hidden;background:#f9f7ff}
+.builder-capacity-controls button{height:34px;min-width:34px;border:0;background:transparent;color:#52439c;font-size:19px;font-weight:900}
+.builder-capacity-controls button:hover:not(:disabled){background:#e7defc}
+.builder-capacity-controls button:disabled{opacity:.3;cursor:not-allowed}
+.builder-capacity-controls output{display:grid;place-items:center;width:34px;font-weight:950;color:#403279}
+.builder-lineup{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;border:1px solid #d6d7ed;background:linear-gradient(135deg,#202945,#2a3460);border-radius:13px;padding:12px;min-height:110px}
+.builder-member{position:relative;min-width:0;min-height:99px;background:#111a36;border:1px solid #696e9b;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px #0003}
+.builder-member.is-baron{grid-column:span 2;border-color:#f2b85a}
+.builder-member.is-focused{border-color:#e8ca83;box-shadow:0 0 0 2px #f5dc9b,0 0 16px #e5bd7a8e}
+.builder-member-content{display:flex;align-items:center;justify-content:flex-end;flex-direction:column;gap:3px;position:absolute;inset:0;width:100%;padding:5px;border:0;background:transparent;color:#fff;text-align:center}
+.builder-member-image{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center}
+.builder-member-content::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#0a112ee8,transparent 65%)}
+.builder-member-name{position:relative;z-index:1;font-size:10px;line-height:1.25;font-weight:950;text-shadow:0 1px 3px #000b;max-width:96%;word-break:break-word}
+.builder-member-badge{position:absolute;top:6px;left:5px;z-index:1;background:#352012ee;color:#ffe0a0;border:1px solid #dfaa55;border-radius:6px;padding:2px 4px;font-size:9px;font-weight:950}
+.builder-remove{position:absolute;right:4px;top:4px;z-index:4;width:22px;height:22px;display:grid;place-items:center;border:1px solid #ffffff9f;border-radius:50%;background:#221c36e8;color:#fff;padding:0;font-size:16px;line-height:1}
+.builder-remove:hover{background:#b53b68}
+.builder-member-empty{border:1px dashed #8488b8;background:#ffffff0d;display:grid;place-items:center;box-shadow:none}
+.builder-empty-plus{font-size:22px;color:#c0c5ed;font-weight:400;opacity:.75}
+.builder-lineup-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px;font-size:11px;font-weight:750;color:#686c87}
+.builder-all-button{border:1px solid #c6bbe5;border-radius:8px;padding:5px 8px;background:#eee9fa;color:#5844a5;font-size:10px;font-weight:900}
+.builder-all-button:hover{background:#ded3f7}
+.builder-notice{margin:11px 0 0;border-radius:9px;padding:9px 12px;background:#f5f2fc;color:#615985;font-size:11px;line-height:1.55}
+.builder-pool-controls{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:10px 0 14px}
+.builder-pool-controls input{flex:1;min-width:190px;max-width:100%;border:1px solid #dcdcec;outline-color:#8c7ecf;background:#fff;padding:9px 11px;border-radius:9px;font-size:12px}
+.builder-costs{display:flex;gap:4px;flex-wrap:wrap}
+.builder-cost-filter{border:1px solid #dedcec;border-radius:7px;background:#faf9fe;color:#5c557a;min-width:29px;height:32px;padding:0 7px;font-size:11px;font-weight:900}
+.builder-cost-filter.active{background:#5544ad;color:#fff;border-color:#5544ad}
+.builder-pool{display:grid;grid-template-columns:repeat(auto-fill,minmax(61px,1fr));gap:8px;max-height:425px;overflow:auto;padding:5px 5px 7px;scrollbar-color:#c6bedf #f5f4f9}
+.builder-pick{display:flex;align-items:center;flex-direction:column;gap:4px;min-width:0;padding:5px 3px 6px;border:1px solid #e6e2ef;border-radius:10px;background:#fcfbff;color:#4b526c;transition:opacity .14s,filter .14s,transform .14s,box-shadow .14s}
+.builder-pick:hover{transform:translateY(-2px);border-color:#8d78d8;opacity:1!important;filter:none!important}
+.builder-pick-image-wrap{position:relative;width:100%;max-width:64px;aspect-ratio:1}
+.builder-pick img{display:block;width:100%;height:100%;object-fit:cover;object-position:70% center;border:2px solid #85879c;border-radius:7px}
+.builder-pick.cost-1 img{border-color:#8b96a4}.builder-pick.cost-2 img{border-color:#23af91}.builder-pick.cost-3 img{border-color:#389fdb}.builder-pick.cost-4 img{border-color:#ad64d9}.builder-pick.cost-5 img{border-color:#e2ac3d}.builder-pick.cost-7 img{border-color:#f57c47}
+.builder-pick-name{font-size:9px;line-height:1.15;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;text-align:center}
+.builder-pick.is-related{background:#eafff9;border-color:#32c4a3;box-shadow:0 0 0 1px #43d6b3,0 0 12px #54e9b57d}
+.builder-pick.is-related img{border-color:#32cfaa}
+.builder-pick.is-independent{background:#f7f3ff;border-color:#ab91ea;box-shadow:0 0 0 1px #c6b7ec}
+.builder-pick.is-independent img{border-color:#9172db}
+.builder-pick.is-muted{opacity:.32;filter:grayscale(.5)}
+.builder-pick.is-in-team{background:#ece9f9}
+.builder-pick-badge{position:absolute;right:2px;top:2px;background:#211a32ed;color:#fff;padding:3px;border-radius:4px;font-size:9px;font-weight:950;line-height:1}
+.builder-empty-pool{grid-column:1 / -1;text-align:center;color:#85849a;font-size:12px;padding:20px}
+.builder-legend{display:flex;gap:15px;flex-wrap:wrap;margin-top:10px;font-size:10px;color:#68728d;font-weight:800}
+.builder-legend span{display:flex;align-items:center;gap:6px}
+.builder-key{width:11px;height:11px;border-radius:3px;display:inline-block}
+.builder-key-related{background:#38d5aa}.builder-key-independent{background:#9c75dd}.builder-key-muted{background:#c6c9cf}
+.builder-synergy-panel{position:sticky;top:12px}
+.builder-synergies{display:grid;gap:7px;max-height:695px;overflow:auto}
+.builder-no-synergies{text-align:center;padding:18px 12px;border-radius:10px;background:#f7f6fb;color:#7d819a;font-size:12px}
+.builder-synergy{display:flex;gap:8px;align-items:center;padding:8px;border:1px solid #e6e4ec;border-radius:9px;background:#fdfcff}
+.builder-synergy-icon{flex-shrink:0;width:33px;height:33px;display:grid;place-items:center;background:#332d63;padding:4px;border-radius:7px}
+.builder-synergy-icon img{width:100%;height:100%;object-fit:contain}
+.builder-synergy-info{flex:1;min-width:0}
+.builder-synergy-head{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.builder-synergy-head strong{font-size:11px;color:#38395f;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.builder-synergy-head b{font-size:12px;color:#5949a8}
+.builder-synergy-levels{font-size:10px;color:#858b9b;line-height:1.4;overflow-wrap:anywhere}
+.builder-synergy-note{color:#7f8799;font-size:10px;line-height:1.6;margin-top:15px;border-top:1px solid #e9e8f2;padding-top:11px}
+@media(max-width:1020px){.builder-layout{grid-template-columns:1fr}.builder-synergy-panel{position:static}.builder-synergies{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));max-height:none}}
+@media(max-width:680px){.builder-hero{padding:18px}.builder-hero h2{font-size:22px}.builder-layout{gap:10px;margin-top:10px}.builder-panel{padding:12px}.builder-lineup{padding:7px;gap:5px}.builder-member{min-height:82px;border-radius:7px}.builder-member-name{font-size:8px}.builder-member-badge{font-size:8px}.builder-remove{width:19px;height:19px}.builder-pool{grid-template-columns:repeat(auto-fill,minmax(53px,1fr));gap:6px;max-height:360px}}
+@media(max-width:360px){.builder-lineup{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media print{.builder-page{display:none!important}}
 </style></head><body><div class="app">
-<header class="hero"><div class="micro">TFT MÙA 19 · PRISMATIC TOUR · HANDBOOK</div><h1>94 TƯỚNG · 47 TỘC/HỆ</h1><p>Tra cứu tướng, tộc/hệ, kỹ năng, hiệu ứng đặc biệt và cách mở khóa trong TFT mùa 19.</p><div class="stats"><span class="stat">94 tướng</span><span class="stat">🔒 32 tướng cần mở</span><span class="stat">47 tộc/hệ</span><span class="stat">5 bộ lọc hiệu ứng</span><span class="stat">94 kỹ năng tóm tắt</span></div></header><nav aria-label="Chọn tab sổ tay" class="major-tabs"><button class="major-tab active" id="tab-units" type="button"><span class="tab-label">⚔ TƯỚNG</span><span class="tab-number">94</span></button><button class="major-tab" id="tab-traits" type="button"><span class="tab-label">♫ TỘC / HỆ</span><span class="tab-number">47</span></button></nav>
+<header class="hero"><div class="micro">TFT MÙA 19 · PRISMATIC TOUR · HANDBOOK</div><h1>94 TƯỚNG · 47 TỘC/HỆ</h1><p>Tra cứu tướng, tộc/hệ, kỹ năng, hiệu ứng đặc biệt và cách mở khóa trong TFT mùa 19.</p><div class="stats"><span class="stat">94 tướng</span><span class="stat">🔒 32 tướng cần mở</span><span class="stat">47 tộc/hệ</span><span class="stat">5 bộ lọc hiệu ứng</span><span class="stat">94 kỹ năng tóm tắt</span></div></header><nav aria-label="Chọn tab sổ tay" class="major-tabs"><button class="major-tab active" id="tab-units" type="button"><span class="tab-label">⚔ TƯỚNG</span><span class="tab-number">94</span></button><button class="major-tab" id="tab-traits" type="button"><span class="tab-label">♫ TỘC / HỆ</span><span class="tab-number">47</span></button><button class="major-tab" id="tab-builder" type="button"><span class="tab-label">♟ TẠO ĐỘI HÌNH</span></button></nav>
 <section aria-label="Bộ lọc" class="filters unit-page-part"><div class="filter-top"><button class="btn primary" id="byCost">THEO GIÁ VÀNG</button><button class="btn" id="byRole">THEO VAI TRÒ</button><button class="btn" id="quiz">ẨN TÊN ĐỂ HỌC</button><button class="btn ghost" id="reset">XÓA BỘ LỌC</button><span class="space"></span><input aria-label="Tìm tướng" class="search" id="search" placeholder="Tìm tên tướng..." type="search"></div>
 <div class="row-filter"><span class="row-label">HIỆU ỨNG</span><button class="pill-btn active" data-effect="all">Tất cả</button><button class="pill-btn wound" data-effect="wound">Giảm hồi máu <em id="n-wound">2</em></button><button class="pill-btn sunder" data-effect="sunder">Giảm giáp <em id="n-sunder">2</em></button><button class="pill-btn shred" data-effect="shred">Giảm kháng phép <em id="n-shred">4</em></button><button class="pill-btn stun" data-effect="stun">Choáng <em id="n-stun">6</em></button><button class="pill-btn knockup" data-effect="knockup">Hất tung <em id="n-knockup">8</em></button></div>
-<div class="row-filter"><span class="row-label">TỘC / HỆ</span><select class="traitselect" id="trait"><option value="all">Tất cả tộc/hệ</option></select><label class="check"><input id="onlyLocked" type="checkbox"> Chỉ tướng cần mở khóa 🔒</label></div></section>
+<div class="row-filter"><span class="row-label">TỘC / HỆ</span><div class="trait-picker" id="traitPicker">
+ <button class="trait-picker-toggle" id="traitToggle" type="button" aria-expanded="false" aria-controls="traitMenu" aria-haspopup="true"><span id="traitSelectedLabel">Tất cả tộc/hệ</span><span aria-hidden="true">▾</span></button>
+ <div class="trait-picker-menu" id="traitMenu" hidden><div class="trait-picker-grid" id="traitPickerGrid" aria-label="Danh sách tộc hệ"></div></div>
+</div><label class="check"><input id="onlyLocked" type="checkbox"> Chỉ tướng cần mở khóa 🔒</label></div></section>
 <div class="statusline unit-page-part"><strong id="status">Đang hiển thị 94 / 94 tướng</strong></div><nav class="quicknav unit-page-part" id="quicknav"></nav><main class="unit-page-part" id="board"></main><section class="traits-page" id="traitsPage" hidden=""><div class="traits-hero"><div><div class="th-eyebrow">BỘ TỪ ĐIỂN TỘC/HỆ · TFT MÙA 19</div><h2>47 TỘC / HỆ</h2><p>Tra cứu hiệu ứng, mốc kích hoạt và danh sách tướng thuộc từng tộc/hệ.</p></div><div class="traits-summary">14 NHÓM NHẠC · 14 HỆ · 19 ĐỘC NHẤT</div></div>
 <div class="traits-controls"><div class="trait-tab-buttons"><button class="trait-kind active" data-kind="all" type="button">TẤT CẢ (47)</button><button class="trait-kind" data-kind="band" type="button">NHÓM NHẠC (14)</button><button class="trait-kind" data-kind="class" type="button">HỆ CHIẾN ĐẤU (14)</button><button class="trait-kind" data-kind="solo" type="button">ĐỘC NHẤT (19)</button></div><input aria-label="Tìm tộc hệ" id="traitSearch" placeholder="Tìm tên tộc/hệ tiếng Anh..." type="search"></div>
 <div class="traits-info-line"><span id="traitsCount">47 / 47 tộc/hệ</span></div>
 <div class="traits-grid" id="traitsGrid"></div>
+</section>
+<section class="builder-page" id="builderPage" aria-label="Tạo đội hình" hidden>
+ <div class="builder-hero">
+  <div><div class="th-eyebrow">TFT MÙA 19 · ĐỘI HÌNH CỦA BẠN</div><h2>TẠO ĐỘI HÌNH</h2><p>Thêm tướng vào danh sách, xem tộc/hệ đang có và tìm những tướng phù hợp. Không cần sắp xếp vị trí đứng.</p></div>
+  <div class="builder-hero-actions"><button class="builder-reset" type="button" id="builderReset">XÓA ĐỘI HÌNH</button></div>
+ </div>
+ <div class="builder-layout">
+  <div class="builder-main-column">
+   <section class="builder-panel" aria-labelledby="builderLineupTitle">
+    <div class="builder-panel-heading">
+     <div><h3 id="builderLineupTitle">ĐỘI HÌNH ĐÃ CHỌN</h3><p>Chạm vào một tướng để xem gợi ý cùng tộc/hệ; chạm lần nữa để xem gợi ý cho cả đội.</p></div>
+     <div class="builder-capacity-group" aria-label="Điều chỉnh số suất đội hình"><span>GIỚI HẠN</span><div class="builder-capacity-controls"><button type="button" id="builderMinus" aria-label="Giảm một suất" title="Giảm một suất">−</button><output id="builderCapacity" aria-live="polite">10</output><button type="button" id="builderPlus" aria-label="Tăng một suất" title="Tăng một suất">+</button></div></div>
+    </div>
+    <div class="builder-lineup" id="builderBoard" aria-label="Các tướng đã chọn"></div>
+    <div class="builder-lineup-foot"><span id="builderInstruction">Chọn icon trong kho tướng để bắt đầu.</span><button id="builderFocusAll" type="button" class="builder-all-button" hidden>GỢI Ý CHO CẢ ĐỘI</button></div>
+    <p class="builder-notice" id="builderNotice" aria-live="polite">Baron Nashor chiếm 2 suất. Bạn có thể tăng hoặc giảm giới hạn đội hình bằng nút + / −.</p>
+   </section>
+   <section class="builder-panel" aria-labelledby="builderPoolTitle">
+    <div class="builder-panel-heading"><div><h3 id="builderPoolTitle">KHO TƯỚNG</h3><p>Chạm vào icon để thêm. Icon sáng là gợi ý chung tộc/hệ; icon mờ vẫn có thể chọn.</p></div><span class="builder-pool-total" id="builderPoolCount">94 TƯỚNG</span></div>
+    <div class="builder-pool-controls"><input type="search" id="builderSearch" aria-label="Tìm tướng cho đội hình" placeholder="Tìm tên tướng hoặc tộc/hệ..." autocomplete="off"><div class="builder-costs" aria-label="Lọc theo giá vàng"><button type="button" class="builder-cost-filter active" data-build-cost="all">TẤT CẢ</button><button type="button" class="builder-cost-filter" data-build-cost="1">1</button><button type="button" class="builder-cost-filter" data-build-cost="2">2</button><button type="button" class="builder-cost-filter" data-build-cost="3">3</button><button type="button" class="builder-cost-filter" data-build-cost="4">4</button><button type="button" class="builder-cost-filter" data-build-cost="5">5</button><button type="button" class="builder-cost-filter" data-build-cost="7">7</button></div></div>
+    <div class="builder-pool" id="builderPool" aria-label="Icon các tướng có thể thêm"></div>
+    <div class="builder-legend"><span><i class="builder-key builder-key-related"></i> Chung tộc/hệ</span><span><i class="builder-key builder-key-independent"></i> Hệ độc lập</span><span><i class="builder-key builder-key-muted"></i> Không liên quan</span></div>
+   </section>
+  </div>
+  <aside class="builder-panel builder-synergy-panel" aria-labelledby="builderSynergyTitle"><div class="builder-panel-heading"><div><h3 id="builderSynergyTitle">TỘC / HỆ TRONG ĐỘI</h3><p>Tổng hợp từ các tướng đã chọn</p></div></div><div id="builderSynergies" class="builder-synergies"></div><p class="builder-synergy-note">Các mốc chỉ để tham khảo; một số tộc/hệ còn phụ thuộc cấp sao và điều kiện riêng.</p></aside>
+ </div>
 </section>
 <footer class="footer" aria-label="Nguồn tham khảo"><strong>Nguồn tham khảo:</strong> <a href="https://tft.ninja/sets/19/units" target="_blank" rel="noopener noreferrer">TFT Ninja</a> · <a href="https://tactics.tools/info/set-update" target="_blank" rel="noopener noreferrer">Tactics.tools</a> · <a href="https://mobalytics.gg/tft/set19/unlocks" target="_blank" rel="noopener noreferrer">Mobalytics</a></footer>
 </div>
@@ -155,9 +276,53 @@ const list=[...new Set(roster.flatMap(u=>u.traits))].sort((a,b)=>a.localeCompare
 const iconURL=(name)=>'https://ap.tft.tools/static/trait-icons/99da_19_'+traitInfo[name].slug+'_w.svg';
 const fallbackIcon=(name)=>{const t=name.split(/\s+/).map(s=>s[0]||'').slice(0,2).join('').toLocaleUpperCase('vi');return t.length>3?t.slice(0,3):t};
 function traitImg(name){const frame=el('span','trait-icon'),img=el('img');img.alt='Icon '+name;img.loading='lazy';let fall=el('span','trait-icon-fallback',fallbackIcon(name));frame.append(fall);img.src=traitIcons[name]||iconURL(name);img.onload=()=>{fall.hidden=true};img.onerror=()=>{img.hidden=true;fall.hidden=false};frame.append(img);return frame}
-function switchTab(tab){ui.tab=tab;const isTraits=tab==='traits';$('tab-units').classList.toggle('active',!isTraits);$('tab-traits').classList.toggle('active',isTraits);document.querySelectorAll('.unit-page-part').forEach(x=>x.hidden=isTraits);$('traitsPage').hidden=!isTraits;if(!isTraits&&$('traitDialog').open)$('traitDialog').close();if(isTraits)renderTraits();else render();window.scrollTo(0,0)}
-$('tab-units').onclick=()=>switchTab('units');$('tab-traits').onclick=()=>switchTab('traits');
-for(const t of list){const op=el('option','',t);op.value=t;$('trait').append(op)}
+function switchTab(tab){
+  if(!['units','traits','builder'].includes(tab))return;
+  ui.tab=tab;
+  ['units','traits','builder'].forEach(name=>{
+    const button=$('tab-'+name);
+    button.classList.toggle('active',name===tab);
+    button.setAttribute('aria-pressed',String(name===tab));
+  });
+  document.querySelectorAll('.unit-page-part').forEach(x=>x.hidden=tab!=='units');
+  $('traitsPage').hidden=tab!=='traits';
+  $('builderPage').hidden=tab!=='builder';
+  closeTraitPicker();
+  if(tab!=='traits'&&$('traitDialog').open)$('traitDialog').close();
+  if(tab==='traits')renderTraits();
+  else if(tab==='builder')renderBuilder();
+  else render();
+  window.scrollTo(0,0);
+}
+$('tab-units').onclick=()=>switchTab('units');
+$('tab-traits').onclick=()=>switchTab('traits');
+$('tab-builder').onclick=()=>switchTab('builder');
+
+
+const picker=$('traitPicker'),pickerMenu=$('traitMenu'),pickerGrid=$('traitPickerGrid');
+function closeTraitPicker(){pickerMenu.hidden=true;$('traitToggle').setAttribute('aria-expanded','false')}
+function setTraitFilter(name){
+  ui.trait=name;
+  $('traitSelectedLabel').textContent=name==='all'?'Tất cả tộc/hệ':name;
+  pickerGrid.querySelectorAll('[data-trait-choice]').forEach(b=>b.classList.toggle('selected',b.dataset.traitChoice===name));
+  closeTraitPicker();render();
+}
+function initTraitPicker(){
+  for(const name of ['all',...list]){
+    const b=el('button','trait-picker-choice');b.type='button';b.dataset.traitChoice=name;
+    const icon=el('span','trait-picker-icon');
+    if(name==='all')icon.textContent='✦';
+    else {const im=el('img');im.src=traitIcons[name]||iconURL(name);im.alt='';im.loading='lazy';im.onerror=()=>{im.hidden=true;icon.textContent='✦'};icon.append(im)}
+    b.append(icon,el('span','',name==='all'?'Tất cả tộc/hệ':name));
+    b.classList.toggle('selected',name==='all');
+    b.onclick=()=>setTraitFilter(name);pickerGrid.append(b);
+  }
+  $('traitToggle').onclick=()=>{const opening=pickerMenu.hidden;pickerMenu.hidden=!opening;$('traitToggle').setAttribute('aria-expanded',String(opening))};
+  document.addEventListener('click',e=>{if(!picker.contains(e.target))closeTraitPicker()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTraitPicker()});
+}
+initTraitPicker();
+
 for(const k of Object.keys(defs))$('n-'+k).textContent=roster.filter(u=>u.effects.includes(k)).length;
 function effChip(k){const d=defs[k],x=el('span','effect '+k,d.label);x.title=d.desc;return x}
 function traitChip(name){const x=el('span','trait'),dot=el('span','dot',fallbackIcon(name).slice(0,2));const icon=el('img');icon.src=traitIcons[name]||iconURL(name);icon.alt='';icon.loading='lazy';icon.onload=()=>{dot.textContent='';dot.append(icon)};icon.onerror=()=>{};x.title='Mở phần '+name;x.append(dot,document.createTextNode(name));x.onclick=(event)=>{event.stopPropagation();if($('details').open)$('details').close();ui.traitKind='all';ui.traitSearch='';$('traitSearch').value='';ui.traitSelected=name;switchTab('traits');showTraitDetail(name)};return x}
@@ -222,8 +387,8 @@ function card(u){const c=el('article','card'),p=el('div','pic'),im=el('img');im.
 const body=el('div','cardbody');body.append(el('h3','cardname',u.name),el('div','meta',roleVi[u.role]+' · '+(u.damage==='Magic'?'Phép':'Vật lý')));const tl=el('div','traitline');u.traits.forEach(t=>tl.append(traitChip(t)));body.append(tl);if(u.effects.length){const tags=el('div','tags');u.effects.forEach(k=>tags.append(effChip(k)));body.append(tags)}const acts=el('div','actions'),btn=el('button','smallbtn',u.locked?'🔒 XEM CÁCH MỞ KHÓA':'XEM KỸ NĂNG · TỘC/HỆ');btn.onclick=()=>showCard(u);acts.append(btn);body.append(acts);c.append(p,body);return c}
 function render(){const arr=roster.filter(matched);$('status').textContent='Đang hiển thị '+arr.length+' / 94 tướng'+(ui.locked?' · Chỉ tướng khóa':'');const grp=arr.reduce((acc,u)=>{const key=groupKey(u);(acc[key]??=[]).push(u);return acc},{});const keys=Object.keys(grp).sort((a,b)=>ui.view==='cost'?Number(a)-Number(b):roleOrder.indexOf(a.split('|')[0])-roleOrder.indexOf(b.split('|')[0])||a.localeCompare(b));$('board').replaceChildren();$('quicknav').replaceChildren();if(!arr.length){$('board').append(el('div','noresults','Không có tướng phù hợp. Hãy xóa bớt bộ lọc.'));return}keys.forEach((k,i)=>{const sec=el('section','group');sec.id='group-'+i;const header=el('div','grouphead');header.append(el('h2','',groupLabel(k)),el('small','',grp[k].length+' tướng'));sec.append(header);const grid=el('div','cards');grp[k].forEach(u=>grid.append(card(u)));sec.append(grid);$('board').append(sec);const a=el('a','',groupLabel(k)+' · '+grp[k].length);a.href='#group-'+i;$('quicknav').append(a)})}
 function setFilter(selector,field){document.querySelectorAll(selector).forEach(b=>b.addEventListener('click',()=>{ui[field]=b.dataset[field];document.querySelectorAll(selector).forEach(x=>x.classList.toggle('active',x===b));render()}))}
-setFilter('[data-effect]','effect');$('trait').onchange=e=>{ui.trait=e.target.value;render()};$('onlyLocked').onchange=e=>{ui.locked=e.target.checked;render()};$('search').oninput=e=>{ui.search=e.target.value.trim().toLowerCase();render()};$('byCost').onclick=()=>{ui.view='cost';$('byCost').classList.add('primary');$('byRole').classList.remove('primary');render()};$('byRole').onclick=()=>{ui.view='role';$('byRole').classList.add('primary');$('byCost').classList.remove('primary');render()};$('quiz').onclick=()=>{ui.quiz=!ui.quiz;document.body.classList.toggle('quiz',ui.quiz);$('quiz').classList.toggle('active',ui.quiz);$('quiz').textContent=ui.quiz?'HIỆN TÊN':'ẨN TÊN ĐỂ HỌC'};
-$('reset').onclick=()=>{ui.effect=ui.trait='all';ui.locked=false;ui.search='';$('trait').value='all';$('onlyLocked').checked=false;$('search').value='';document.querySelectorAll('[data-effect]').forEach(b=>b.classList.toggle('active',b.dataset.effect==='all'));render()};$('close').onclick=$('done').onclick=()=>$('details').close();$('details').onclick=e=>{if(e.target===$('details'))$('details').close()};
+setFilter('[data-effect]','effect');$('onlyLocked').onchange=e=>{ui.locked=e.target.checked;render()};$('search').oninput=e=>{ui.search=e.target.value.trim().toLowerCase();render()};$('byCost').onclick=()=>{ui.view='cost';$('byCost').classList.add('primary');$('byRole').classList.remove('primary');render()};$('byRole').onclick=()=>{ui.view='role';$('byRole').classList.add('primary');$('byCost').classList.remove('primary');render()};$('quiz').onclick=()=>{ui.quiz=!ui.quiz;document.body.classList.toggle('quiz',ui.quiz);$('quiz').classList.toggle('active',ui.quiz);$('quiz').textContent=ui.quiz?'HIỆN TÊN':'ẨN TÊN ĐỂ HỌC'};
+$('reset').onclick=()=>{ui.effect=ui.trait='all';ui.locked=false;ui.search='';setTraitFilter('all');$('onlyLocked').checked=false;$('search').value='';document.querySelectorAll('[data-effect]').forEach(b=>b.classList.toggle('active',b.dataset.effect==='all'));render()};$('close').onclick=$('done').onclick=()=>$('details').close();$('details').onclick=e=>{if(e.target===$('details'))$('details').close()};
 
 // Trait tab
 $('closeTraitDialog').onclick=$('doneTraitDialog').onclick=()=>$('traitDialog').close();
@@ -238,6 +403,205 @@ document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',(
 
 // Render the initial unit list once all event handlers have been registered.
 render();
+
+// Tạo đội hình: chỉ lưu danh sách tướng, không mô phỏng vị trí đứng.
+// Các hằng số được đặt ở đây để dễ thay đổi khi bạn muốn bổ sung tính năng.
+const TEAM_DEFAULT_CAPACITY=10;
+const TEAM_MIN_CAPACITY=1;
+const TEAM_MAX_CAPACITY=15;
+const TEAM_BARON='tft91';
+const TEAM_MALZAHAR='tft44';
+const TEAM_STORAGE_KEY='tft19-team-composer-v2';
+const teamById=new Map(roster.map(u=>[u.id,u]));
+const traitMembers=new Map(list.map(trait=>[
+  trait,new Set(roster.filter(u=>u.traits.includes(trait)).map(u=>u.id))
+]));
+const teamState={capacity:TEAM_DEFAULT_CAPACITY,ids:[],focus:null,search:'',cost:'all'};
+
+// Khi người dùng quay lại trang, tự khôi phục đội hình đã tạo trên thiết bị này.
+try{
+  const saved=JSON.parse(localStorage.getItem(TEAM_STORAGE_KEY)||'null');
+  if(saved&&typeof saved==='object'){
+    const raw=Number(saved.capacity);
+    teamState.capacity=Number.isInteger(raw)?Math.max(TEAM_MIN_CAPACITY,Math.min(TEAM_MAX_CAPACITY,raw)):TEAM_DEFAULT_CAPACITY;
+    const unique=[...new Set(Array.isArray(saved.ids)?saved.ids:[])];
+    for(const id of unique){
+      if(!teamById.has(id))continue;
+      const unit=teamById.get(id);
+      if(teamUsed()+teamSize(unit)>teamState.capacity)continue;
+      teamState.ids.push(id);
+    }
+  }
+}catch(_error){}
+function teamSize(unit){return unit.id===TEAM_BARON?2:1}
+function teamUnits(){return teamState.ids.map(id=>teamById.get(id)).filter(Boolean)}
+function teamUsed(){return teamUnits().reduce((sum,u)=>sum+teamSize(u),0)}
+function teamSave(){try{localStorage.setItem(TEAM_STORAGE_KEY,JSON.stringify({capacity:teamState.capacity,ids:teamState.ids}))}catch(_error){}}
+function teamHasMalzahar(){return teamState.ids.includes(TEAM_MALZAHAR)}
+function teamMessage(message){$('builderNotice').textContent=message}
+
+// Nếu không có tướng nào khác cùng một tộc/hệ, icon đó luôn được làm sáng.
+// Mordekaiser không thuộc nhóm này: các tướng Pentakill khác cũng có trait Pentakill.
+function teamIndependent(unit){
+  return unit.id!==TEAM_BARON&&unit.traits.every(t=>(traitMembers.get(t)?.size||0)<=1);
+}
+function teamSharedTraits(a,b){
+  if(a.id===b.id)return [];
+  return a.traits.filter(t=>(traitMembers.get(t)?.size||0)>1&&b.traits.includes(t));
+}
+function teamReferences(){
+  if(teamState.focus&&teamState.ids.includes(teamState.focus))return [teamById.get(teamState.focus)];
+  return teamUnits();
+}
+function teamHint(unit){
+  // Malzahar chỉ làm sáng Baron; không tự xác nhận Baron đã được mở khóa.
+  if(unit.id===TEAM_BARON)return teamHasMalzahar()
+    ?{kind:'related',why:'Đã có Malzahar. Muốn mở khóa Baron vẫn phải hoàn thành các điều kiện khác.'}
+    :{kind:'muted',why:'Thêm Malzahar để làm sáng Baron Nashor.'};
+  if(teamIndependent(unit))return {kind:'independent',why:'Tướng độc lập: không có tướng nào khác chung tộc/hệ.'};
+  const refs=teamReferences();
+  if(!refs.length)return {kind:'neutral',why:'Bạn có thể bắt đầu với tướng bất kỳ.'};
+  const common=[...new Set(refs.flatMap(other=>teamSharedTraits(other,unit)))];
+  return common.length?{kind:'related',why:'Chung: '+common.join(', ')}
+    :{kind:'muted',why:'Chưa có tộc/hệ trùng với tướng đang xét.'};
+}
+function teamAdd(unit){
+  if(teamState.ids.includes(unit.id)){
+    teamState.focus=unit.id;renderBuilder();
+    teamMessage(unit.name+' đã ở trong đội hình. Bấm × trên thẻ tướng để xóa.');
+    return;
+  }
+  if(teamUsed()+teamSize(unit)>teamState.capacity){
+    teamMessage(unit.name+' cần '+teamSize(unit)+' suất nhưng đội chỉ còn '+(teamState.capacity-teamUsed())+' suất. Hãy tăng giới hạn bằng nút + hoặc xóa bớt tướng.');
+    return;
+  }
+  teamState.ids.push(unit.id);
+  teamState.focus=null;
+  teamSave();renderBuilder();
+  teamMessage('Đã thêm '+unit.name+' · '+teamUsed()+' / '+teamState.capacity+' suất.'+(unit.id===TEAM_MALZAHAR?' Baron Nashor đã được làm sáng trong kho tướng.':''));
+}
+function teamRemove(id){
+  const before=teamById.get(id);
+  teamState.ids=teamState.ids.filter(x=>x!==id);
+  if(teamState.focus===id)teamState.focus=null;
+  teamSave();renderBuilder();
+  teamMessage('Đã xóa '+before.name+' khỏi đội hình.');
+}
+function teamToggleFocus(id){
+  teamState.focus=teamState.focus===id?null:id;
+  renderBuilder();
+  const focused=teamState.focus&&teamById.get(teamState.focus);
+  teamMessage(focused?'Đang gợi ý các tướng cùng tộc/hệ với '+focused.name+'.':'Đang gợi ý các tướng liên quan đến toàn đội.');
+}
+function teamSetCapacity(change){
+  const next=teamState.capacity+change;
+  if(next<TEAM_MIN_CAPACITY||next>TEAM_MAX_CAPACITY)return;
+  if(next<teamUsed()){
+    teamMessage('Đội hình đang dùng '+teamUsed()+' suất. Hãy xóa bớt tướng trước khi giảm giới hạn.');
+    return;
+  }
+  teamState.capacity=next;
+  teamSave();renderBuilder();
+  teamMessage('Giới hạn đội hình: '+next+' suất.');
+}
+function renderBuilderLineup(){
+  const board=$('builderBoard');board.replaceChildren();
+  const team=teamUnits(),used=teamUsed();
+  for(const unit of team){
+    const card=el('div','builder-member'+(unit.id===TEAM_BARON?' is-baron':'')+(teamState.focus===unit.id?' is-focused':''));
+    const button=el('button','builder-member-content');button.type='button';
+    button.setAttribute('aria-pressed',String(teamState.focus===unit.id));
+    button.setAttribute('aria-label','Xem gợi ý tộc/hệ cho '+unit.name);
+    const image=el('img','builder-member-image');image.src=imgs[unit.id];image.alt='';
+    button.append(image,el('span','builder-member-name',unit.name));
+    if(unit.id===TEAM_BARON)button.append(el('span','builder-member-badge','2 SUẤT'));
+    button.onclick=()=>teamToggleFocus(unit.id);
+    const remove=el('button','builder-remove','×');remove.type='button';remove.title='Xóa '+unit.name;
+    remove.setAttribute('aria-label','Xóa '+unit.name+' khỏi đội hình');remove.onclick=()=>teamRemove(unit.id);
+    card.append(button,remove);board.append(card);
+  }
+  // Ô trống chỉ biểu thị các suất còn lại, không có ý nghĩa vị trí trên bàn cờ.
+  for(let i=0;i<teamState.capacity-used;i++){
+    const empty=el('div','builder-member builder-member-empty');
+    empty.append(el('span','builder-empty-plus','+'));
+    empty.title='Suất trống · Chọn một tướng ở kho bên dưới';
+    board.append(empty);
+  }
+  $('builderCapacity').textContent=String(teamState.capacity);
+  $('builderMinus').disabled=teamState.capacity===TEAM_MIN_CAPACITY||teamState.capacity-1<used;
+  $('builderPlus').disabled=teamState.capacity===TEAM_MAX_CAPACITY;
+  $('builderFocusAll').hidden=!teamState.focus;
+  $('builderInstruction').textContent=teamState.focus
+    ?'Đang xem tướng liên quan đến '+teamById.get(teamState.focus)?.name+'.'
+    :!team.length?'Chọn icon trong kho tướng để bắt đầu.'
+    :used===teamState.capacity?'Đội đã đủ suất. Có thể tăng giới hạn hoặc xóa tướng.'
+    :'Đang hiển thị gợi ý chung tộc/hệ của cả đội.';
+}
+function renderBuilderPool(){
+  const query=teamState.search.toLowerCase();
+  const options=roster.filter(u=>(teamState.cost==='all'||String(u.cost)===teamState.cost)
+    &&(!query||(u.name+' '+u.traits.join(' ')).toLowerCase().includes(query)));
+  $('builderPoolCount').textContent=options.length+' / '+roster.length+' TƯỚNG';
+  const pool=$('builderPool');pool.replaceChildren();
+  if(!options.length){pool.append(el('p','builder-empty-pool','Không có tướng phù hợp.'));return}
+  for(const unit of options){
+    const hint=teamHint(unit),already=teamState.ids.includes(unit.id);
+    const button=el('button','builder-pick cost-'+unit.cost+' is-'+hint.kind+(already?' is-in-team':''));
+    button.type='button';button.title=unit.name+' · '+unit.cost+' vàng · '+unit.traits.join(', ')+'\n'+hint.why;
+    button.setAttribute('aria-label',(already?'Xem ':'Thêm ')+unit.name+' · '+hint.why);
+    button.dataset.unitId=unit.id;
+    const frame=el('span','builder-pick-image-wrap');const image=el('img');
+    image.src=imgs[unit.id];image.alt='';image.loading='lazy';frame.append(image);
+    if(already)frame.append(el('span','builder-pick-badge','✓'));
+    else if(unit.id===TEAM_BARON)frame.append(el('span','builder-pick-badge','2'));
+    button.append(frame,el('span','builder-pick-name',unit.name));
+    button.onclick=()=>teamAdd(unit);pool.append(button);
+  }
+}
+function renderBuilderSynergies(){
+  const panel=$('builderSynergies');panel.replaceChildren();
+  const team=teamUnits();
+  if(!team.length){panel.append(el('p','builder-no-synergies','Thêm một tướng để xem tộc/hệ của đội.'));return}
+  const counts=new Map();
+  for(const unit of team)for(const trait of unit.traits){
+    if(!counts.has(trait))counts.set(trait,new Set());
+    counts.get(trait).add(unit.id);
+  }
+  const entries=[...counts].sort((a,b)=>b[1].size-a[1].size||a[0].localeCompare(b[0]));
+  for(const [name,ids] of entries){
+    const trait=traitInfo[name],count=ids.size;
+    const row=el('div','builder-synergy');
+    const badge=el('span','builder-synergy-icon');const image=el('img');
+    image.src=traitIcons[name]||iconURL(name);image.alt='';image.loading='lazy';badge.append(image);
+    const info=el('div','builder-synergy-info'),header=el('div','builder-synergy-head');
+    header.append(el('strong','',name),el('b','',String(count)));
+    info.append(header,el('div','builder-synergy-levels',trait.kind==='solo'?'Độc nhất · '+trait.levels:'Mốc: '+(trait.levels||'–')));
+    row.append(badge,info);panel.append(row);
+  }
+}
+function renderBuilder(){renderBuilderLineup();renderBuilderPool();renderBuilderSynergies()}
+
+$('builderMinus').onclick=()=>teamSetCapacity(-1);
+$('builderPlus').onclick=()=>teamSetCapacity(1);
+$('builderFocusAll').onclick=()=>{teamState.focus=null;renderBuilder();teamMessage('Đang gợi ý các tướng liên quan đến toàn đội.')};
+$('builderSearch').oninput=e=>{teamState.search=e.target.value.trim();renderBuilderPool()};
+document.querySelectorAll('[data-build-cost]').forEach(button=>button.onclick=()=>{
+  teamState.cost=button.dataset.buildCost;
+  document.querySelectorAll('[data-build-cost]').forEach(x=>x.classList.toggle('active',x===button));
+  renderBuilderPool();
+});
+$('builderReset').addEventListener('click',()=>{
+  if(!teamState.ids.length){
+    teamMessage('Đội hình hiện đang trống.');
+    return;
+  }
+  teamState.ids=[];
+  teamState.focus=null;
+  teamSave();
+  renderBuilder();
+  teamMessage('Đã xóa toàn bộ tướng. Giới hạn suất hiện tại vẫn được giữ.');
+});
+renderBuilder();
 
 })();</script>
 

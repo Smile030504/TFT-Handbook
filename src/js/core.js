@@ -5,7 +5,7 @@ const traitInfo=JSON.parse($('traitInfo').textContent),traitIcons=JSON.parse($('
 const roleVi={Tank:'ĐỠ ĐÒN',Caster:'THUẬT SƯ',Fighter:'ĐẤU SĨ',Marksman:'XẠ THỦ',Specialist:'ĐẶC THÙ',Assassin:'SÁT THỦ'};
 const roleOrder=['Caster','Marksman','Fighter','Tank','Specialist','Assassin'];
 const kindVi={band:'NHÓM NHẠC',class:'HỆ CHIẾN ĐẤU',solo:'ĐỘC NHẤT'};
-const ui={view:'cost',effect:'all',traits:[],locked:false,search:'',quiz:false,tab:'units',traitKind:'all',traitSearch:'',traitSelected:null};
+const ui={view:'cost',effect:'all',traits:[],costs:[],locked:false,search:'',quiz:false,tab:'units',traitKind:'all',traitSearch:'',traitSelected:null};
 let selectedUnit=null;
 const el=(tag,cls,content)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(content!==undefined)x.textContent=content;return x};
 const list=[...new Set(roster.flatMap(u=>u.traits))].sort((a,b)=>a.localeCompare(b,'en'));
@@ -51,16 +51,13 @@ function updateTraitPicker(){const count = ui.traits.length; $('traitSelectedLab
 
 function toggleTraitFilter(name) {
   if (name === 'all') {
-    // Chọn Tất cả sẽ xóa các lựa chọn trước đó
     ui.traits = [];
     closeTraitPicker();
 
   } else if (ui.traits.includes(name)) {
-    // Bấm lại tộc/hệ đã chọn để bỏ chọn
     ui.traits = ui.traits.filter(trait => trait !== name);
 
   } else {
-    // Thêm tộc/hệ mới vào danh sách
     ui.traits.push(name);
   }
 
@@ -94,6 +91,10 @@ for(const k of Object.keys(defs))$('n-'+k).textContent=roster.filter(u=>u.effect
 function effChip(k){const d=defs[k],x=el('span','effect '+k,d.label);x.title=d.desc;return x}
 function traitChip(name){const x=el('span','trait'),dot=el('span','dot',fallbackIcon(name).slice(0,2));const icon=el('img');icon.src=traitIcons[name]||iconURL(name);icon.alt='';icon.loading='lazy';icon.onload=()=>{dot.textContent='';dot.append(icon)};icon.onerror=()=>{};x.title='Mở phần '+name;x.append(dot,document.createTextNode(name));x.onclick=(event)=>{event.stopPropagation();if($('details').open)$('details').close();ui.traitKind='all';ui.traitSearch='';$('traitSearch').value='';ui.traitSelected=name;switchTab('traits');showTraitDetail(name)};return x}
 function matched(u) {
+  const matchCost =
+    ui.costs.length === 0 ||
+    ui.costs.includes(u.cost);
+
   const matchEffect =
     ui.effect === 'all' ||
     u.effects.includes(ui.effect);
@@ -110,6 +111,7 @@ function matched(u) {
     u.name.toLowerCase().includes(ui.search);
 
   return (
+    matchCost &&
     matchEffect &&
     matchTraits &&
     matchLocked &&
@@ -129,7 +131,6 @@ try {
     document.body.classList.remove('dark-mode');
   }
 } catch (error) {
-  // Use the default theme if storage is unavailable.
 }
 
 function updateThemeButton() {

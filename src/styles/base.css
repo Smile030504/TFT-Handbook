@@ -33,3 +33,35 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 .skillkeyword{display:inline-flex;margin-top:11px;background:#eae3fc;border:1px solid #ddd3fa;color:#4d388a;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:850}
 .skillhint{font-size:11px;margin:9px 0 0;color:#737b99}
 @media(max-width:680px){.skillpanel{padding:12px}.skilldescription{font-size:13px}}
+
+/* Bộ lọc nhiều mức giá vàng */
+.quicknav .cost-filter-btn {
+  padding: 6px 10px;
+  border-radius: 22px;
+  border: 1px solid #dcd7f0;
+  background: #ffffff;
+  color: #5140a7;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+/* Nút đang được chọn - Light Mode */
+.quicknav .cost-filter-btn.active {
+  background: #5140a7;
+  color: #ffffff;
+  border-color: #5140a7;
+}
+
+/* Nút bình thường - Dark Mode */
+body.dark-mode .quicknav .cost-filter-btn {
+  background: #2d3039;
+  color: #e2e3ed;
+  border-color: #484b59;
+}
+
+/* Nút đang được chọn - Dark Mode */
+body.dark-mode .quicknav .cost-filter-btn.active {
+  background: #7660c5;
+  color: #ffffff;
+  border-color: #7660c5;
+}

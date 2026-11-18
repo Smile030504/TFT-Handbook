@@ -4,18 +4,90 @@ function card(u){const c=el('article','card'),p=el('div','pic'),im=el('img');im.
 const body=el('div','cardbody');body.append(el('h3','cardname',u.name),el('div','meta',roleVi[u.role]+' · '+(u.damage==='Magic'?'Phép':'Vật lý')));const tl=el('div','traitline');u.traits.forEach(t=>tl.append(traitChip(t)));body.append(tl);if(u.effects.length){const tags=el('div','tags');u.effects.forEach(k=>tags.append(effChip(k)));body.append(tags)}const acts=el('div','actions'),btn=el('button','smallbtn',u.locked?'🔒 XEM CÁCH MỞ KHÓA':'XEM KỸ NĂNG · TỘC/HỆ');btn.onclick=()=>showCard(u);acts.append(btn);body.append(acts);c.append(p,body);return c}
 
 function render() {
-  // Lấy danh sách tướng đáp ứng các bộ lọc
   const arr = roster.filter(matched);
 
-  // Cập nhật số lượng tướng
+const costLevels = [...new Set(
+  roster.map(unit => unit.cost)
+)].sort((a, b) => a - b);
+
+
+function updateCostButtons() {
+  document.querySelectorAll('#quicknav [data-cost]')
+    .forEach(button => {
+      const value = button.dataset.cost;
+
+      const active = value === 'all'
+        ? ui.costs.length === 0
+        : ui.costs.includes(Number(value));
+
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+}
+
+
+function initCostFilters() {
+  const container = $('quicknav');
+
+  container.setAttribute(
+    'aria-label',
+    'Lọc theo giá vàng'
+  );
+
+  container.replaceChildren();
+
+  function addCostButton(value, label) {
+    const button = el('button', 'cost-filter-btn', label);
+
+    button.type = 'button';
+    button.dataset.cost = String(value);
+
+    button.onclick = () => {
+
+      if (value === 'all') {
+        ui.costs = [];
+
+      } else if (ui.costs.includes(value)) {
+        ui.costs = ui.costs.filter(
+          cost => cost !== value
+        );
+
+      } else {
+        ui.costs.push(value);
+      }
+
+      updateCostButtons();
+      render();
+    };
+
+    container.append(button);
+  }
+
+  addCostButton('all', 'TẤT CẢ');
+
+  costLevels.forEach(cost => {
+    const count = roster.filter(
+      unit => unit.cost === cost
+    ).length;
+
+    addCostButton(
+      cost,
+      `${cost} VÀNG · ${count}`
+    );
+  });
+
+  updateCostButtons();
+}
+
+
+initCostFilters();
+
   $('status').textContent =
     'Đang hiển thị ' + arr.length + ' / ' +
     roster.length + ' tướng' +
     (ui.locked ? ' · Chỉ tướng khóa' : '');
 
-  // Xóa kết quả cũ trước khi render mới
   $('board').replaceChildren();
-  $('quicknav').replaceChildren();
 
   if (!arr.length) {
     $('board').append(
@@ -25,14 +97,12 @@ function render() {
     return;
   }
 
-  // Hàm tạo một nhóm tướng
   function appendGroup(name, members, index, traitName = null) {
     const section = el('section', 'group');
     section.id = 'group-' + index;
 
     const header = el('div', 'grouphead');
 
-    // Nếu là nhóm Tộc/Hệ thì hiển thị icon của hệ
     if (traitName) {
       const icon = el('img', 'filter-trait-icon');
 
@@ -53,7 +123,6 @@ function render() {
 
     section.append(header);
 
-    // Tạo danh sách card tướng
     if (members.length) {
       const grid = el('div', 'cards');
 
@@ -70,16 +139,8 @@ function render() {
     }
 
     $('board').append(section);
-
-    // Tạo thanh điều hướng nhóm
-    const link = el('a', '',
-      name + ' · ' + members.length);
-
-    link.href = '#group-' + index;
-    $('quicknav').append(link);
   }
 
-  // Nếu người chơi đang chọn Tộc/Hệ
   if (ui.traits.length > 0) {
     ui.traits.forEach((trait, index) => {
 
@@ -96,8 +157,6 @@ function render() {
     return;
   }
 
-  // Nếu không chọn Tộc/Hệ:
-  // giữ nguyên cách nhóm theo giá hoặc vai trò
   const groups = arr.reduce((result, unit) => {
     const key = groupKey(unit);
 
@@ -126,6 +185,8 @@ setFilter('[data-effect]','effect');$('onlyLocked').onchange=e=>{ui.locked=e.tar
 
 $('reset').onclick = () => {
   ui.effect = 'all';
+  ui.costs = [];
+  updateCostButtons();  
   ui.locked = false;
   ui.search = '';
 

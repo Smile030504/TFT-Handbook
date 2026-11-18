@@ -34,7 +34,7 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 .skillkeyword{display:inline-flex;margin-top:11px;background:#eae3fc;border:1px solid #ddd3fa;color:#4d388a;border-radius:8px;padding:5px 9px;font-size:12px;font-weight:850}
 .skillhint{font-size:11px;margin:9px 0 0;color:#737b99}
 @media(max-width:680px){.skillpanel{padding:12px}.skilldescription{font-size:13px}}
-</style><style>/* Tộc/hệ learning tab */
+</style><style>
 [hidden]{display:none!important}
 .major-tabs{display:flex;gap:7px;margin:16px 0 13px;padding:6px;border:1px solid #dcdde9;background:#e9ebf4;border-radius:13px;width:fit-content;max-width:100%}
 .major-tab{border:0;background:transparent;padding:11px 14px;font-size:13px;font-weight:950;color:#505a79;border-radius:9px;display:inline-flex;align-items:center;justify-content:space-between;gap:12px;min-width:174px;white-space:nowrap}.major-tab .tab-label{display:inline-flex;align-items:center;gap:5px}.major-tab .tab-number{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:24px;font-size:12px;line-height:1}
@@ -627,16 +627,13 @@ function updateTraitPicker(){const count = ui.traits.length; $('traitSelectedLab
 
 function toggleTraitFilter(name) {
   if (name === 'all') {
-    // Chọn Tất cả sẽ xóa các lựa chọn trước đó
     ui.traits = [];
     closeTraitPicker();
 
   } else if (ui.traits.includes(name)) {
-    // Bấm lại tộc/hệ đã chọn để bỏ chọn
     ui.traits = ui.traits.filter(trait => trait !== name);
 
   } else {
-    // Thêm tộc/hệ mới vào danh sách
     ui.traits.push(name);
   }
 
@@ -705,7 +702,6 @@ try {
     document.body.classList.remove('dark-mode');
   }
 } catch (error) {
-  // Use the default theme if storage is unavailable.
 }
 
 function updateThemeButton() {
@@ -759,7 +755,6 @@ function renderUnlock(u){
       visual.append(im);
     }else visual.textContent=n.icon||'✦';
     card.append(visual,el('div','unlock-node-name',n.name));
-    // Replace the numerical 2★ / 3★ badge by actual stars under the champion.
     const matched=n.type==='unit' ? (n.label||'').match(/(?:^|\s)([1-3])★/) : null;
     if(matched){card.append(el('div','unlock-node-stars','★'.repeat(Number(matched[1]))));}
     const clean=(n.label||'').replace(/(?:^|\s)[1-3]★\s*(?:[·•]\s*)?/,'').trim();
@@ -767,7 +762,6 @@ function renderUnlock(u){
     nodes.append(card);
   });
   start.append(nodes);
-  // The item or action requirement is centered immediately above a long arrow.
   const link=el('div','unlock-link');
   const unique=[...new Set(captions)];
   const arrowLabel=unique.length ? unique.join(rule.join==='hoặc'?' / ':' · ') : 'Hoàn thành yêu cầu';
@@ -937,7 +931,6 @@ function renderTraits(){const arr=traitCardsData();$('traitsCount').textContent=
 function showTraitDetail(name){ui.traitSelected=name;const data=traitInfo[name],members=roster.filter(u=>u.traits.includes(name));document.querySelectorAll('.trait-card').forEach(c=>c.classList.toggle('selected',c.dataset.cardTrait===name));const box=$('traitDetail');box.replaceChildren();const header=el('div','trait-detail-header'),label=el('div');label.append(el('h3','',name),el('div','trait-card-en',kindVi[data.kind]));header.append(traitImg(name),label);box.append(header,el('p','',data.description),el('p','',data.kind==='solo'?data.levels:'MỐC KÍCH HOẠT: '+data.levels),el('h4','',members.length+' TƯỚNG THUỘC NHÓM'));const grid=el('div','trait-detail-members');members.forEach(u=>{const b=el('button','trait-member');const im=el('img');im.src=imgs[u.id];im.alt=u.name;b.append(im,el('span','',u.name),el('small','',u.cost+' vàng'+(u.locked?' · 🔒':'')));b.onclick=()=>showCard(u);grid.append(b)});box.append(grid);if(!$('traitDialog').open)$('traitDialog').showModal()}
 document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{ui.traitKind=b.dataset.kind;document.querySelectorAll('[data-kind]').forEach(x=>x.classList.toggle('active',x===b));ui.traitSelected=null;if($('traitDialog').open)$('traitDialog').close();renderTraits()}));$('traitSearch').oninput=e=>{ui.traitSearch=e.target.value.trim().toLowerCase();ui.traitSelected=null;if($('traitDialog').open)$('traitDialog').close();renderTraits()};
 
-// Render the initial unit list once all event handlers have been registered.
 render();
 
 const TEAM_DEFAULT_CAPACITY=10;

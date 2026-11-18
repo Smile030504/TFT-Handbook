@@ -299,17 +299,6 @@ $('byRole').onclick = () => {
 };
 
 
-$('quiz').onclick = () => {
-  ui.quiz = !ui.quiz;
-
-  document.body.classList.toggle('quiz', ui.quiz);
-  $('quiz').classList.toggle('active', ui.quiz);
-
-  $('quiz').textContent =
-    ui.quiz ? 'HIỆN TÊN' : 'ẨN TÊN ĐỂ HỌC';
-};
-
-
 $('reset').onclick = () => {
   ui.costs = [];
   ui.roles = [];

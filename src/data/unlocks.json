@@ -1,0 +1,481 @@
+{
+  "tft06": {
+    "text": "Có Ziggs 2 sao đang mang 1 trang bị.",
+    "nodes": [
+      {
+        "type": "unit",
+        "name": "Ziggs",
+        "label": "2★ · 1 trang bị"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft17": {
+    "text": "Có một tướng Beach Pop đang mang 2 trang bị.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Beach Pop",
+        "label": "2 trang bị"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft25": {
+    "text": "Khi Hyperpop đang kích hoạt, các tướng Hyperpop dùng kỹ năng tổng cộng 10 lần.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Hyperpop",
+        "label": "10 lần tung chiêu"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft31": {
+    "text": "Có tướng thuộc Classical, Renegade hoặc Trickshot đang mang 2 trang bị.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Classical",
+        "label": "2 trang bị"
+      },
+      {
+        "type": "trait",
+        "name": "Renegade",
+        "label": "2 trang bị"
+      },
+      {
+        "type": "trait",
+        "name": "Trickshot",
+        "label": "2 trang bị"
+      }
+    ],
+    "level": null,
+    "join": "hoặc",
+    "hint": ""
+  },
+  "tft32": {
+    "text": "Làm mới cửa hàng 4 lần trước vòng chọn chung (carousel) của giai đoạn 2.",
+    "nodes": [
+      {
+        "type": "action",
+        "name": "Reroll",
+        "label": "4 lần trước carousel vòng 2",
+        "icon": "↻"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft33": {
+    "text": "Hạ gục tổng cộng 5 kẻ địch khi tộc/hệ Hyperpop đang kích hoạt.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Hyperpop",
+        "label": "5 mạng hạ gục"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft40": {
+    "text": "Có 3 tướng thuộc K/DA hoặc Renegade.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "K/DA",
+        "label": "Tổng 3 tướng"
+      },
+      {
+        "type": "trait",
+        "name": "Renegade",
+        "label": "Tổng 3 tướng"
+      }
+    ],
+    "level": null,
+    "join": "hoặc",
+    "hint": ""
+  },
+  "tft48": {
+    "text": "Có Annie 2 sao đang mang 1 trang bị.",
+    "nodes": [
+      {
+        "type": "unit",
+        "name": "Annie",
+        "label": "2★ · 1 trang bị"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft51": {
+    "text": "Trang bị 1 Giáp Lưới (Chain Vest) cho một tướng Thuật Sư hoặc Xạ Thủ.",
+    "nodes": [
+      {
+        "type": "action",
+        "name": "Giáp Lưới",
+        "label": "Cho Thuật Sư / Xạ Thủ",
+        "icon": "🛡"
+      }
+    ],
+    "level": 7,
+    "join": "và",
+    "hint": ""
+  },
+  "tft52": {
+    "text": "Có 4 tướng khác nhau thuộc Heartsteel hoặc Prodigy.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Heartsteel",
+        "label": "4 tướng khác nhau"
+      },
+      {
+        "type": "trait",
+        "name": "Prodigy",
+        "label": "4 tướng khác nhau"
+      }
+    ],
+    "level": 7,
+    "join": "hoặc",
+    "hint": ""
+  },
+  "tft57": {
+    "text": "Có một tướng Ionic Spark hoặc Hitmaker đang mang 3 trang bị.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Ionic Spark",
+        "label": "3 trang bị"
+      },
+      {
+        "type": "trait",
+        "name": "Hitmaker",
+        "label": "3 trang bị"
+      }
+    ],
+    "level": 7,
+    "join": "hoặc",
+    "hint": ""
+  },
+  "tft58": {
+    "text": "Có 4 tướng khác nhau thuộc Pentakill hoặc Swiftstriker.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Pentakill",
+        "label": "4 tướng khác nhau"
+      },
+      {
+        "type": "trait",
+        "name": "Swiftstriker",
+        "label": "4 tướng khác nhau"
+      }
+    ],
+    "level": 7,
+    "join": "hoặc",
+    "hint": ""
+  },
+  "tft63": {
+    "text": "Khi Classical kích hoạt, kẻ địch chịu trạng thái Mê Hoặc (Captivated) tổng cộng 300 giây.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Classical",
+        "label": "300 giây Mê Hoặc"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft64": {
+    "text": "Ra sân với tộc/hệ Rock trong 3 giao tranh.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Rock",
+        "label": "3 giao tranh"
+      }
+    ],
+    "level": 7,
+    "join": "và",
+    "hint": ""
+  },
+  "tft65": {
+    "text": "Khi Xayah đang trên sân, các đồng minh gây tổng cộng 25.000 sát thương.",
+    "nodes": [
+      {
+        "type": "unit",
+        "name": "Xayah",
+        "label": "25.000 sát thương từ đồng minh"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft67": {
+    "text": "Đạt tổng 7 cấp sao từ các tướng True Damage và Slayer.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "True Damage",
+        "label": "Tổng 7 cấp sao"
+      },
+      {
+        "type": "trait",
+        "name": "Slayer",
+        "label": "Tổng 7 cấp sao"
+      }
+    ],
+    "level": 7,
+    "join": "và",
+    "hint": ""
+  },
+  "tft71": {
+    "text": "Có 5 tướng khác nhau thuộc Beach Pop hoặc Juggernaut.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Beach Pop",
+        "label": "5 tướng khác nhau"
+      },
+      {
+        "type": "trait",
+        "name": "Juggernaut",
+        "label": "5 tướng khác nhau"
+      }
+    ],
+    "level": 7,
+    "join": "hoặc",
+    "hint": ""
+  },
+  "tft72": {
+    "text": "Đạt tổng 12 cấp sao từ các tướng K/DA khác nhau, khi chưa mở khóa Akali True Damage.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "K/DA",
+        "label": "12 cấp sao"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": "Không thể mở khi Akali True Damage đã được mở khóa."
+  },
+  "tft73": {
+    "text": "Nhận tổng cộng 375 Bling từ True Damage, khi chưa mở khóa Akali K/DA.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "True Damage",
+        "label": "375 Bling"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": "Không thể mở khi Akali K/DA đã được mở khóa."
+  },
+  "tft74": {
+    "text": "Có Alune hoặc Yone đạt 2 sao.",
+    "nodes": [
+      {
+        "type": "unit",
+        "name": "Alune",
+        "label": "2★"
+      },
+      {
+        "type": "unit",
+        "name": "Yone",
+        "label": "2★"
+      }
+    ],
+    "level": null,
+    "join": "hoặc",
+    "hint": ""
+  },
+  "tft76": {
+    "text": "Để khán giả Ionic Spark cổ vũ tổng cộng 250 lần.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Ionic Spark",
+        "label": "250 lượt cổ vũ"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft77": {
+    "text": "Tích lũy tổng cộng 20 vàng lợi tức trong lúc Xayah đang trên sân.",
+    "nodes": [
+      {
+        "type": "unit",
+        "name": "Xayah",
+        "label": "20 vàng lợi tức"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft78": {
+    "text": "Gây tổng 40 sát thương lên máu Linh Thú đối thủ trong lúc Xayah đang trên sân.",
+    "nodes": [
+      {
+        "type": "unit",
+        "name": "Xayah",
+        "label": "40 sát thương Linh Thú"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft80": {
+    "text": "Đạt tổng 10 cấp sao từ các tướng Pentakill khác nhau.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Pentakill",
+        "label": "10 cấp sao"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft83": {
+    "text": "Kết thúc giao tranh khi bạn đang có ít nhất 85 vàng.",
+    "nodes": [
+      {
+        "type": "action",
+        "name": "Vàng",
+        "label": "≥ 85 vàng khi kết thúc giao tranh",
+        "icon": "◉"
+      }
+    ],
+    "level": 7,
+    "join": "và",
+    "hint": ""
+  },
+  "tft85": {
+    "text": "Ở đầu giao tranh, có một tướng của mỗi mức giá đứng trên ô Beach Pop.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Beach Pop",
+        "label": "Một tướng mỗi mức giá ở ô Beach Pop"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft86": {
+    "text": "Tích lũy tổng cộng 900 điểm Hype từ Hyperpop.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Hyperpop",
+        "label": "900 Hype"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft89": {
+    "text": "Chỉ có đúng 1 tướng đứng ở hai hàng trước của sân đấu.",
+    "nodes": [
+      {
+        "type": "action",
+        "name": "Xếp đội hình",
+        "label": "1 tướng ở 2 hàng trước",
+        "icon": "♟"
+      }
+    ],
+    "level": 8,
+    "join": "và",
+    "hint": ""
+  },
+  "tft91": {
+    "text": "Thu thập đủ 5 thành viên của dàn nhạc Baron và gây tổng 60.000 sát thương bằng Malzahar mạnh nhất của bạn.",
+    "nodes": [
+      {
+        "type": "unit",
+        "name": "Malzahar",
+        "label": "60.000 sát thương"
+      },
+      {
+        "type": "action",
+        "name": "Dàn nhạc Baron",
+        "label": "Đủ 5 thành viên",
+        "icon": "♫"
+      }
+    ],
+    "level": null,
+    "join": "và",
+    "hint": ""
+  },
+  "tft92": {
+    "text": "Khi ở cấp 8 trở lên, thắng 4 giao tranh liên tiếp và thua 3 giao tranh liên tiếp.",
+    "nodes": [
+      {
+        "type": "action",
+        "name": "Chuỗi thắng",
+        "label": "4 trận liên tiếp",
+        "icon": "↑"
+      },
+      {
+        "type": "action",
+        "name": "Chuỗi thua",
+        "label": "3 trận liên tiếp",
+        "icon": "↓"
+      }
+    ],
+    "level": 8,
+    "join": "và",
+    "hint": ""
+  },
+  "tft93": {
+    "text": "Kích hoạt ít nhất 8 tộc/hệ không thuộc loại Độc Nhất cùng lúc.",
+    "nodes": [
+      {
+        "type": "action",
+        "name": "Tộc/hệ",
+        "label": "≥ 8 hệ không độc nhất",
+        "icon": "✧"
+      }
+    ],
+    "level": 9,
+    "join": "và",
+    "hint": ""
+  },
+  "tft94": {
+    "text": "Các tướng Collab được truyền cảm hứng (Inspired) tổng cộng 15 lần.",
+    "nodes": [
+      {
+        "type": "trait",
+        "name": "Collab",
+        "label": "15 lần Inspired"
+      }
+    ],
+    "level": 10,
+    "join": "và",
+    "hint": ""
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wound": {
+    "label": "Giảm hồi máu",
+    "desc": "Kỹ năng hoặc nội tại của tướng áp dụng Vết Thương (Wound), giảm hồi phục nhận vào."
+  },
+  "sunder": {
+    "label": "Giảm giáp",
+    "desc": "Giảm Giáp của mục tiêu (Sunder). Không tính xuyên giáp của riêng đòn đánh."
+  },
+  "shred": {
+    "label": "Giảm kháng phép",
+    "desc": "Giảm Kháng Phép của mục tiêu (Shred). Không tính bỏ qua kháng phép cá nhân."
+  },
+  "stun": {
+    "label": "Choáng",
+    "desc": "Làm choáng trực tiếp, khiến kẻ địch không thể hành động."
+  },
+  "knockup": {
+    "label": "Hất tung",
+    "desc": "Hất tung (knock up), một dạng khống chế khác choáng trực tiếp."
+  }
+}

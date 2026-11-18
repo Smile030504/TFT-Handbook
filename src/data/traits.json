@@ -1,0 +1,331 @@
+{
+  "Beach Pop": {
+    "kind": "band",
+    "vi": "Pop Bãi Biển",
+    "description": "Nhận nhạc cụ có thể đặt trên bàn. Đồng minh đứng cạnh được hồi máu định kỳ; tướng Beach Pop còn được thêm tốc đánh và hồi năng lượng. Mốc 7 tạo luồng gió biển hồi máu và năng lượng cho các thành viên.",
+    "levels": "3 / 5 / 7",
+    "slug": "oceansong"
+  },
+  "Classical": {
+    "kind": "band",
+    "vi": "Cổ Điển",
+    "description": "Tướng Classical làm kẻ địch bị Mê Hoặc theo cách riêng. Cả nhóm nhận khuếch đại sát thương, tăng thêm theo thời gian đối thủ bị Mê Hoặc; mốc cao còn cho hồi máu hoặc cơ hội nhận tướng từ đối thủ bị hạ.",
+    "levels": "2 / 4 / 6",
+    "slug": "virtuoso"
+  },
+  "EDM": {
+    "kind": "band",
+    "vi": "Nhạc Điện Tử EDM",
+    "description": "Khi kích hoạt cặp Jax và Vi, kỹ năng EDM của họ được nâng cấp. Hãy xem kỹ năng riêng của Jax và Vi để biết chính xác hiệu ứng từng người.",
+    "levels": "2",
+    "slug": "edm"
+  },
+  "Gu Feng": {
+    "kind": "band",
+    "vi": "Cổ Phong",
+    "description": "Tướng Gu Feng nhận SMCK, SMPT, Giáp và Kháng Phép tăng theo cấp người chơi. Mốc 3 thêm Máu, mốc 4 được chọn cuộn bí kíp trang bị, một hướng có thể mở đường lên cấp 11.",
+    "levels": "2 / 3 / 4",
+    "slug": "heavenscale"
+  },
+  "Heartsteel": {
+    "kind": "band",
+    "vi": "HEARTSTEEL",
+    "description": "Mỗi thành viên mang một chỉ số hỗ trợ khác nhau cho đội. Mốc 3 và 5 được chọn hướng nâng cấp kỹ năng (Bias); mốc 7 tăng mạnh phần thưởng chỉ số HEARTSTEEL của chính các thành viên.",
+    "levels": "1 / 3 / 5 / 7",
+    "slug": "heartsteel"
+  },
+  "Hyperpop": {
+    "kind": "band",
+    "vi": "Hyperpop",
+    "description": "Tướng Hyperpop tăng Máu và Tốc Đánh, tạo điểm Hype sau giao tranh dựa trên cấp sao và số lần hạ gục. Đạt mốc Hype sẽ nhận phần thưởng; các mốc tộc cao giúp tích Hype nhanh hơn.",
+    "levels": "2 / 3 / 4 / 5",
+    "slug": "glitterbomb"
+  },
+  "Illbeats": {
+    "kind": "band",
+    "vi": "Illbeats – Bàn Phối Nhạc",
+    "description": "Dùng bảng Mixer phân phối Decibel cho các kênh chỉ số như Máu, SMCK, SMPT và khả năng rơi vàng. Tướng Illbeats hưởng đủ hiệu ứng phối; các đồng minh khác hưởng một nửa.",
+    "levels": "2 / 3 / 4",
+    "slug": "illbeats"
+  },
+  "Ionic Spark": {
+    "kind": "band",
+    "vi": "Tia Lửa Ion",
+    "description": "Người hâm mộ gửi quà cho tướng Ionic Spark mỗi 4 giây. Tướng nhận thêm Máu; quà ở các mốc có thể hồi máu, tăng Tốc Đánh, SMCK/SMPT hoặc cho vàng và vật phẩm.",
+    "levels": "3 / 5 / 7 / 10",
+    "slug": "ionicspark"
+  },
+  "Jazz": {
+    "kind": "band",
+    "vi": "Jazz",
+    "description": "Đội được cộng Máu và Khuếch Đại Sát Thương theo mỗi tộc/hệ thường đang kích hoạt (không tính hệ độc nhất). Càng ghép được nhiều mốc hệ nhỏ khác nhau, hiệu ứng càng mạnh.",
+    "levels": "2 / 3 / 4",
+    "slug": "jazz"
+  },
+  "K/DA": {
+    "kind": "band",
+    "vi": "K/DA",
+    "description": "Cộng TỔNG CẤP SAO các tướng K/DA thay vì đếm số lượng tướng. Từng ngưỡng mở thêm bài hát mang buff riêng như giảm năng lượng tối đa, lá chắn, tốc đánh, choáng; mốc cao nhất biến thành viên lên 4 sao.",
+    "levels": "3★ / 5★ / 7★ / 10★ / 13★ / 15★ / 21★",
+    "slug": "kda"
+  },
+  "Pentakill": {
+    "kind": "band",
+    "vi": "Pentakill",
+    "description": "Thành viên tăng SMCK và SMPT. Những kẻ địch đầu tiên tụt dưới ngưỡng máu thấp sẽ bị kết liễu và triệu hồi quỷ đồng minh; mốc cao cho triệu hồi mạnh hơn.",
+    "levels": "3 / 5 / 7",
+    "slug": "pentakill"
+  },
+  "R&B": {
+    "kind": "band",
+    "vi": "R&B",
+    "description": "Mốc 1 giúp cả đội chịu ít sát thương kỹ năng hơn. Khi có cả Mel và Rell, hai người liên kết: một phần sát thương Mel nhận chuyển sang Rell, còn Rell hồi máu dựa trên sát thương Mel gây ra.",
+    "levels": "1 / 2",
+    "slug": "rnb"
+  },
+  "Rock": {
+    "kind": "band",
+    "vi": "Rock",
+    "description": "Triệu hồi Thần Tượng Hỏa Ngục chiến đấu cùng đội. Các mốc cao giúp nó hồi máu theo sát thương tướng Rock gây ra, bắn luồng năng lượng và phóng đòn diện rộng.",
+    "levels": "3 / 4 / 5 / 7",
+    "slug": "demonvision"
+  },
+  "True Damage": {
+    "kind": "band",
+    "vi": "True Damage",
+    "description": "Có hai mặt đĩa: mặt A thưởng cho chuỗi thắng, mặt B thưởng cho chuỗi thua. Tích Bling để đổi thưởng hoặc tiếp tục nuôi; thành viên gây thêm sát thương chuẩn theo mốc hệ.",
+    "levels": "3 / 5 / Mốc Kim Cương",
+    "slug": "truedamage"
+  },
+  "Arcanist": {
+    "kind": "class",
+    "vi": "Pháp Sư",
+    "description": "Cả đội tăng Sức Mạnh Phép Thuật; riêng các Arcanist nhận nhiều SMPT hơn.",
+    "levels": "2 / 4 / 6",
+    "slug": "arcanist"
+  },
+  "Bodyguard": {
+    "kind": "class",
+    "vi": "Vệ Sĩ",
+    "description": "Khi còn ít nhất một Bodyguard sống, cả đội nhận thêm Giáp và Kháng Phép; riêng Bodyguard nhận nhiều hơn.",
+    "levels": "2 / 4 / 6",
+    "slug": "bodyguard"
+  },
+  "Choreographer": {
+    "kind": "class",
+    "vi": "Biên Đạo",
+    "description": "Đồng minh khởi đầu ở hai hàng đầu nhận lá chắn, các hàng phía sau nhận Khuếch Đại Sát Thương. Tướng Choreographer hưởng gấp đôi các hiệu ứng.",
+    "levels": "2 / 3 / 4 / 5",
+    "slug": "choreographer"
+  },
+  "Collab": {
+    "kind": "class",
+    "vi": "Hợp Tác",
+    "description": "Tướng Collab được Truyền Cảm Hứng khi gây hoặc nhận đủ số lần sát thương, tăng SMCK và SMPT. Mỗi số lần kích hoạt nhất định trong giao tranh nhận thêm bản sao tướng Collab. Thành viên Collab thay đổi giữa các trận.",
+    "levels": "3 / 5",
+    "slug": "collab"
+  },
+  "Encore": {
+    "kind": "class",
+    "vi": "Diễn Lại",
+    "description": "Khi tướng Encore bắn đạn từ kỹ năng, họ bắn thêm một viên phụ với hiệu lực thấp hơn.",
+    "levels": "2 / 4",
+    "slug": "encore"
+  },
+  "Frontman": {
+    "kind": "class",
+    "vi": "Giọng Ca Chính",
+    "description": "Cả đội được cộng Máu. Tướng Frontman nhận nhiều Máu hơn và còn tăng thêm sau lần tung chiêu đầu tiên.",
+    "levels": "2 / 4 / 6",
+    "slug": "frontman"
+  },
+  "Hitmaker": {
+    "kind": "class",
+    "vi": "Tạo Hit",
+    "description": "Tướng Hitmaker nhận SMCK. Những người giữ nhiều trang bị nhất trở thành chủ lực, được thưởng thêm SMCK.",
+    "levels": "2 / 4",
+    "slug": "hitmaker"
+  },
+  "Juggernaut": {
+    "kind": "class",
+    "vi": "Đấu Sĩ Kiên Cường",
+    "description": "Tướng thuộc hệ nhận Giảm Sát Thương, hiệu quả tăng khi bị mất máu.",
+    "levels": "2 / 4 / 6",
+    "slug": "juggernaut"
+  },
+  "Manager": {
+    "kind": "class",
+    "vi": "Quản Lý",
+    "description": "Xuất hiện một ô Sân Khấu đặc biệt. Đồng minh bắt đầu trong ô nhận tăng chỉ số định kỳ; mốc cao có thêm năng lượng hoặc tạo vàng.",
+    "levels": "2 / 3 / 4",
+    "slug": "manager"
+  },
+  "Prodigy": {
+    "kind": "class",
+    "vi": "Thần Đồng",
+    "description": "Cả đội tăng hồi năng lượng; tướng Prodigy được hưởng nhiều hơn. Mốc cao còn giúp đồng minh thấp máu hồi phục dựa trên sát thương kỹ năng Prodigy gây ra.",
+    "levels": "2 / 3 / 4 / 5",
+    "slug": "prodigy"
+  },
+  "Renegade": {
+    "kind": "class",
+    "vi": "Nổi Loạn",
+    "description": "Tướng Renegade nhận thêm tỉ lệ chí mạng và sát thương chí mạng; mốc cao nhất còn có giảm sát thương nhận vào.",
+    "levels": "2 / 3 / 4 / 5",
+    "slug": "renegade"
+  },
+  "Slayer": {
+    "kind": "class",
+    "vi": "Sát Phạt",
+    "description": "Tướng Slayer nhận Tốc Đánh và Hút Máu Toàn Phần. Hiệu ứng tăng thêm tùy theo lượng Máu đã mất.",
+    "levels": "2 / 4 / 6",
+    "slug": "slayer"
+  },
+  "Swiftstriker": {
+    "kind": "class",
+    "vi": "Đánh Nhanh",
+    "description": "Cả đội tăng tốc đánh. Tướng Swiftstriker tích thêm Tốc Đánh mỗi 2 giây, tối đa 5 cộng dồn.",
+    "levels": "2 / 3 / 4 / 5",
+    "slug": "swiftstriker"
+  },
+  "Trickshot": {
+    "kind": "class",
+    "vi": "Bắn Nảy",
+    "description": "Đòn đánh và kỹ năng của tướng Trickshot có thể nảy sang mục tiêu khác. Mốc hệ quyết định số lần nảy và tỉ lệ sát thương được giữ lại.",
+    "levels": "2 / 3 / 4",
+    "slug": "trickshot"
+  },
+  "8-Bit": {
+    "kind": "solo",
+    "vi": "8-Bit",
+    "description": "Theo dõi tổng sát thương đội đã gây; sát thương của Miss Fortune được tính gấp ba. Khi phá kỷ lục sát thương, nhận phần thưởng.",
+    "levels": "Độc nhất · Miss Fortune",
+    "slug": "8bit"
+  },
+  "Beat Master": {
+    "kind": "solo",
+    "vi": "Bậc Thầy Nhịp Điệu",
+    "description": "Khi Rell xuống 50% Máu tối đa, cô cưỡi thú và được hồi đầy máu trong 2 giây. Khi cưỡi, năng lượng tối đa giảm và mỗi đòn đánh thứ ba tung sát thương phép dựa trên Giáp/Kháng Phép.",
+    "levels": "Độc nhất · Rell",
+    "slug": "beatmaster"
+  },
+  "Boy Band": {
+    "kind": "solo",
+    "vi": "Nhóm Nhạc Nam",
+    "description": "Rakan mang theo các bản sao có thể đặt vị trí. Bản sao có một phần máu, sát thương và sao chép trang bị hoàn chỉnh hoặc Ánh Sáng của Rakan.",
+    "levels": "Độc nhất · Rakan",
+    "slug": "boyband"
+  },
+  "Composer": {
+    "kind": "solo",
+    "vi": "Nhà Soạn Nhạc",
+    "description": "Khi có Malzahar, 5 loại nhạc cụ thần bí có thể xuất hiện trong cửa hàng. Giữ nhạc cụ tăng SMPT đội; nếu Malzahar gây đủ sát thương và có đủ 5 loại sẽ mở khóa Baron Nashor.",
+    "levels": "Độc nhất · Malzahar",
+    "slug": "composer"
+  },
+  "Country": {
+    "kind": "solo",
+    "vi": "Đồng Quê",
+    "description": "Đầu giao tranh, Alistar mạnh nhất nhận thêm giảm sát thương nếu đã có hơn 500 Máu cộng thêm.",
+    "levels": "Độc nhất · Alistar",
+    "slug": "country"
+  },
+  "Disco": {
+    "kind": "solo",
+    "vi": "Disco",
+    "description": "Cả đội hồi một phần Máu tối đa mỗi giây. Sau 6 lần tung kỹ năng, đội bước vào cơn sốt Disco và nhận lượng lớn Tốc Đánh.",
+    "levels": "Độc nhất · Nunu & Willump",
+    "slug": "disco"
+  },
+  "Emo": {
+    "kind": "solo",
+    "vi": "Emo",
+    "description": "Amumu nhận thêm Giáp và Kháng Phép khi bắt đầu giao tranh mà không có đồng minh đứng sát bên.",
+    "levels": "Độc nhất · Amumu",
+    "slug": "emo"
+  },
+  "Freestyle": {
+    "kind": "solo",
+    "vi": "Phong Cách Tự Do",
+    "description": "Akali True Damage có nội tại khác nhau tùy mặt đĩa: mặt A kiếm vàng; mặt B hồi máu cho người chơi.",
+    "levels": "Độc nhất · Akali True Damage",
+    "slug": "freestyle"
+  },
+  "Goth": {
+    "kind": "solo",
+    "vi": "Gothic",
+    "description": "Khi Zeri mạnh nhất lần đầu gây sát thương lên một kẻ địch trong giao tranh, dơi ma hút một phần SMCK của nạn nhân và chuyển cho Zeri.",
+    "levels": "Độc nhất · Zeri",
+    "slug": "goth"
+  },
+  "Indie": {
+    "kind": "solo",
+    "vi": "Nhạc Độc Lập",
+    "description": "Sau giao tranh Seraphine thu hút người theo dõi, nhận thêm một tướng ngẫu nhiên. Khi lên tướng 3 sao, cô được nâng cấp; đủ số tướng 3 sao cô trở thành Siêu Sao.",
+    "levels": "Độc nhất · Seraphine",
+    "slug": "indie"
+  },
+  "Hype Man": {
+    "kind": "solo",
+    "vi": "Người Khuấy Động",
+    "description": "Mỗi lần tướng Hyperpop gây hoặc chịu một lượng sát thương nhất định, Teemo tích thêm Hype cho hệ Hyperpop.",
+    "levels": "Độc nhất · Teemo",
+    "slug": "hypeman"
+  },
+  "Mariachi": {
+    "kind": "solo",
+    "vi": "Mariachi",
+    "description": "Nidalee chuyển thành dạng báo khi thi triển kỹ năng lúc còn nhiều Máu; khi xuống thấp Máu sẽ nhảy ra xa và trở lại dạng người.",
+    "levels": "Độc nhất · Nidalee",
+    "slug": "mariachi"
+  },
+  "Melodic Heart": {
+    "kind": "solo",
+    "vi": "Giai Điệu Trái Tim",
+    "description": "Trong 12 giây đầu giao tranh, Gwen mạnh nhất có màn sương không thể bị nhắm bằng đòn đánh. Đồng minh đứng trong sương được giảm sát thương nhận vào.",
+    "levels": "Độc nhất · Gwen",
+    "slug": "melodicheart"
+  },
+  "One Monster Band": {
+    "kind": "solo",
+    "vi": "Ban Nhạc Một Quái",
+    "description": "Baron Nashor chiếm 2 vị trí đội hình và miễn nhiễm hiệu ứng khống chế. Sau lần tung chiêu đầu tiên, Baron hút các chỉ số tấn công từ kẻ địch trên bàn.",
+    "levels": "Độc nhất · Baron Nashor",
+    "slug": "onemonsterband"
+  },
+  "Producer": {
+    "kind": "solo",
+    "vi": "Nhà Sản Xuất",
+    "description": "Khi có Sona trên bàn, chọn một ban nhạc để Sona nhận tộc của nhóm đó. SMCK và Tốc Đánh cộng thêm của Sona được chuyển thành SMPT.",
+    "levels": "Độc nhất · Sona",
+    "slug": "producer"
+  },
+  "Record Mogul": {
+    "kind": "solo",
+    "vi": "Ông Trùm Hãng Đĩa",
+    "description": "Dr. Mundo nhận Hợp Đồng Thu Âm ngay và định kỳ. Đồng minh giữ hợp đồng nhận thêm sát thương; khi họ hạ gục, Mundo tăng Máu vĩnh viễn.",
+    "levels": "Độc nhất · Dr. Mundo",
+    "slug": "recordmogul"
+  },
+  "Synthwave": {
+    "kind": "solo",
+    "vi": "Sóng Tổng Hợp",
+    "description": "Khi Garen xuống 35% Máu, nhận lá chắn tính theo tổng lượng hồi máu và lá chắn đã nhận trong giao tranh.",
+    "levels": "Độc nhất · Garen",
+    "slug": "synthwave"
+  },
+  "Tango": {
+    "kind": "solo",
+    "vi": "Tango",
+    "description": "Twisted Fate chọn đồng minh gần nhất làm bạn nhảy. Cả hai tăng Tốc Đánh; sát thương gây thêm Thiêu Đốt và Vết Thương (giảm hồi máu).",
+    "levels": "Độc nhất · Twisted Fate",
+    "slug": "tango"
+  },
+  "Windblessed": {
+    "kind": "solo",
+    "vi": "Gió Ban Phúc",
+    "description": "Đầu giao tranh, Janna mạnh nhất tạo lốc xoáy bay về phía trước và hất tung đối thủ trên đường đi.",
+    "levels": "Độc nhất · Janna",
+    "slug": "windblessed"
+  }
+}

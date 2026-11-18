@@ -25,7 +25,6 @@ function renderUnlock(u){
       visual.append(im);
     }else visual.textContent=n.icon||'✦';
     card.append(visual,el('div','unlock-node-name',n.name));
-    // Replace the numerical 2★ / 3★ badge by actual stars under the champion.
     const matched=n.type==='unit' ? (n.label||'').match(/(?:^|\s)([1-3])★/) : null;
     if(matched){card.append(el('div','unlock-node-stars','★'.repeat(Number(matched[1]))));}
     const clean=(n.label||'').replace(/(?:^|\s)[1-3]★\s*(?:[·•]\s*)?/,'').trim();
@@ -33,7 +32,6 @@ function renderUnlock(u){
     nodes.append(card);
   });
   start.append(nodes);
-  // The item or action requirement is centered immediately above a long arrow.
   const link=el('div','unlock-link');
   const unique=[...new Set(captions)];
   const arrowLabel=unique.length ? unique.join(rule.join==='hoặc'?' / ':' · ') : 'Hoàn thành yêu cầu';

@@ -5,7 +5,7 @@ const traitInfo=JSON.parse($('traitInfo').textContent),traitIcons=JSON.parse($('
 const roleVi={Tank:'ĐỠ ĐÒN',Caster:'THUẬT SƯ',Fighter:'ĐẤU SĨ',Marksman:'XẠ THỦ',Specialist:'ĐẶC THÙ',Assassin:'SÁT THỦ'};
 const roleOrder=['Caster','Marksman','Fighter','Tank','Specialist','Assassin'];
 const kindVi={band:'NHÓM NHẠC',class:'HỆ CHIẾN ĐẤU',solo:'ĐỘC NHẤT'};
-const ui={view:'cost',effect:'all',traits:[],costs:[],locked:false,search:'',quiz:false,tab:'units',traitKind:'all',traitSearch:'',traitSelected:null};
+const ui={view:'cost',effects:[],traits:[],costs:[],roles:[],locked:false,search:'',quiz:false,tab:'units',traitKind:'all',traitSearch:'',traitSelected:null};
 let selectedUnit=null;
 const el=(tag,cls,content)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(content!==undefined)x.textContent=content;return x};
 const list=[...new Set(roster.flatMap(u=>u.traits))].sort((a,b)=>a.localeCompare(b,'en'));
@@ -91,13 +91,17 @@ for(const k of Object.keys(defs))$('n-'+k).textContent=roster.filter(u=>u.effect
 function effChip(k){const d=defs[k],x=el('span','effect '+k,d.label);x.title=d.desc;return x}
 function traitChip(name){const x=el('span','trait'),dot=el('span','dot',fallbackIcon(name).slice(0,2));const icon=el('img');icon.src=traitIcons[name]||iconURL(name);icon.alt='';icon.loading='lazy';icon.onload=()=>{dot.textContent='';dot.append(icon)};icon.onerror=()=>{};x.title='Mở phần '+name;x.append(dot,document.createTextNode(name));x.onclick=(event)=>{event.stopPropagation();if($('details').open)$('details').close();ui.traitKind='all';ui.traitSearch='';$('traitSearch').value='';ui.traitSelected=name;switchTab('traits');showTraitDetail(name)};return x}
 function matched(u) {
-  const matchCost =
+  const matchCosts =
     ui.costs.length === 0 ||
     ui.costs.includes(u.cost);
 
-  const matchEffect =
-    ui.effect === 'all' ||
-    u.effects.includes(ui.effect);
+  const matchRoles =
+    ui.roles.length === 0 ||
+    ui.roles.includes(u.role);
+
+  const matchEffects =
+    ui.effects.length === 0 ||
+    ui.effects.some(effect => u.effects.includes(effect));
 
   const matchTraits =
     ui.traits.length === 0 ||
@@ -111,8 +115,9 @@ function matched(u) {
     u.name.toLowerCase().includes(ui.search);
 
   return (
-    matchCost &&
-    matchEffect &&
+    matchCosts &&
+    matchEffects &&
+    matchRoles &&
     matchTraits &&
     matchLocked &&
     matchSearch

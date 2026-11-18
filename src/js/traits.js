@@ -1,4 +1,3 @@
-// Trait tab
 $('closeTraitDialog').onclick=$('doneTraitDialog').onclick=()=>$('traitDialog').close();
 $('traitDialog').onclick=e=>{if(e.target===$('traitDialog'))$('traitDialog').close()};
 function traitCardsData(){return list.filter(n=>(ui.traitKind==='all'||traitInfo[n].kind===ui.traitKind)&&(!ui.traitSearch||[traitInfo[n].vi,n].join(' ').toLowerCase().includes(ui.traitSearch)))}
@@ -9,5 +8,4 @@ function renderTraits(){const arr=traitCardsData();$('traitsCount').textContent=
 function showTraitDetail(name){ui.traitSelected=name;const data=traitInfo[name],members=roster.filter(u=>u.traits.includes(name));document.querySelectorAll('.trait-card').forEach(c=>c.classList.toggle('selected',c.dataset.cardTrait===name));const box=$('traitDetail');box.replaceChildren();const header=el('div','trait-detail-header'),label=el('div');label.append(el('h3','',name),el('div','trait-card-en',kindVi[data.kind]));header.append(traitImg(name),label);box.append(header,el('p','',data.description),el('p','',data.kind==='solo'?data.levels:'MỐC KÍCH HOẠT: '+data.levels),el('h4','',members.length+' TƯỚNG THUỘC NHÓM'));const grid=el('div','trait-detail-members');members.forEach(u=>{const b=el('button','trait-member');const im=el('img');im.src=imgs[u.id];im.alt=u.name;b.append(im,el('span','',u.name),el('small','',u.cost+' vàng'+(u.locked?' · 🔒':'')));b.onclick=()=>showCard(u);grid.append(b)});box.append(grid);if(!$('traitDialog').open)$('traitDialog').showModal()}
 document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{ui.traitKind=b.dataset.kind;document.querySelectorAll('[data-kind]').forEach(x=>x.classList.toggle('active',x===b));ui.traitSelected=null;if($('traitDialog').open)$('traitDialog').close();renderTraits()}));$('traitSearch').oninput=e=>{ui.traitSearch=e.target.value.trim().toLowerCase();ui.traitSelected=null;if($('traitDialog').open)$('traitDialog').close();renderTraits()};
 
-// Render the initial unit list once all event handlers have been registered.
 render();

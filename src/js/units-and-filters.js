@@ -180,27 +180,127 @@ initCostFilters();
     );
   });
 }
-function setFilter(selector,field){document.querySelectorAll(selector).forEach(b=>b.addEventListener('click',()=>{ui[field]=b.dataset[field];document.querySelectorAll(selector).forEach(x=>x.classList.toggle('active',x===b));render()}))}
-setFilter('[data-effect]','effect');$('onlyLocked').onchange=e=>{ui.locked=e.target.checked;render()};$('search').oninput=e=>{ui.search=e.target.value.trim().toLowerCase();render()};$('byCost').onclick=()=>{ui.view='cost';$('byCost').classList.add('primary');$('byRole').classList.remove('primary');render()};$('byRole').onclick=()=>{ui.view='role';$('byRole').classList.add('primary');$('byCost').classList.remove('primary');render()};$('quiz').onclick=()=>{ui.quiz=!ui.quiz;document.body.classList.toggle('quiz',ui.quiz);$('quiz').classList.toggle('active',ui.quiz);$('quiz').textContent=ui.quiz?'HIỆN TÊN':'ẨN TÊN ĐỂ HỌC'};
+
+function syncMultiButtons(selector, stateKey, dataKey) {
+  document.querySelectorAll(selector).forEach(button => {
+
+    const value = button.dataset[dataKey];
+
+    const selected = value === 'all'
+      ? ui[stateKey].length === 0
+      : ui[stateKey].includes(value);
+
+    button.classList.toggle('active', selected);
+
+    button.setAttribute(
+      'aria-pressed',
+      String(selected)
+    );
+  });
+}
+
+
+function initMultiFilter(selector, stateKey, dataKey) {
+  document.querySelectorAll(selector).forEach(button => {
+
+    button.addEventListener('click', () => {
+      const value = button.dataset[dataKey];
+
+      if (value === 'all') {
+        ui[stateKey] = [];
+
+      } else if (ui[stateKey].includes(value)) {
+        ui[stateKey] = ui[stateKey].filter(
+          item => item !== value
+        );
+
+      } else {
+        ui[stateKey].push(value);
+      }
+
+      syncMultiButtons(selector, stateKey, dataKey);
+      render();
+    });
+  });
+
+  syncMultiButtons(selector, stateKey, dataKey);
+}
+
+
+initMultiFilter('[data-role]', 'roles', 'role');
+initMultiFilter('[data-effect]', 'effects', 'effect');
+
+
+$('onlyLocked').onchange = e => {
+  ui.locked = e.target.checked;
+  render();
+};
+
+
+$('search').oninput = e => {
+  ui.search = e.target.value.trim().toLowerCase();
+  render();
+};
+
+
+$('byCost').onclick = () => {
+  ui.view = 'cost';
+
+  $('byCost').classList.add('primary');
+  $('byRole').classList.remove('primary');
+
+  render();
+};
+
+
+$('byRole').onclick = () => {
+  ui.view = 'role';
+
+  $('byRole').classList.add('primary');
+  $('byCost').classList.remove('primary');
+
+  render();
+};
+
+
+$('quiz').onclick = () => {
+  ui.quiz = !ui.quiz;
+
+  document.body.classList.toggle('quiz', ui.quiz);
+  $('quiz').classList.toggle('active', ui.quiz);
+
+  $('quiz').textContent =
+    ui.quiz ? 'HIỆN TÊN' : 'ẨN TÊN ĐỂ HỌC';
+};
+
 
 $('reset').onclick = () => {
-  ui.effect = 'all';
   ui.costs = [];
-  updateCostButtons();  
+  ui.roles = [];
+  ui.effects = [];
   ui.locked = false;
   ui.search = '';
+
+  updateCostButtons();
+
+  syncMultiButtons('[data-role]', 'roles', 'role');
+  syncMultiButtons('[data-effect]', 'effects', 'effect');
 
   clearTraitFilters();
 
   $('onlyLocked').checked = false;
   $('search').value = '';
 
-  document.querySelectorAll('[data-effect]').forEach(button => {
-    button.classList.toggle(
-      'active',
-      button.dataset.effect === 'all'
-    );
-  });
-
   render();
-};$('close').onclick=$('done').onclick=()=>$('details').close();$('details').onclick=e=>{if(e.target===$('details'))$('details').close()};
+};
+
+
+$('close').onclick = $('done').onclick = () => {
+  $('details').close();
+};
+
+$('details').onclick = e => {
+  if (e.target === $('details')) {
+    $('details').close();
+  }
+};

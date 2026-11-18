@@ -24,7 +24,6 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 @media(max-width:720px){.app{padding:10px 9px 45px}.hero{padding:23px 20px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pic{height:112px}.cardname{font-size:12px}.grouphead h2{font-size:18px}.row-label{width:100%}.search{min-width:100%;max-width:100%}.filters{padding:11px}.group{scroll-margin-top:12px}}
 @media print{body{background:white}.app{max-width:none;padding:0}.hero{border-radius:0;box-shadow:none;padding:15px}.filters,.quicknav,.actions,.footer,.statusline,.dialogfooter{display:none!important}.group{break-before:page}.group:first-child{break-before:auto}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.card{break-inside:avoid;box-shadow:none}.pic{height:105px}body.quiz .cardname{filter:none}}
 
-/* Đã khôi phục tóm tắt kỹ năng cho toàn bộ 94 tướng. */
 .skillpanel{padding:15px 16px;background:linear-gradient(135deg,#f7f5ff,#fbfcff);border:1px solid #dcd8f3;border-radius:12px}
 .skillpanel .dlabel{color:#44358e}
 .skillinfo{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:6px 0 10px}
@@ -34,7 +33,6 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 .skillhint{font-size:11px;margin:9px 0 0;color:#737b99}
 @media(max-width:680px){.skillpanel{padding:12px}.skilldescription{font-size:13px}}
 
-/* Bộ lọc nhiều mức giá vàng */
 .quicknav .cost-filter-btn {
   padding: 6px 10px;
   border-radius: 22px;
@@ -45,21 +43,18 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
   font-weight: 850;
 }
 
-/* Nút đang được chọn - Light Mode */
 .quicknav .cost-filter-btn.active {
   background: #5140a7;
   color: #ffffff;
   border-color: #5140a7;
 }
 
-/* Nút bình thường - Dark Mode */
 body.dark-mode .quicknav .cost-filter-btn {
   background: #2d3039;
   color: #e2e3ed;
   border-color: #484b59;
 }
 
-/* Nút đang được chọn - Dark Mode */
 body.dark-mode .quicknav .cost-filter-btn.active {
   background: #7660c5;
   color: #ffffff;

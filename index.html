@@ -25,7 +25,7 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 @media(max-width:720px){.app{padding:10px 9px 45px}.hero{padding:23px 20px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pic{height:112px}.cardname{font-size:12px}.grouphead h2{font-size:18px}.row-label{width:100%}.search{min-width:100%;max-width:100%}.filters{padding:11px}.group{scroll-margin-top:12px}}
 @media print{body{background:white}.app{max-width:none;padding:0}.hero{border-radius:0;box-shadow:none;padding:15px}.filters,.quicknav,.actions,.footer,.statusline,.dialogfooter{display:none!important}.group{break-before:page}.group:first-child{break-before:auto}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.card{break-inside:avoid;box-shadow:none}.pic{height:105px}body.quiz .cardname{filter:none}}
 
-/* Đã khôi phục tóm tắt kỹ năng cho toàn bộ 94 tướng. */
+
 .skillpanel{padding:15px 16px;background:linear-gradient(135deg,#f7f5ff,#fbfcff);border:1px solid #dcd8f3;border-radius:12px}
 .skillpanel .dlabel{color:#44358e}
 .skillinfo{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:6px 0 10px}
@@ -52,14 +52,14 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 .trait-quick-members{display:flex;gap:4px;flex-wrap:wrap;padding:0 14px 13px}.trait-mini-img{width:32px;height:32px;object-fit:cover;object-position:90% center;border-radius:7px;border:2px solid #e6e0f3;cursor:pointer}.trait-mini-img:hover{border-color:#7258bf}
 .trait-detail{margin-top:18px;border:1px solid #d3d0e7;background:#fff;border-radius:18px;padding:20px;box-shadow:0 13px 28px #1e27411a;scroll-margin-top:20px}.trait-detail-header{display:flex;gap:15px;align-items:center}.trait-detail-header .trait-icon{width:76px;height:76px}.trait-detail-header .trait-icon>img{width:58px;height:58px}.trait-detail h3{margin:0;font-size:23px}.trait-detail p{font-size:14px;line-height:1.65;color:#46546e}.trait-detail-members{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:12px}.trait-member{border:1px solid #dfe2ec;border-radius:9px;overflow:hidden;cursor:pointer;background:#fff;padding:0;text-align:left;min-width:0}.trait-member img{display:block;width:100%;height:72px;object-fit:cover;object-position:90% center}.trait-member span{display:block;font-size:11px;font-weight:900;padding:6px 7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.trait-member small{display:block;color:#7e8595;font-size:10px;margin:-4px 0 5px 7px}
 .trait-help{font-size:12px;background:#eeedf8;border:1px solid #dfd9f0;border-radius:12px;padding:13px 17px;margin:18px 0;color:#4f5574}
-/* Make trait labels in original cards show localized names and glyphs */
+
 .trait .dot{background:#403774;color:#fff;width:17px;height:17px;vertical-align:middle}.trait .dot img{width:14px;height:14px;object-fit:contain;display:block}
 .trait .dot{min-width:22px}.trait{cursor:pointer}.trait:hover{border-color:#b8a3ed}
 @media(max-width:1080px){.traits-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.major-tabs{width:100%}.major-tab{flex:1;min-width:0;padding:11px 10px;gap:6px;font-size:11px}.major-tab .tab-number{min-width:29px;height:22px;font-size:11px}.traits-hero{padding:18px}.traits-grid{grid-template-columns:1fr}.traits-controls #traitSearch{width:100%;min-width:0}.trait-detail-members{grid-template-columns:repeat(3,minmax(0,1fr))}.trait-card-desc{min-height:0}}
 @media print{.major-tabs,.traits-controls,.trait-card-controls,.trait-help{display:none!important}.traits-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trait-card{break-inside:avoid}.trait-card-desc{min-height:0}.unit-page-part{display:none!important}}
 
-/* Trait detail: same centered popup behavior as champion dialog */
+
 #traitDialog.trait-dialog{width:min(900px,calc(100vw - 24px));max-height:min(90vh,940px);padding:0;border:1px solid #d5d3e7;border-radius:18px;background:#fff;color:#202748;box-shadow:0 26px 85px #10132899;overflow:auto;overscroll-behavior:contain}
 #traitDialog::backdrop{background:#111426bd;backdrop-filter:blur(4px)}
 .trait-dialog-top{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:2;padding:13px 20px;background:#f4f2fb;border-bottom:1px solid #e3dff3;color:#524398;font-size:12px;letter-spacing:.08em;font-weight:950}
@@ -70,9 +70,7 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 @media(max-width:680px){#traitDialog.trait-dialog{max-height:92vh}#traitDialog .trait-detail{padding:16px 13px}.trait-dialog-top{padding:11px 14px}.trait-dialog-bottom{padding:9px 13px}}
 @media print{#traitDialog{display:none!important}}
 
-/* Sơ đồ mở khóa — chỉ dành cho tướng khóa */
 
-/* Danh sách chọn tộc/hệ dạng nhiều cột, dùng icon đã có sẵn trong website. */
 .trait-picker{position:relative;min-width:192px}
 .trait-picker-toggle{display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:192px;padding:8px 11px;background:#fff;color:#34415f;border:1px solid #deddea;border-radius:10px;font-size:12px;font-weight:850;text-align:left}
 .trait-picker-toggle:hover,.trait-picker-toggle[aria-expanded="true"]{border-color:#9b86d9;background:#f9f7ff}
@@ -86,7 +84,6 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 @media(max-width:700px){.trait-picker-menu{width:min(530px,calc(100vw - 34px));max-height:58vh}.trait-picker-grid{grid-template-rows:repeat(24,auto);grid-template-columns:repeat(2,minmax(0,1fr))}.trait-picker-choice{font-size:11px;gap:6px}}
 @media(max-width:430px){.trait-picker-menu{width:calc(100vw - 52px)}.trait-picker-grid{grid-auto-flow:row;grid-template-columns:1fr;grid-template-rows:none}}
 
-/* Đánh dấu những tộc/hệ đã chọn */
 .trait-picker-choice.selected::after {
   content: '✓';
   margin-left: auto;
@@ -94,7 +91,6 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
   color: #f3d58a;
 }
 
-/* Không để tên tộc/hệ quá dài làm hỏng nút */
 #traitSelectedLabel {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -102,7 +98,7 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
   max-width: 170px;
 }
 
-/* Icon tộc/hệ trong tiêu đề nhóm tướng */
+
 .grouphead .filter-trait-icon {
   width: 32px;
   height: 32px;
@@ -134,7 +130,6 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 .unlock-node{background:#fcfbff;border:1px solid #e1dcf3;border-radius:11px;min-width:112px;flex:1 1 126px;max-width:175px;overflow:hidden;padding:8px;text-align:center}
 .unlock-flow:not(.has-multiple) .unlock-node{min-width:0;max-width:175px;width:100%}
 .unlock-node-visual{width:100%;height:90px;margin:0 auto 7px;background:linear-gradient(135deg,#242c51,#56439b);border-radius:9px;display:grid;place-items:center;overflow:hidden;color:white;font-size:29px}
-/* The champion's face is generally at the right of the original horizontal splash art. */
 .unlock-node-visual img{width:100%;height:100%;object-fit:cover;object-position:right center;display:block}
 .unlock-node-visual.trait-visual {padding:10px}
 .unlock-node-visual.trait-visual img{width:70px;height:70px;max-width:100%;max-height:100%;object-fit:contain;object-position:center;padding:0;transform:none}
@@ -265,7 +260,6 @@ body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none
 @media(max-width:360px){.builder-lineup{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media print{.builder-page{display:none!important}}
 
-    /* Theme toggle */
 .theme-toggle {
   position: fixed;
   right: 20px;
@@ -290,7 +284,6 @@ body:not(.dark-mode) .theme-toggle {
   border-color: #d3d5df;
 }
 
-/* Dark theme */
 body.dark-mode {
   --bg: #15171b;
   --ink: #e9eaf0;
@@ -300,7 +293,6 @@ body.dark-mode {
   color-scheme: dark;
 }
 
-/* Main surfaces */
 body.dark-mode :is(
   .filters, .card, .builder-panel,
   .trait-card, .trait-detail,
@@ -313,7 +305,6 @@ body.dark-mode :is(
   border-color: #393d48;
 }
 
-/* Navigation */
 body.dark-mode .major-tabs {
   background: #202229;
   border-color: #393d48;
@@ -328,7 +319,6 @@ body.dark-mode .major-tab.active {
   color: #e4d9ff;
 }
 
-/* Buttons and inputs */
 body.dark-mode :is(
   .btn, .pill-btn, .trait-kind,
   .smallbtn, .quicknav a,
@@ -365,7 +355,6 @@ body.dark-mode input::placeholder {
   color: #9a9eae;
 }
 
-/* Champion cards and labels */
 body.dark-mode :is(
   .trait, .trait-card-kind,
   .trait-card-levels,
@@ -398,7 +387,6 @@ body.dark-mode :is(
   color: #ececf5;
 }
 
-/* Champion skill and unlock panels */
 body.dark-mode :is(
   .skillpanel, .unlock-panel,
   .unlock-target, .trait-help
@@ -413,7 +401,6 @@ body.dark-mode .unlock-target b {
   color: #e9eaf0;
 }
 
-/* Trait details and dialogs */
 body.dark-mode :is(
   .trait-card-levels,
   .trait-dialog-top,
@@ -429,7 +416,6 @@ body.dark-mode .trait-card-controls button {
   border-color: #4d4760;
 }
 
-/* Team builder */
 body.dark-mode :is(
   .builder-pick, .builder-trait-choices,
   .builder-trait-choice
@@ -464,7 +450,6 @@ body.dark-mode :is(
   color: #c4c3d7;
 }
 
-/* Synergy tiers */
 body.dark-mode .builder-synergy {
   --synergy-bg: #292c34;
   --synergy-text: #b8bfce;
@@ -513,7 +498,6 @@ body.dark-mode .major-tab.active .tab-number {
   color: #ffffff;
 }
 
-/* Số lượng trên các tab - Light Mode */
 body:not(.dark-mode) .major-tab .tab-number {
   background: #e6dfff;
   color: #44358e;
@@ -780,16 +764,13 @@ function card(u){const c=el('article','card'),p=el('div','pic'),im=el('img');im.
 const body=el('div','cardbody');body.append(el('h3','cardname',u.name),el('div','meta',roleVi[u.role]+' · '+(u.damage==='Magic'?'Phép':'Vật lý')));const tl=el('div','traitline');u.traits.forEach(t=>tl.append(traitChip(t)));body.append(tl);if(u.effects.length){const tags=el('div','tags');u.effects.forEach(k=>tags.append(effChip(k)));body.append(tags)}const acts=el('div','actions'),btn=el('button','smallbtn',u.locked?'🔒 XEM CÁCH MỞ KHÓA':'XEM KỸ NĂNG · TỘC/HỆ');btn.onclick=()=>showCard(u);acts.append(btn);body.append(acts);c.append(p,body);return c}
 
 function render() {
-  // Lấy danh sách tướng đáp ứng các bộ lọc
   const arr = roster.filter(matched);
 
-  // Cập nhật số lượng tướng
   $('status').textContent =
     'Đang hiển thị ' + arr.length + ' / ' +
     roster.length + ' tướng' +
     (ui.locked ? ' · Chỉ tướng khóa' : '');
 
-  // Xóa kết quả cũ trước khi render mới
   $('board').replaceChildren();
   $('quicknav').replaceChildren();
 
@@ -801,14 +782,12 @@ function render() {
     return;
   }
 
-  // Hàm tạo một nhóm tướng
   function appendGroup(name, members, index, traitName = null) {
     const section = el('section', 'group');
     section.id = 'group-' + index;
 
     const header = el('div', 'grouphead');
 
-    // Nếu là nhóm Tộc/Hệ thì hiển thị icon của hệ
     if (traitName) {
       const icon = el('img', 'filter-trait-icon');
 
@@ -829,7 +808,6 @@ function render() {
 
     section.append(header);
 
-    // Tạo danh sách card tướng
     if (members.length) {
       const grid = el('div', 'cards');
 
@@ -847,7 +825,6 @@ function render() {
 
     $('board').append(section);
 
-    // Tạo thanh điều hướng nhóm
     const link = el('a', '',
       name + ' · ' + members.length);
 
@@ -855,7 +832,6 @@ function render() {
     $('quicknav').append(link);
   }
 
-  // Nếu người chơi đang chọn Tộc/Hệ
   if (ui.traits.length > 0) {
     ui.traits.forEach((trait, index) => {
 
@@ -872,8 +848,6 @@ function render() {
     return;
   }
 
-  // Nếu không chọn Tộc/Hệ:
-  // giữ nguyên cách nhóm theo giá hoặc vai trò
   const groups = arr.reduce((result, unit) => {
     const key = groupKey(unit);
 
@@ -920,7 +894,6 @@ $('reset').onclick = () => {
   render();
 };$('close').onclick=$('done').onclick=()=>$('details').close();$('details').onclick=e=>{if(e.target===$('details'))$('details').close()};
 
-// Trait tab
 $('closeTraitDialog').onclick=$('doneTraitDialog').onclick=()=>$('traitDialog').close();
 $('traitDialog').onclick=e=>{if(e.target===$('traitDialog'))$('traitDialog').close()};
 function traitCardsData(){return list.filter(n=>(ui.traitKind==='all'||traitInfo[n].kind===ui.traitKind)&&(!ui.traitSearch||[traitInfo[n].vi,n].join(' ').toLowerCase().includes(ui.traitSearch)))}

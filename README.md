@@ -1,76 +1,57 @@
-# TFT Handbook – Source Code (Refactored)
+# TFT Handbook — Tạo đội hình
 
-Đây là **bản phát triển riêng**, chưa thay đổi repository hoặc Vercel của bạn. Website vẫn dùng HTML/CSS/JavaScript thuần, không cần React và không cần Node.js.
+Website HTML/CSS/JavaScript thuần. Mở `index.html` bằng Chrome hoặc Edge để dùng offline; không cần cài Node.js, React hay chạy server.
 
-## Cấu trúc
+## Cách sử dụng
+
+- **TƯỚNG:** tra cứu 94 tướng, hiệu ứng, tộc/hệ, kỹ năng và điều kiện mở khóa.
+- **TỘC / HỆ:** tra cứu 47 tộc/hệ. Ở tab Tướng, nhấn nút lọc **Tất cả tộc/hệ** để chọn từ bảng icon nhiều cột.
+- **TẠO ĐỘI HÌNH:** bấm icon trong **Kho tướng** để thêm. Bấm **×** trên thẻ tướng để xóa. Bấm một thẻ đã chọn để xem gợi ý tướng chung tộc/hệ, bấm lần nữa để trở lại gợi ý cho cả đội.
+- Dùng nút **− / +** ở phần *Giới hạn* để chỉnh số suất (1–15, mặc định 10). Không thể giảm xuống ít hơn số suất đang sử dụng. Baron Nashor tính **2 suất**.
+- Icon mờ vẫn có thể chọn. Tướng độc lập luôn sáng; Mordekaiser **không** được xem là độc lập vì chung Pentakill với các tướng khác. Baron chỉ sáng khi có Malzahar trong đội, **không có nghĩa là đã hoàn thành điều kiện mở khóa Baron**.
+- Đội hình tự lưu trên trình duyệt hiện tại qua `localStorage`. Nút **XÓA ĐỘI HÌNH** xóa ngay toàn bộ tướng đã chọn (không có hộp xác nhận); không đổi giới hạn suất.
+
+## Cấu trúc source
 
 ```text
-TFT-Handbook-Refactored/
-├── index.html                  # Bản web được tạo tự động, đầy đủ ảnh, xem offline
-├── build.py                    # Ghép source thành index.html
-├── src/
-│   ├── template.html           # Khung HTML: tab, nút, popup
-│   ├── styles/
-│   │   ├── base.css            # Layout, màu sắc, ô tướng
-│   │   ├── traits.css          # Giao diện tộc/hệ
-│   │   └── unlocks.css         # Popup mở khóa (nếu tách riêng)
-│   ├── js/
-│   │   ├── core.js             # Dữ liệu, trạng thái và helpers
-│   │   ├── units-and-filters.js # Thẻ tướng, bộ lọc, popup kỹ năng
-│   │   ├── unlocks.js          # Sơ đồ mở khóa
-│   │   ├── traits.js           # Tab tộc/hệ, icon
-│   ├── data/
-│   │   ├── champions.json      # 94 tướng: giá, vai trò, tộc/hệ, hiệu ứng
-│   │   ├── skills.json         # 94 kỹ năng tóm tắt
-│   │   ├── unlocks.json        # 32 điều kiện mở khóa
-│   │   ├── traits.json         # 47 mô tả tộc/hệ
-│   │   ├── effects.json        # Từ điển hiệu ứng
-│   │   ├── champion-images.json # Bảng ánh xạ tướng => file ảnh
-│   │   └── trait-icons.json    # Bảng ánh xạ hệ => icon
-│   └── assets/
-│       ├── champions/          # 94 hình tướng
-│       └── traits/             # 47 icon tộc/hệ
+TFT-Handbook-Team-Composer/
+├── index.html                 # Website hoàn chỉnh; mở trực tiếp để xem
+├── build.py                   # Tạo lại index.html từ source
+├── README.md
+└── src/
+    ├── template.html          # Khung HTML ba tab
+    ├── styles/
+    │   ├── base.css
+    │   ├── traits.css          # Tộc/hệ, cả bảng lọc icon nhiều cột
+    │   ├── unlocks.css
+    │   └── builder.css         # Giao diện tab TẠO ĐỘI HÌNH
+    ├── js/
+    │   ├── core.js            # Dữ liệu chung, chuyển tab, bảng lọc tộc/hệ
+    │   ├── units-and-filters.js
+    │   ├── traits.js
+    │   ├── unlocks.js
+    │   └── builder.js         # Thêm/xóa tướng, giới hạn suất, gợi ý, tự lưu
+    ├── data/                  # JSON tướng, kỹ năng, mở khóa và tộc/hệ
+    └── assets/                # Hình tướng và icon tộc/hệ
 ```
 
-## Chạy thử
+## Chỉnh sửa trong VS Code
 
-**Cách đơn giản nhất:** mở `index.html` bằng Chrome hoặc Edge. Nó đã được tạo sẵn và vẫn sử dụng offline.
+1. Giữ branch `dev`, giải nén ZIP rồi **chép nội dung bên trong thư mục** vào repository `TFT-Handbook` (thay file cũ nếu cần).
+2. Chỉnh trong `src/` — ví dụ `src/js/builder.js` để sửa logic đội hình, `src/styles/builder.css` để sửa giao diện, `src/template.html` để đổi chữ/nút.
+3. Chạy trong Terminal:
 
-**Khi sửa dữ liệu/code:**
-
-1. Mở thư mục này trong VS Code.
-2. Ví dụ: tìm Tibbers trong `src/data/unlocks.json`, sửa mô tả nếu cần. Để sửa giao diện sơ đồ, xem `src/js/unlocks.js` và `src/styles/unlocks.css`.
-3. Mở terminal trong thư mục và chạy:
-
-   ```bash
-   python build.py
+   ```powershell
+   py build.py
    ```
 
-   Nếu Windows chỉ có Python Launcher, dùng `py build.py`.
-4. Mở lại `index.html` và kiểm tra thay đổi.
+   Nếu `py` không chạy, thử `python build.py`.
+4. Mở lại `index.html` mới và refresh để kiểm tra trước khi commit/push.
 
-**Đừng sửa trực tiếp `index.html`**: nó được sinh từ thư mục `src/`, lần build sau sẽ ghi đè.
+**Không sửa trực tiếp `index.html` để phát triển:** `build.py` sẽ ghi đè file đó mỗi khi chạy. Khi đưa lên GitHub + Vercel, cần commit cả `src/` lẫn `index.html` vừa build.
 
-## GitHub / Vercel – không đụng bản đang chạy
-
-1. Giữ nguyên `main` để website Vercel Production tiếp tục hoạt động.
-2. Tạo nhánh `dev` trên GitHub từ `main`. Không đưa code mới lên `main` trong lúc thử nghiệm.
-3. Khi muốn đưa bản refactor lên nhánh `dev`, bạn có thể dùng GitHub Desktop: checkout nhánh `dev`, chép **nội dung** thư mục refactor này vào thư mục repo (thay `index.html` và thêm `src/`, `build.py`), rồi commit/push.
-4. Test bản `dev`, sau đó tạo Pull Request `dev -> main` chỉ khi sẵn sàng công bố.
-
-Lưu ý: Vercel có thể tạo một **Preview Deployment** cho nhánh `dev`; bản Production vẫn giữ nguyên cho đến khi merge vào production branch. Đừng dùng `vercel --prod` trong quá trình thử nghiệm.
-
-## Nguồn dữ liệu tham khảo
+## Nguồn tham khảo
 
 - https://tft.ninja/sets/19/units
 - https://tactics.tools/info/set-update
 - https://mobalytics.gg/tft/set19/unlocks
-
-Mùa 19 có thể có điều chỉnh sau PBE; dữ liệu trong file là snapshot từ lần cập nhật trước.
-
-## Bản này
-
-Bản dành cho người chơi, đã bỏ các công cụ quản trị trên giao diện: nút lưu file, nút xuất PDF, nút dán icon và liên kết chỉnh icon. Không còn bộ lọc hay gợi ý trang bị. **Điều kiện mở khóa liên quan tới trang bị vẫn giữ lại** vì là luật của mùa.
-
-Tất cả dữ liệu ảnh và icon đã được đóng gói trong `index.html` khi chạy `python build.py`. Khi sửa code, hãy sửa trong thư mục `src/` rồi build lại.
-

@@ -35,3 +35,17 @@
 @media print{#traitDialog{display:none!important}}
 
 /* Sơ đồ mở khóa — chỉ dành cho tướng khóa */
+
+/* Danh sách chọn tộc/hệ dạng nhiều cột, dùng icon đã có sẵn trong website. */
+.trait-picker{position:relative;min-width:192px}
+.trait-picker-toggle{display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:192px;padding:8px 11px;background:#fff;color:#34415f;border:1px solid #deddea;border-radius:10px;font-size:12px;font-weight:850;text-align:left}
+.trait-picker-toggle:hover,.trait-picker-toggle[aria-expanded="true"]{border-color:#9b86d9;background:#f9f7ff}
+.trait-picker-menu{position:absolute;top:calc(100% + 9px);left:0;z-index:55;width:min(840px,calc(100vw - 70px));max-height:min(510px,66vh);overflow:auto;background:linear-gradient(155deg,#20292d,#0b141a);border:1px solid #748078;border-radius:14px;padding:15px;box-shadow:0 18px 42px #11172b75}
+.trait-picker-grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(12,auto);grid-template-columns:repeat(4,minmax(0,1fr));column-gap:6px;row-gap:3px}
+.trait-picker-choice{border:0;border-left:2px solid transparent;background:transparent;min-width:0;display:flex;align-items:center;gap:9px;text-align:left;color:#dfc896;font-size:12px;font-weight:650;border-radius:6px;padding:6px 4px;line-height:1.3}
+.trait-picker-choice:hover,.trait-picker-choice.selected{color:#fff0c3;background:#ffffff16;border-left-color:#d4bb79}
+.trait-picker-choice span:last-child{overflow-wrap:anywhere}
+.trait-picker-icon{width:26px;height:26px;flex:0 0 26px;display:grid;place-items:center;background:#111c26;border:1px solid #414b55;border-radius:6px;color:#f3d58a;font-size:16px}
+.trait-picker-icon img{width:22px;height:22px;object-fit:contain}
+@media(max-width:700px){.trait-picker-menu{width:min(530px,calc(100vw - 34px));max-height:58vh}.trait-picker-grid{grid-template-rows:repeat(24,auto);grid-template-columns:repeat(2,minmax(0,1fr))}.trait-picker-choice{font-size:11px;gap:6px}}
+@media(max-width:430px){.trait-picker-menu{width:calc(100vw - 52px)}.trait-picker-grid{grid-auto-flow:row;grid-template-columns:1fr;grid-template-rows:none}}

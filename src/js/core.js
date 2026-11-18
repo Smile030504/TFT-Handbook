@@ -5,7 +5,7 @@ const traitInfo=JSON.parse($('traitInfo').textContent),traitIcons=JSON.parse($('
 const roleVi={Tank:'ĐỠ ĐÒN',Caster:'THUẬT SƯ',Fighter:'ĐẤU SĨ',Marksman:'XẠ THỦ',Specialist:'ĐẶC THÙ',Assassin:'SÁT THỦ'};
 const roleOrder=['Caster','Marksman','Fighter','Tank','Specialist','Assassin'];
 const kindVi={band:'NHÓM NHẠC',class:'HỆ CHIẾN ĐẤU',solo:'ĐỘC NHẤT'};
-const ui={view:'cost',effect:'all',trait:'all',locked:false,search:'',quiz:false,tab:'units',traitKind:'all',traitSearch:'',traitSelected:null};
+const ui={view:'cost',effects:[],traits:[],costs:[],roles:[],locked:false,search:'',quiz:false,tab:'units',traitKind:'all',traitSearch:'',traitSelected:null};
 let selectedUnit=null;
 const el=(tag,cls,content)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(content!==undefined)x.textContent=content;return x};
 const list=[...new Set(roster.flatMap(u=>u.traits))].sort((a,b)=>a.localeCompare(b,'en'));
@@ -37,11 +37,38 @@ $('tab-builder').onclick=()=>switchTab('builder');
 
 const picker=$('traitPicker'),pickerMenu=$('traitMenu'),pickerGrid=$('traitPickerGrid');
 function closeTraitPicker(){pickerMenu.hidden=true;$('traitToggle').setAttribute('aria-expanded','false')}
-function setTraitFilter(name){
-  ui.trait=name;
-  $('traitSelectedLabel').textContent=name==='all'?'Tất cả tộc/hệ':name;
-  pickerGrid.querySelectorAll('[data-trait-choice]').forEach(b=>b.classList.toggle('selected',b.dataset.traitChoice===name));
-  closeTraitPicker();render();
+function updateTraitPicker(){const count = ui.traits.length; $('traitSelectedLabel').textContent = count === 0 ? 'Tất cả tộc/hệ' : count === 1 ? ui.traits[0] : count + ' tộc/hệ đã chọn'; pickerGrid.querySelectorAll('[data-trait-choice]').forEach(button => {
+    const name = button.dataset.traitChoice;
+
+    const selected = name === 'all'
+      ? count === 0
+      : ui.traits.includes(name);
+
+    button.classList.toggle('selected', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+}
+
+function toggleTraitFilter(name) {
+  if (name === 'all') {
+    ui.traits = [];
+    closeTraitPicker();
+
+  } else if (ui.traits.includes(name)) {
+    ui.traits = ui.traits.filter(trait => trait !== name);
+
+  } else {
+    ui.traits.push(name);
+  }
+
+  updateTraitPicker();
+  render();
+}
+
+function clearTraitFilters() {
+  ui.traits = [];
+  updateTraitPicker();
+  closeTraitPicker();
 }
 function initTraitPicker(){
   for(const name of ['all',...list]){
@@ -51,7 +78,8 @@ function initTraitPicker(){
     else {const im=el('img');im.src=traitIcons[name]||iconURL(name);im.alt='';im.loading='lazy';im.onerror=()=>{im.hidden=true;icon.textContent='✦'};icon.append(im)}
     b.append(icon,el('span','',name==='all'?'Tất cả tộc/hệ':name));
     b.classList.toggle('selected',name==='all');
-    b.onclick=()=>setTraitFilter(name);pickerGrid.append(b);
+    b.onclick = () => toggleTraitFilter(name);
+    pickerGrid.append(b);
   }
   $('traitToggle').onclick=()=>{const opening=pickerMenu.hidden;pickerMenu.hidden=!opening;$('traitToggle').setAttribute('aria-expanded',String(opening))};
   document.addEventListener('click',e=>{if(!picker.contains(e.target))closeTraitPicker()});
@@ -62,7 +90,39 @@ initTraitPicker();
 for(const k of Object.keys(defs))$('n-'+k).textContent=roster.filter(u=>u.effects.includes(k)).length;
 function effChip(k){const d=defs[k],x=el('span','effect '+k,d.label);x.title=d.desc;return x}
 function traitChip(name){const x=el('span','trait'),dot=el('span','dot',fallbackIcon(name).slice(0,2));const icon=el('img');icon.src=traitIcons[name]||iconURL(name);icon.alt='';icon.loading='lazy';icon.onload=()=>{dot.textContent='';dot.append(icon)};icon.onerror=()=>{};x.title='Mở phần '+name;x.append(dot,document.createTextNode(name));x.onclick=(event)=>{event.stopPropagation();if($('details').open)$('details').close();ui.traitKind='all';ui.traitSearch='';$('traitSearch').value='';ui.traitSelected=name;switchTab('traits');showTraitDetail(name)};return x}
-function matched(u){return (ui.effect==='all'||u.effects.includes(ui.effect))&&(ui.trait==='all'||u.traits.includes(ui.trait))&&(!ui.locked||u.locked)&&(!ui.search||u.name.toLowerCase().includes(ui.search))}
+function matched(u) {
+  const matchCosts =
+    ui.costs.length === 0 ||
+    ui.costs.includes(u.cost);
+
+  const matchRoles =
+    ui.roles.length === 0 ||
+    ui.roles.includes(u.role + '|' + u.damage);
+
+  const matchEffects =
+    ui.effects.length === 0 ||
+    ui.effects.some(effect => u.effects.includes(effect));
+
+  const matchTraits =
+    ui.traits.length === 0 ||
+    ui.traits.some(trait => u.traits.includes(trait));
+
+  const matchLocked =
+    !ui.locked || u.locked;
+
+  const matchSearch =
+    !ui.search ||
+    u.name.toLowerCase().includes(ui.search);
+
+  return (
+    matchCosts &&
+    matchEffects &&
+    matchRoles &&
+    matchTraits &&
+    matchLocked &&
+    matchSearch
+  );
+}
 function groupKey(u){return ui.view==='cost'?String(u.cost):u.role+'|'+u.damage}
 function groupLabel(k){if(ui.view==='cost')return k+' VÀNG';const [r,d]=k.split('|');return roleVi[r]+' '+(d==='Magic'?'PHÉP':'VẬT LÝ')}
 
@@ -76,7 +136,6 @@ try {
     document.body.classList.remove('dark-mode');
   }
 } catch (error) {
-  // Use the default theme if storage is unavailable.
 }
 
 function updateThemeButton() {

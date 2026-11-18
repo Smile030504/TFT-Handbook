@@ -1,4 +1,3 @@
-/* Tộc/hệ learning tab */
 [hidden]{display:none!important}
 .major-tabs{display:flex;gap:7px;margin:16px 0 13px;padding:6px;border:1px solid #dcdde9;background:#e9ebf4;border-radius:13px;width:fit-content;max-width:100%}
 .major-tab{border:0;background:transparent;padding:11px 14px;font-size:13px;font-weight:950;color:#505a79;border-radius:9px;display:inline-flex;align-items:center;justify-content:space-between;gap:12px;min-width:174px;white-space:nowrap}.major-tab .tab-label{display:inline-flex;align-items:center;gap:5px}.major-tab .tab-number{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:24px;font-size:12px;line-height:1}
@@ -16,14 +15,12 @@
 .trait-quick-members{display:flex;gap:4px;flex-wrap:wrap;padding:0 14px 13px}.trait-mini-img{width:32px;height:32px;object-fit:cover;object-position:90% center;border-radius:7px;border:2px solid #e6e0f3;cursor:pointer}.trait-mini-img:hover{border-color:#7258bf}
 .trait-detail{margin-top:18px;border:1px solid #d3d0e7;background:#fff;border-radius:18px;padding:20px;box-shadow:0 13px 28px #1e27411a;scroll-margin-top:20px}.trait-detail-header{display:flex;gap:15px;align-items:center}.trait-detail-header .trait-icon{width:76px;height:76px}.trait-detail-header .trait-icon>img{width:58px;height:58px}.trait-detail h3{margin:0;font-size:23px}.trait-detail p{font-size:14px;line-height:1.65;color:#46546e}.trait-detail-members{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:12px}.trait-member{border:1px solid #dfe2ec;border-radius:9px;overflow:hidden;cursor:pointer;background:#fff;padding:0;text-align:left;min-width:0}.trait-member img{display:block;width:100%;height:72px;object-fit:cover;object-position:90% center}.trait-member span{display:block;font-size:11px;font-weight:900;padding:6px 7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.trait-member small{display:block;color:#7e8595;font-size:10px;margin:-4px 0 5px 7px}
 .trait-help{font-size:12px;background:#eeedf8;border:1px solid #dfd9f0;border-radius:12px;padding:13px 17px;margin:18px 0;color:#4f5574}
-/* Make trait labels in original cards show localized names and glyphs */
 .trait .dot{background:#403774;color:#fff;width:17px;height:17px;vertical-align:middle}.trait .dot img{width:14px;height:14px;object-fit:contain;display:block}
 .trait .dot{min-width:22px}.trait{cursor:pointer}.trait:hover{border-color:#b8a3ed}
 @media(max-width:1080px){.traits-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.major-tabs{width:100%}.major-tab{flex:1;min-width:0;padding:11px 10px;gap:6px;font-size:11px}.major-tab .tab-number{min-width:29px;height:22px;font-size:11px}.traits-hero{padding:18px}.traits-grid{grid-template-columns:1fr}.traits-controls #traitSearch{width:100%;min-width:0}.trait-detail-members{grid-template-columns:repeat(3,minmax(0,1fr))}.trait-card-desc{min-height:0}}
 @media print{.major-tabs,.traits-controls,.trait-card-controls,.trait-help{display:none!important}.traits-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trait-card{break-inside:avoid}.trait-card-desc{min-height:0}.unit-page-part{display:none!important}}
 
-/* Trait detail: same centered popup behavior as champion dialog */
 #traitDialog.trait-dialog{width:min(900px,calc(100vw - 24px));max-height:min(90vh,940px);padding:0;border:1px solid #d5d3e7;border-radius:18px;background:#fff;color:#202748;box-shadow:0 26px 85px #10132899;overflow:auto;overscroll-behavior:contain}
 #traitDialog::backdrop{background:#111426bd;backdrop-filter:blur(4px)}
 .trait-dialog-top{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:2;padding:13px 20px;background:#f4f2fb;border-bottom:1px solid #e3dff3;color:#524398;font-size:12px;letter-spacing:.08em;font-weight:950}
@@ -34,9 +31,7 @@
 @media(max-width:680px){#traitDialog.trait-dialog{max-height:92vh}#traitDialog .trait-detail{padding:16px 13px}.trait-dialog-top{padding:11px 14px}.trait-dialog-bottom{padding:9px 13px}}
 @media print{#traitDialog{display:none!important}}
 
-/* Sơ đồ mở khóa — chỉ dành cho tướng khóa */
 
-/* Danh sách chọn tộc/hệ dạng nhiều cột, dùng icon đã có sẵn trong website. */
 .trait-picker{position:relative;min-width:192px}
 .trait-picker-toggle{display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:192px;padding:8px 11px;background:#fff;color:#34415f;border:1px solid #deddea;border-radius:10px;font-size:12px;font-weight:850;text-align:left}
 .trait-picker-toggle:hover,.trait-picker-toggle[aria-expanded="true"]{border-color:#9b86d9;background:#f9f7ff}
@@ -49,3 +44,28 @@
 .trait-picker-icon img{width:22px;height:22px;object-fit:contain}
 @media(max-width:700px){.trait-picker-menu{width:min(530px,calc(100vw - 34px));max-height:58vh}.trait-picker-grid{grid-template-rows:repeat(24,auto);grid-template-columns:repeat(2,minmax(0,1fr))}.trait-picker-choice{font-size:11px;gap:6px}}
 @media(max-width:430px){.trait-picker-menu{width:calc(100vw - 52px)}.trait-picker-grid{grid-auto-flow:row;grid-template-columns:1fr;grid-template-rows:none}}
+
+.trait-picker-choice.selected::after {
+  content: '✓';
+  margin-left: auto;
+  font-weight: 900;
+  color: #f3d58a;
+}
+
+#traitSelectedLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 170px;
+}
+
+.grouphead .filter-trait-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex: 0 0 32px;
+  padding: 4px;
+  border: 1px solid #4b5260;
+  background: #1b222a;
+  border-radius: 8px;
+}

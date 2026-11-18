@@ -12,7 +12,7 @@ SRC=ROOT/'src'
 TEMPLATE=(SRC/'template.html').read_text(encoding='utf-8')
 
 # The order is intentionally the original runtime order.
-STYLE_FILES=['base.css', 'traits.css', 'unlocks.css', 'builder.css']
+STYLE_FILES=['base.css', 'traits.css', 'unlocks.css', 'builder.css', 'theme.css']
 JS_FILES=['core.js','unlocks.js','units-and-filters.js','traits.js','builder.js']
 DATA_IDS={
  'unlockRules':'unlocks.json',

@@ -68,3 +68,38 @@ function groupLabel(k){if(ui.view==='cost')return k+' VÀNG';const [r,d]=k.split
 
 const unlockRules=JSON.parse($('unlockRules').textContent);
 const unlockSource='https://mobalytics.gg/tft/guides/set-19-unlockable-champions';
+
+const themeToggle = document.getElementById('themeToggle');
+
+try {
+  if (localStorage.getItem('tft-theme') === 'light') {
+    document.body.classList.remove('dark-mode');
+  }
+} catch (error) {
+  // Use the default theme if storage is unavailable.
+}
+
+function updateThemeButton() {
+  const dark = document.body.classList.contains('dark-mode');
+
+  themeToggle.textContent = dark
+    ? '☀️ Bật sáng'
+    : '🌙 Bật tối';
+}
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  const dark = document.body.classList.contains('dark-mode');
+
+  try {
+    localStorage.setItem(
+      'tft-theme',
+      dark ? 'dark' : 'light'
+    );
+  } catch (error) {}
+
+  updateThemeButton();
+});
+
+updateThemeButton();

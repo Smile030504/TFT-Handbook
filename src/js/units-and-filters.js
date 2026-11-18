@@ -2,7 +2,144 @@ function showCard(u){selectedUnit=u;const dg=$('details');$('dimage').src=imgs[u
 if(!dg.open)dg.showModal()}
 function card(u){const c=el('article','card'),p=el('div','pic'),im=el('img');im.src=imgs[u.id];im.alt=u.name;im.loading='lazy';p.append(im,el('span','cost',u.cost+' VÀNG'));if(u.locked){const lk=el('span','lock');lk.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> KHÓA';p.append(lk)}p.onclick=()=>showCard(u);
 const body=el('div','cardbody');body.append(el('h3','cardname',u.name),el('div','meta',roleVi[u.role]+' · '+(u.damage==='Magic'?'Phép':'Vật lý')));const tl=el('div','traitline');u.traits.forEach(t=>tl.append(traitChip(t)));body.append(tl);if(u.effects.length){const tags=el('div','tags');u.effects.forEach(k=>tags.append(effChip(k)));body.append(tags)}const acts=el('div','actions'),btn=el('button','smallbtn',u.locked?'🔒 XEM CÁCH MỞ KHÓA':'XEM KỸ NĂNG · TỘC/HỆ');btn.onclick=()=>showCard(u);acts.append(btn);body.append(acts);c.append(p,body);return c}
-function render(){const arr=roster.filter(matched);$('status').textContent='Đang hiển thị '+arr.length+' / 94 tướng'+(ui.locked?' · Chỉ tướng khóa':'');const grp=arr.reduce((acc,u)=>{const key=groupKey(u);(acc[key]??=[]).push(u);return acc},{});const keys=Object.keys(grp).sort((a,b)=>ui.view==='cost'?Number(a)-Number(b):roleOrder.indexOf(a.split('|')[0])-roleOrder.indexOf(b.split('|')[0])||a.localeCompare(b));$('board').replaceChildren();$('quicknav').replaceChildren();if(!arr.length){$('board').append(el('div','noresults','Không có tướng phù hợp. Hãy xóa bớt bộ lọc.'));return}keys.forEach((k,i)=>{const sec=el('section','group');sec.id='group-'+i;const header=el('div','grouphead');header.append(el('h2','',groupLabel(k)),el('small','',grp[k].length+' tướng'));sec.append(header);const grid=el('div','cards');grp[k].forEach(u=>grid.append(card(u)));sec.append(grid);$('board').append(sec);const a=el('a','',groupLabel(k)+' · '+grp[k].length);a.href='#group-'+i;$('quicknav').append(a)})}
+
+function render() {
+  // Lấy danh sách tướng đáp ứng các bộ lọc
+  const arr = roster.filter(matched);
+
+  // Cập nhật số lượng tướng
+  $('status').textContent =
+    'Đang hiển thị ' + arr.length + ' / ' +
+    roster.length + ' tướng' +
+    (ui.locked ? ' · Chỉ tướng khóa' : '');
+
+  // Xóa kết quả cũ trước khi render mới
+  $('board').replaceChildren();
+  $('quicknav').replaceChildren();
+
+  if (!arr.length) {
+    $('board').append(
+      el('div', 'noresults',
+        'Không có tướng phù hợp. Hãy xóa bớt bộ lọc.')
+    );
+    return;
+  }
+
+  // Hàm tạo một nhóm tướng
+  function appendGroup(name, members, index, traitName = null) {
+    const section = el('section', 'group');
+    section.id = 'group-' + index;
+
+    const header = el('div', 'grouphead');
+
+    // Nếu là nhóm Tộc/Hệ thì hiển thị icon của hệ
+    if (traitName) {
+      const icon = el('img', 'filter-trait-icon');
+
+      icon.src = traitIcons[traitName] || iconURL(traitName);
+      icon.alt = '';
+
+      icon.onerror = () => {
+        icon.hidden = true;
+      };
+
+      header.append(icon);
+    }
+
+    header.append(
+      el('h2', '', name),
+      el('small', '', members.length + ' tướng')
+    );
+
+    section.append(header);
+
+    // Tạo danh sách card tướng
+    if (members.length) {
+      const grid = el('div', 'cards');
+
+      members.forEach(unit => {
+        grid.append(card(unit));
+      });
+
+      section.append(grid);
+    } else {
+      section.append(
+        el('div', 'noresults',
+          'Không có tướng phù hợp với các bộ lọc còn lại.')
+      );
+    }
+
+    $('board').append(section);
+
+    // Tạo thanh điều hướng nhóm
+    const link = el('a', '',
+      name + ' · ' + members.length);
+
+    link.href = '#group-' + index;
+    $('quicknav').append(link);
+  }
+
+  // Nếu người chơi đang chọn Tộc/Hệ
+  if (ui.traits.length > 0) {
+    ui.traits.forEach((trait, index) => {
+
+      const members = arr
+        .filter(unit => unit.traits.includes(trait))
+        .sort((a, b) =>
+          a.cost - b.cost ||
+          a.name.localeCompare(b.name, 'vi')
+        );
+
+      appendGroup(trait, members, index, trait);
+    });
+
+    return;
+  }
+
+  // Nếu không chọn Tộc/Hệ:
+  // giữ nguyên cách nhóm theo giá hoặc vai trò
+  const groups = arr.reduce((result, unit) => {
+    const key = groupKey(unit);
+
+    (result[key] ??= []).push(unit);
+    return result;
+  }, {});
+
+  const keys = Object.keys(groups).sort((a, b) =>
+    ui.view === 'cost'
+      ? Number(a) - Number(b)
+      : roleOrder.indexOf(a.split('|')[0]) -
+          roleOrder.indexOf(b.split('|')[0]) ||
+        a.localeCompare(b)
+  );
+
+  keys.forEach((key, index) => {
+    appendGroup(
+      groupLabel(key),
+      groups[key],
+      index
+    );
+  });
+}
 function setFilter(selector,field){document.querySelectorAll(selector).forEach(b=>b.addEventListener('click',()=>{ui[field]=b.dataset[field];document.querySelectorAll(selector).forEach(x=>x.classList.toggle('active',x===b));render()}))}
 setFilter('[data-effect]','effect');$('onlyLocked').onchange=e=>{ui.locked=e.target.checked;render()};$('search').oninput=e=>{ui.search=e.target.value.trim().toLowerCase();render()};$('byCost').onclick=()=>{ui.view='cost';$('byCost').classList.add('primary');$('byRole').classList.remove('primary');render()};$('byRole').onclick=()=>{ui.view='role';$('byRole').classList.add('primary');$('byCost').classList.remove('primary');render()};$('quiz').onclick=()=>{ui.quiz=!ui.quiz;document.body.classList.toggle('quiz',ui.quiz);$('quiz').classList.toggle('active',ui.quiz);$('quiz').textContent=ui.quiz?'HIỆN TÊN':'ẨN TÊN ĐỂ HỌC'};
-$('reset').onclick=()=>{ui.effect=ui.trait='all';ui.locked=false;ui.search='';setTraitFilter('all');$('onlyLocked').checked=false;$('search').value='';document.querySelectorAll('[data-effect]').forEach(b=>b.classList.toggle('active',b.dataset.effect==='all'));render()};$('close').onclick=$('done').onclick=()=>$('details').close();$('details').onclick=e=>{if(e.target===$('details'))$('details').close()};
+
+$('reset').onclick = () => {
+  ui.effect = 'all';
+  ui.locked = false;
+  ui.search = '';
+
+  clearTraitFilters();
+
+  $('onlyLocked').checked = false;
+  $('search').value = '';
+
+  document.querySelectorAll('[data-effect]').forEach(button => {
+    button.classList.toggle(
+      'active',
+      button.dataset.effect === 'all'
+    );
+  });
+
+  render();
+};$('close').onclick=$('done').onclick=()=>$('details').close();$('details').onclick=e=>{if(e.target===$('details'))$('details').close()};

@@ -49,3 +49,31 @@
 .trait-picker-icon img{width:22px;height:22px;object-fit:contain}
 @media(max-width:700px){.trait-picker-menu{width:min(530px,calc(100vw - 34px));max-height:58vh}.trait-picker-grid{grid-template-rows:repeat(24,auto);grid-template-columns:repeat(2,minmax(0,1fr))}.trait-picker-choice{font-size:11px;gap:6px}}
 @media(max-width:430px){.trait-picker-menu{width:calc(100vw - 52px)}.trait-picker-grid{grid-auto-flow:row;grid-template-columns:1fr;grid-template-rows:none}}
+
+/* Đánh dấu những tộc/hệ đã chọn */
+.trait-picker-choice.selected::after {
+  content: '✓';
+  margin-left: auto;
+  font-weight: 900;
+  color: #f3d58a;
+}
+
+/* Không để tên tộc/hệ quá dài làm hỏng nút */
+#traitSelectedLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 170px;
+}
+
+/* Icon tộc/hệ trong tiêu đề nhóm tướng */
+.grouphead .filter-trait-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex: 0 0 32px;
+  padding: 4px;
+  border: 1px solid #4b5260;
+  background: #1b222a;
+  border-radius: 8px;
+}

@@ -68,3 +68,7 @@ Lưu ý: Vercel có thể tạo một **Preview Deployment** cho nhánh `dev`; b
 - https://mobalytics.gg/tft/set19/unlocks
 
 Mùa 19 có thể có điều chỉnh sau PBE; dữ liệu trong file là snapshot từ lần cập nhật trước.
+
+## Bản này
+
+Đã bỏ toàn bộ mục gợi ý trang bị và bộ lọc Shojin/Bùa Xanh/Cuồng Đao. Các điều kiện mở khóa liên quan đến số trang bị vẫn được giữ nguyên vì đó là cơ chế mở khóa tướng.

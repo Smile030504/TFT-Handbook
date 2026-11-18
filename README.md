@@ -8,6 +8,7 @@ Website HTML/CSS/JavaScript thuần. Mở `index.html` bằng Chrome hoặc Edge
 - **TỘC / HỆ:** tra cứu 47 tộc/hệ. Ở tab Tướng, nhấn nút lọc **Tất cả tộc/hệ** để chọn từ bảng icon nhiều cột.
 - **TẠO ĐỘI HÌNH:** bấm icon trong **Kho tướng** để thêm. Bấm **×** trên thẻ tướng để xóa. Bấm một thẻ đã chọn để xem gợi ý tướng chung tộc/hệ, bấm lần nữa để trở lại gợi ý cho cả đội.
 - Dùng nút **− / +** ở phần *Giới hạn* để chỉnh số suất (1–15, mặc định 10). Không thể giảm xuống ít hơn số suất đang sử dụng. Baron Nashor tính **2 suất**.
+- Bấm một tộc/hệ ở **Tộc / hệ trong đội** để mở icon các tướng thuộc hệ đó; bấm icon để thêm ngay. Tướng đã chọn có dấu ✓. Màu khung đổi theo mốc kích hoạt (Đồng, Bạc, Vàng, Kim Cương). K/DA cần số sao nên không suy ra mốc chỉ bằng số tướng.
 - Icon mờ vẫn có thể chọn. Tướng độc lập luôn sáng; Mordekaiser **không** được xem là độc lập vì chung Pentakill với các tướng khác. Baron chỉ sáng khi có Malzahar trong đội, **không có nghĩa là đã hoàn thành điều kiện mở khóa Baron**.
 - Đội hình tự lưu trên trình duyệt hiện tại qua `localStorage`. Nút **XÓA ĐỘI HÌNH** xóa ngay toàn bộ tướng đã chọn (không có hộp xác nhận); không đổi giới hạn suất.
 

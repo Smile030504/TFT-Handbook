@@ -1,5 +1,3 @@
-// Tạo đội hình: chỉ lưu danh sách tướng, không mô phỏng vị trí đứng.
-// Các hằng số được đặt ở đây để dễ thay đổi khi bạn muốn bổ sung tính năng.
 const TEAM_DEFAULT_CAPACITY=10;
 const TEAM_MIN_CAPACITY=1;
 const TEAM_MAX_CAPACITY=15;
@@ -10,9 +8,8 @@ const teamById=new Map(roster.map(u=>[u.id,u]));
 const traitMembers=new Map(list.map(trait=>[
   trait,new Set(roster.filter(u=>u.traits.includes(trait)).map(u=>u.id))
 ]));
-const teamState={capacity:TEAM_DEFAULT_CAPACITY,ids:[],focus:null,search:'',cost:'all'};
+const teamState={capacity:TEAM_DEFAULT_CAPACITY,ids:[],focus:null,search:'',cost:'all',openTraits:new Set()};
 
-// Khi người dùng quay lại trang, tự khôi phục đội hình đã tạo trên thiết bị này.
 try{
   const saved=JSON.parse(localStorage.getItem(TEAM_STORAGE_KEY)||'null');
   if(saved&&typeof saved==='object'){
@@ -34,8 +31,6 @@ function teamSave(){try{localStorage.setItem(TEAM_STORAGE_KEY,JSON.stringify({ca
 function teamHasMalzahar(){return teamState.ids.includes(TEAM_MALZAHAR)}
 function teamMessage(message){$('builderNotice').textContent=message}
 
-// Nếu không có tướng nào khác cùng một tộc/hệ, icon đó luôn được làm sáng.
-// Mordekaiser không thuộc nhóm này: các tướng Pentakill khác cũng có trait Pentakill.
 function teamIndependent(unit){
   return unit.id!==TEAM_BARON&&unit.traits.every(t=>(traitMembers.get(t)?.size||0)<=1);
 }
@@ -48,7 +43,6 @@ function teamReferences(){
   return teamUnits();
 }
 function teamHint(unit){
-  // Malzahar chỉ làm sáng Baron; không tự xác nhận Baron đã được mở khóa.
   if(unit.id===TEAM_BARON)return teamHasMalzahar()
     ?{kind:'related',why:'Đã có Malzahar. Muốn mở khóa Baron vẫn phải hoàn thành các điều kiện khác.'}
     :{kind:'muted',why:'Thêm Malzahar để làm sáng Baron Nashor.'};
@@ -114,7 +108,6 @@ function renderBuilderLineup(){
     remove.setAttribute('aria-label','Xóa '+unit.name+' khỏi đội hình');remove.onclick=()=>teamRemove(unit.id);
     card.append(button,remove);board.append(card);
   }
-  // Ô trống chỉ biểu thị các suất còn lại, không có ý nghĩa vị trí trên bàn cờ.
   for(let i=0;i<teamState.capacity-used;i++){
     const empty=el('div','builder-member builder-member-empty');
     empty.append(el('span','builder-empty-plus','+'));
@@ -152,6 +145,18 @@ function renderBuilderPool(){
     button.onclick=()=>teamAdd(unit);pool.append(button);
   }
 }
+function teamTraitTier(name,trait,count){
+  if(trait.kind==='solo')return {style:'unique',label:'ĐỘC NHẤT'};
+  if(name==='K/DA')return {style:'special',label:'THEO CẤP SAO'};
+  const milestones=String(trait.levels||'').split('/').map(x=>x.trim())
+    .filter(x=>/^\d+$/.test(x)).map(Number);
+  const reached=milestones.filter(x=>count>=x).length;
+  if(!reached)return {style:'inactive',label:'CHƯA KÍCH'};
+  const tiers=['bronze','silver','gold','prismatic'];
+  const labels=['ĐỒNG','BẠC','VÀNG','KIM CƯƠNG'];
+  const index=Math.min(reached-1,tiers.length-1);
+  return {style:tiers[index],label:labels[index]};
+}
 function renderBuilderSynergies(){
   const panel=$('builderSynergies');panel.replaceChildren();
   const team=teamUnits();
@@ -163,16 +168,57 @@ function renderBuilderSynergies(){
   }
   const entries=[...counts].sort((a,b)=>b[1].size-a[1].size||a[0].localeCompare(b[0]));
   for(const [name,ids] of entries){
-    const trait=traitInfo[name],count=ids.size;
-    const row=el('div','builder-synergy');
+    const trait=traitInfo[name];
+    if(!trait)continue;
+    const count=ids.size,tier=teamTraitTier(name,trait,count);
+    const isOpen=teamState.openTraits.has(name);
+    const row=el('section','builder-synergy tier-'+tier.style+(isOpen?' is-open':''));
+    const toggle=el('button','builder-synergy-toggle');toggle.type='button';
+    toggle.setAttribute('aria-expanded',String(isOpen));
+    toggle.setAttribute('aria-label',(isOpen?'Thu gọn':'Xem')+' tướng thuộc '+name);
     const badge=el('span','builder-synergy-icon');const image=el('img');
     image.src=traitIcons[name]||iconURL(name);image.alt='';image.loading='lazy';badge.append(image);
-    const info=el('div','builder-synergy-info'),header=el('div','builder-synergy-head');
+    const info=el('span','builder-synergy-info'),header=el('span','builder-synergy-head');
     header.append(el('strong','',name),el('b','',String(count)));
-    info.append(header,el('div','builder-synergy-levels',trait.kind==='solo'?'Độc nhất · '+trait.levels:'Mốc: '+(trait.levels||'–')));
-    row.append(badge,info);panel.append(row);
+    const levels=trait.kind==='solo'?'Độc nhất':name==='K/DA'?'Mốc sao: '+trait.levels:'Mốc: '+(trait.levels||'–');
+    info.append(header,el('span','builder-synergy-levels',levels));
+    const side=el('span','builder-synergy-side');
+    side.append(el('span','builder-synergy-tier',tier.label),el('span','builder-synergy-chevron',isOpen?'⌃':'⌄'));
+    toggle.append(badge,info,side);
+    toggle.onclick=()=>{
+      if(teamState.openTraits.has(name))teamState.openTraits.delete(name);
+      else teamState.openTraits.add(name);
+      renderBuilderSynergies();
+    };
+    row.append(toggle);
+    if(isOpen){
+      const expanded=el('div','builder-trait-choices');
+      expanded.setAttribute('aria-label','Các tướng thuộc '+name);
+      const members=[...(traitMembers.get(name)||[])].map(id=>teamById.get(id)).filter(Boolean)
+        .sort((a,b)=>Number(teamState.ids.includes(b.id))-Number(teamState.ids.includes(a.id))
+          ||a.cost-b.cost||a.name.localeCompare(b.name));
+      for(const unit of members){
+        const chosen=teamState.ids.includes(unit.id);
+        const button=el('button','builder-trait-choice cost-'+unit.cost+(chosen?' is-chosen':''));
+        button.type='button';
+        button.title=unit.name+' · '+unit.cost+' vàng'+(chosen?' · Đã trong đội':' · Bấm để thêm');
+        button.setAttribute('aria-label',(chosen?'Đã chọn, xem gợi ý ':'Thêm ')+unit.name);
+        button.dataset.unitId=unit.id;
+        const photo=el('span','builder-trait-portrait');
+        const portrait=el('img');portrait.src=imgs[unit.id];portrait.alt='';portrait.loading='lazy';
+        photo.append(portrait);
+        if(chosen)photo.append(el('span','builder-trait-chosen','✓'));
+        if(unit.id===TEAM_BARON&&!chosen)photo.append(el('span','builder-trait-chosen','2'));
+        button.append(photo,el('span','builder-trait-name',unit.name));
+        button.onclick=()=>teamAdd(unit);
+        expanded.append(button);
+      }
+      row.append(expanded);
+    }
+    panel.append(row);
   }
 }
+
 function renderBuilder(){renderBuilderLineup();renderBuilderPool();renderBuilderSynergies()}
 
 $('builderMinus').onclick=()=>teamSetCapacity(-1);

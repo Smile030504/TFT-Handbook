@@ -234,3 +234,25 @@ body.dark-mode .builder-synergy.tier-special {
   --synergy-text: #c9b7ef;
   --synergy-soft: #41364f;
 }
+
+body.dark-mode .major-tab .tab-number {
+  background: #41404f;
+  color: #e9e5ff;
+  font-weight: 900;
+}
+
+body.dark-mode .major-tab.active .tab-number {
+  background: #7660c5;
+  color: #ffffff;
+}
+
+/* Số lượng trên các tab - Light Mode */
+body:not(.dark-mode) .major-tab .tab-number {
+  background: #e6dfff;
+  color: #44358e;
+}
+
+body:not(.dark-mode) .major-tab.active .tab-number {
+  background: #5543a5;
+  color: #ffffff;
+}

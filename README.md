@@ -19,7 +19,6 @@ TFT-Handbook-Refactored/
 │   │   ├── units-and-filters.js # Thẻ tướng, bộ lọc, popup kỹ năng
 │   │   ├── unlocks.js          # Sơ đồ mở khóa
 │   │   ├── traits.js           # Tab tộc/hệ, icon
-│   │   └── save.js             # Xuất bản HTML có tùy chỉnh
 │   ├── data/
 │   │   ├── champions.json      # 94 tướng: giá, vai trò, tộc/hệ, hiệu ứng
 │   │   ├── skills.json         # 94 kỹ năng tóm tắt
@@ -71,4 +70,7 @@ Mùa 19 có thể có điều chỉnh sau PBE; dữ liệu trong file là snapsh
 
 ## Bản này
 
-Đã bỏ toàn bộ mục gợi ý trang bị và bộ lọc Shojin/Bùa Xanh/Cuồng Đao. Các điều kiện mở khóa liên quan đến số trang bị vẫn được giữ nguyên vì đó là cơ chế mở khóa tướng.
+Bản dành cho người chơi, đã bỏ các công cụ quản trị trên giao diện: nút lưu file, nút xuất PDF, nút dán icon và liên kết chỉnh icon. Không còn bộ lọc hay gợi ý trang bị. **Điều kiện mở khóa liên quan tới trang bị vẫn giữ lại** vì là luật của mùa.
+
+Tất cả dữ liệu ảnh và icon đã được đóng gói trong `index.html` khi chạy `python build.py`. Khi sửa code, hãy sửa trong thư mục `src/` rồi build lại.
+

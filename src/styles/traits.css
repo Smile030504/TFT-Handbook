@@ -69,3 +69,108 @@
   background: #1b222a;
   border-radius: 8px;
 }
+
+
+/* ==== TFT Rewards; scoped styles ==== */
+#rewardsPage{color-scheme:dark;--bg:#14161b;--panel:#22252d;--panel2:#292c37;--line:#414657;--fg:#eef0f8;--muted:#a7acc1;--violet:#7457c8;--icon:48px;--pad:10px;--gap:10px}
+#rewardsPage, #rewardsPage *{box-sizing:border-box}
+#rewardsPage button, #rewardsPage input, #rewardsPage select{font:inherit}
+#rewardsPage button{cursor:pointer}
+#rewardsPage button:focus-visible, #rewardsPage input:focus-visible, #rewardsPage select:focus-visible{outline:2px solid #a992ff;outline-offset:2px}
+#rewardsPage .wrap{max-width:1320px;padding:20px 20px 70px;margin:auto}
+#rewardsPage .hero{background:linear-gradient(125deg,#202644,#4d3793);border-radius:17px;padding:22px 26px 20px}
+#rewardsPage .eyebrow{font-size:10px;letter-spacing:.12em;font-weight:900;color:#d9ccff}
+#rewardsPage .hero h1{font-size:clamp(24px,3vw,32px);margin:7px 0 6px;letter-spacing:.01em}
+#rewardsPage .hero p{margin:0;font-size:12px;color:#e5dcff}
+#rewardsPage .tabshell{position:sticky;top:0;z-index:25;margin:14px 0 16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#1d2029f7;backdrop-filter:blur(12px);box-shadow:0 5px 17px #0006}
+#rewardsPage .tabs{display:flex;align-items:center;gap:7px;overflow-x:auto;padding:1px 0 3px;scrollbar-width:thin}
+#rewardsPage .tab{flex:0 0 auto;padding:9px 13px;color:#dce0f2;background:#2b2e3a;border:1px solid #484a5e;font-size:12px;font-weight:850;border-radius:8px}
+#rewardsPage .tab.active{background:var(--violet);border-color:#a18dea;color:white}
+#rewardsPage .searchrow{display:flex;align-items:center;gap:9px;margin-top:8px}
+#rewardsPage .search{flex:1;min-width:0;max-width:460px;padding:9px 12px;color:#f8f8fd;background:#282b36;border:1px solid #484d60;border-radius:9px;font-size:12px}
+#rewardsPage .sectionhead{display:flex;align-items:center;gap:11px;margin:9px 0 15px}
+#rewardsPage .sectionicon{width:45px;height:45px;border-radius:10px;background:#373056;border:1px solid #66568d;display:grid;place-items:center;font-size:23px;flex:0 0 45px;position:relative;overflow:hidden}
+#rewardsPage .sectionicon img{width:85%;height:85%;object-fit:contain}
+#rewardsPage .sectionhead h2{font-size:20px;margin:0;line-height:1.2}
+#rewardsPage .sectionhead p{margin:4px 0 0;color:#b1b5c7;font-size:11px}
+#rewardsPage .columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);align-items:start;position:relative}
+#rewardsPage .column{display:grid;align-content:start;gap:var(--gap);min-width:0}
+#rewardsPage .card{border:1px solid var(--line);border-radius:11px;background:var(--panel);overflow:hidden;min-width:0}
+#rewardsPage .milestone{display:grid;grid-template-columns:90px minmax(0,1fr);min-height:73px}
+#rewardsPage .milestone .number{font-size:12px;font-weight:950;display:flex;align-items:center;padding:var(--pad);border-right:1px solid var(--line);background:#282b38}
+#rewardsPage .content{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:var(--pad);min-width:0}
+#rewardsPage .poollist{width:100%;display:grid;gap:8px}
+#rewardsPage .pool{width:100%;padding:9px 10px;border-radius:8px;border:1px solid #3e4458;background:#1c202c}
+#rewardsPage .pool strong{display:block;margin:0 0 8px;color:#d8c8ff;font-size:11px}
+#rewardsPage .poolitems{display:flex;flex-wrap:wrap;gap:8px}
+#rewardsPage .reward{position:relative;display:flex;flex:0 0 80px;align-items:center;flex-direction:column;gap:5px;text-align:center;min-width:0;max-width:100%}
+#rewardsPage .iconbox{position:relative;width:var(--icon);height:var(--icon);flex:0 0 var(--icon);border:1px solid #696880;background:linear-gradient(120deg,#36344a,#272938);border-radius:8px;display:grid;place-items:center;overflow:visible}
+#rewardsPage .iconbox.champion{border-width:2px}
+#rewardsPage .iconbox.trait{border-color:#967ed2;background:#2e274b}
+#rewardsPage .iconbox.item.gold{border-color:#aa8535;background:linear-gradient(140deg,#5a4624,#292518)}
+#rewardsPage .iconbox img{width:100%;height:100%;display:block;border-radius:6px;object-fit:contain}
+#rewardsPage .iconbox.champion img{object-fit:cover;object-position:90% center}
+#rewardsPage .iconbox .glyph{display:none !important}
+#rewardsPage .iconbox .glyph.gold{color:#ffd27a}
+#rewardsPage .qty{position:absolute;top:-7px;right:-8px;z-index:3;line-height:1;background:#33264e;color:white;border:1px solid #b29de3;border-radius:5px;padding:3px 4px;font-weight:950;font-size:10px}
+#rewardsPage .caption{font-size:10px;line-height:1.3;font-weight:750;overflow-wrap:anywhere;color:#e7e9f5;white-space:pre-line}
+#rewardsPage .cashout .cashhead{padding:11px 12px;background:#30323d;border-bottom:1px solid #484c5d;display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap}
+#rewardsPage .cashhead strong{font-size:12px}
+#rewardsPage .cashhead small{font-size:10px;color:#b6b9cc}
+#rewardsPage .outcome{display:grid;grid-template-columns:52px 1fr;border-bottom:1px solid #414657}
+#rewardsPage .outcome:last-child{border-bottom:0}
+#rewardsPage .chance{padding:var(--pad);font-size:12px;font-weight:900;display:flex;align-items:center}
+#rewardsPage .outcome .content{min-height:64px}
+#rewardsPage .alert{border:1px solid #6d5b9c;background:#2c2740;padding:13px 16px;border-radius:12px;margin:0 0 14px}
+#rewardsPage .alert strong{font-size:13px}
+#rewardsPage .alert p{margin:5px 0 0;color:#e4d9f8;font-size:12px;line-height:1.55}
+#rewardsPage .charmgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#rewardsPage .charmcard{display:flex;align-items:center;gap:11px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:14px;min-width:0}
+#rewardsPage .charmcard h3{font-size:12px;margin:0 0 4px}
+#rewardsPage .charmcard p{font-size:12px;color:#d0cde5;margin:0}
+#rewardsPage .subhead{font-size:13px;font-weight:900;margin:18px 0 11px}
+#rewardsPage .specialcard{padding:13px}
+#rewardsPage .specialcard h3{font-size:13px;margin:0 0 5px;color:#dbcbff}
+#rewardsPage .specialcard p{font-size:11px;color:#c6c9d7;margin:0 0 10px}
+#rewardsPage .specialcard .extra{font-size:11px;font-weight:800;color:#f0d8a5;margin-bottom:8px}
+#rewardsPage .empty{padding:34px 14px;text-align:center;border:1px dashed #4c4c60;border-radius:12px;color:#b4b5c6}
+#rewardsPage .muted{color:#acb0c1}
+#rewardsPage .noimage{font-size:11px}
+#rewardsPage .foot{margin-top:25px;border-top:1px solid #3a4050;color:#8f97ad;padding:12px 3px;font-size:11px}
+#rewardsPage .measure{position:absolute;visibility:hidden;pointer-events:none;left:-9999px;top:0;display:block}
+#rewardsPage .measure>.card{margin-bottom:var(--gap)}
+@media (max-width:780px){#rewardsPage .wrap{padding:12px 9px 50px}}
+#rewardsPage .columns{grid-template-columns:1fr}
+#rewardsPage .milestone{grid-template-columns:80px 1fr}
+#rewardsPage .charmgrid{grid-template-columns:1fr}
+#rewardsPage .hero{padding:19px 16px}
+#rewardsPage .tabshell{top:0;margin:9px 0 13px}
+#rewardsPage .reward{flex-basis:70px}
+#rewardsPage .sectionhead h2{font-size:18px}
+#rewardsPage .cashhead small{font-size:9px}
+#rewardsPage .ionic-gold-strip{border:1px solid var(--line);background:var(--panel);border-radius:11px;padding:11px 15px 14px;margin-bottom:11px}
+#rewardsPage .ionic-gold-title{display:block;font-size:12px;margin-bottom:11px;color:#e5e4f3}
+#rewardsPage .ionic-gold-line{display:flex;align-items:center;gap:14px;min-height:77px}
+#rewardsPage .ionic-gold-line .reward{flex-basis:80px}
+#rewardsPage .ionic-plus{font-size:34px;line-height:1;font-weight:800;color:#c5b0fa;align-self:center;margin-bottom:17px}
+#rewardsPage .ionic-charm-heading{font-size:12px;font-weight:900;color:#ddd0ff;margin:4px 0 9px}
+#rewardsPage .ionic-choice-grid.charmgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+#rewardsPage .ionic-choice-grid .charmcard{flex-direction:column;justify-content:flex-start;gap:7px;text-align:center;min-width:0;padding:13px 8px}
+#rewardsPage .ionic-choice-grid .charmcard .reward{flex:0 0 auto;width:80px}
+#rewardsPage .ionic-choice-grid .charmcard .reward .caption{display:none}
+#rewardsPage .ionic-choice-grid .charmcard .ionic-charm-info{min-width:0}
+#rewardsPage .ionic-choice-grid .charmcard h3{overflow-wrap:anywhere}
+@media (max-width:700px){#rewardsPage .ionic-choice-grid.charmgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* TFT Handbook rewards integration */
+#rewardsPage{display:block; color-scheme:dark; background:#14161b; color:#eef0f8; border-radius:16px; padding:1px 13px 18px; margin:12px 0 26px; --bg:#14161b;--panel:#22252d;--panel2:#292c37;--line:#414657;--fg:#eef0f8;--muted:#a7acc1;--violet:#7457c8;--icon:48px;--pad:10px;--gap:10px}
+#rewardsPage[hidden]{display:none!important}
+#rewardsPage .reward-app{max-width:100%;margin:0;padding:12px 0 24px;font:13px/1.48 Inter,"Segoe UI",system-ui,sans-serif}
+#rewardsPage .reward-app :is(button,input,select){font:inherit}
+#rewardsPage .reward-app button{cursor:pointer}
+#rewardsPage .reward-row-major{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);align-items:stretch}
+#rewardsPage .reward-row-major>.card{min-width:0;width:100%;height:100%;margin:0;transition:none}
+#rewardsPage .reward-row-major>.card:hover{transform:none;box-shadow:none}
+#rewardsPage .reward-row-major .reward{flex-basis:80px}
+#rewardsPage .iconbox .glyph{display:none!important}
+#rewardsPage .reward-app :is(.number,.caption,.cashhead,.tab,.qty,.chance){color:inherit}
+@media(max-width:780px){#rewardsPage{padding:1px 8px 14px}#rewardsPage .reward-row-major{grid-template-columns:1fr}}

@@ -13,9 +13,9 @@ const iconURL=(name)=>'https://ap.tft.tools/static/trait-icons/99da_19_'+traitIn
 const fallbackIcon=(name)=>{const t=name.split(/\s+/).map(s=>s[0]||'').slice(0,2).join('').toLocaleUpperCase('vi');return t.length>3?t.slice(0,3):t};
 function traitImg(name){const frame=el('span','trait-icon'),img=el('img');img.alt='Icon '+name;img.loading='lazy';let fall=el('span','trait-icon-fallback',fallbackIcon(name));frame.append(fall);img.src=traitIcons[name]||iconURL(name);img.onload=()=>{fall.hidden=true};img.onerror=()=>{img.hidden=true;fall.hidden=false};frame.append(img);return frame}
 function switchTab(tab){
-  if(!['units','traits','rewards','builder'].includes(tab))return;
+  if(!['units','traits','rewards','collab','builder'].includes(tab))return;
   ui.tab=tab;
-  ['units','traits','rewards','builder'].forEach(name=>{
+  ['units','traits','rewards','collab','builder'].forEach(name=>{
     const button=$('tab-'+name);
     button.classList.toggle('active',name===tab);
     button.setAttribute('aria-pressed',String(name===tab));
@@ -24,9 +24,11 @@ function switchTab(tab){
   $('traitsPage').hidden=tab!=='traits';
   $('builderPage').hidden=tab!=='builder';
   $('rewardsPage').hidden=tab!=='rewards';
+  $('collabPage').hidden=tab!=='collab';
   closeTraitPicker();
   if(tab!=='traits'&&$('traitDialog').open)$('traitDialog').close();
   if(tab==='rewards'){ if(window.tftRewardRender)window.tftRewardRender(); }
+  else if(tab==='collab'){if(window.tftCollabRender)window.tftCollabRender();}
   else if(tab==='traits')renderTraits();
   else if(tab==='builder')renderBuilder();
   else render();
@@ -36,6 +38,7 @@ $('tab-units').onclick=()=>switchTab('units');
 $('tab-traits').onclick=()=>switchTab('traits');
 $('tab-builder').onclick=()=>switchTab('builder');
 $('tab-rewards').onclick=()=>switchTab('rewards');
+$('tab-collab').onclick=()=>switchTab('collab');
 
 
 const picker=$('traitPicker'),pickerMenu=$('traitMenu'),pickerGrid=$('traitPickerGrid');
@@ -285,5 +288,87 @@ updateThemeButton();
   $('tabs').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(!b)return;current=b.dataset.tab;app.querySelectorAll('[data-tab]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});$('search').value='';query='';render();window.scrollTo({top:0,behavior:'instant'})});
   $('search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();rerender()});
   window.tftRewardRender=render; window.addEventListener('resize',()=>{if(!$('app').closest('#rewardsPage').hidden)rerender()});render();
+})();
+
+
+
+// ==== TFT Collab 40 groups · approved multi-select filter ====
+
+(() => {
+const root=document.getElementById('collabPage');
+const data=JSON.parse(document.getElementById('collabData').textContent);
+const unitsById=new Map(roster.map(u=>[u.id,u]));
+for(const group of data.groups){for(const champion of group.champions){const unit=unitsById.get(champion.id);if(unit){champion.name=unit.name;champion.cost=unit.cost;}champion.image=imgs[champion.id]||champion.image;}}
+const $=id=>root.querySelector('#collab-'+id), results=$('results');
+const color={1:'#afb3c0',2:'#46bf9a',3:'#55afe9',4:'#bb83ef',5:'#e6b755',7:'#e78659'};
+const selected=new Set();let cost='all', query='', championQuery='';
+function matches(group){
+ const names=group.champions.map(c=>c.name.toLowerCase());
+ const byName=!query||String(group.group)===query.replace(/^nh[oó]m\s*/,'')||names.some(n=>n.includes(query));
+ const byCost=cost==='all'||group.champions.some(c=>String(c.cost)===cost);
+ const bySelected=[...selected].every(n=>group.champions.some(c=>c.name===n));
+ return byName&&byCost&&bySelected;
+}
+function btn(champion,asFilter=false,groupCount=0){
+ const b=document.createElement('button');b.className='unit';b.type='button';b.title='Bấm để tìm nhóm có '+champion.name;b.dataset.name=champion.name;if(asFilter)b.classList.add('filter-unit');
+ const price=champion.cost;b.style.setProperty('--costcolor',color[price]||'#eee');
+ if(selected.has(champion.name))b.classList.add('chosen');
+ if(!asFilter&&cost!=='all'&&String(price)!==cost)b.classList.add('dim');
+ if(!asFilter&&query&&!champion.name.toLowerCase().includes(query))b.classList.add('dim');
+ const p=document.createElement('span');p.className='portrait';
+ const short=document.createElement('span');short.className='fallback';short.textContent=champion.name.replace(/[^\p{L}\s]/gu,'').split(/\s+/).filter(Boolean).map(x=>x[0]).slice(0,2).join('').toUpperCase();
+ p.append(short);
+ // Các URL chỉ được đọc từ champion-images.json, không tạo kho icon riêng
+ if(champion.image){const path=champion.image;const candidates=[path,'src/'+path];const im=new Image();let i=0;im.alt=champion.name;im.loading='lazy';im.onerror=()=>{i++;if(i<candidates.length){im.src=candidates[i]}else{im.remove()}};im.onload=()=>{short.style.display='none'};im.src=candidates[0];p.append(im)}
+ const n=document.createElement('span');n.className='price';n.textContent=price;p.append(n);
+ const label=document.createElement('span');label.className='unit-name';label.textContent=champion.name;b.append(p,label);
+ if(asFilter){const count=document.createElement('span');count.className='filter-groupcount';count.textContent=groupCount+' nhóm';b.append(count);b.title=champion.name+' · Có trong '+groupCount+' nhóm đang hiển thị · Bấm để '+(selected.has(champion.name)?'bỏ chọn':'chọn')}
+ b.addEventListener('click',()=>{if(selected.has(champion.name))selected.delete(champion.name);else selected.add(champion.name);render()});
+ return b;
+}
+function renderChampionFilter(found){
+ const area=$('championFilterPeople'),summary=$('filterSummary');
+ const options=new Map();
+ for(const group of found){for(const c of group.champions){
+   if(!options.has(c.name))options.set(c.name,{champion:c,count:0});
+   options.get(c.name).count++;
+ }}
+ summary.textContent=options.size+' tướng · '+found.length+' nhóm';
+ area.replaceChildren();
+ const listed=[...options.values()].sort((a,b)=>a.champion.cost-b.champion.cost||a.champion.name.localeCompare(b.champion.name,'vi'));
+ const visible=listed.filter(v=>!championQuery||v.champion.name.toLowerCase().includes(championQuery));
+ const frag=document.createDocumentFragment();
+ for(const v of visible)frag.append(btn(v.champion,true,v.count));
+ if(!visible.length){
+   const empty=document.createElement('div');empty.className='filter-nochoices';
+   empty.textContent=found.length?'Không có tướng trùng từ khóa trong các nhóm hiện tại.':'Không còn nhóm chung. Bỏ bớt tướng đã chọn hoặc xóa lọc để thử lại.';
+   frag.append(empty);
+ }
+ area.append(frag);
+}
+function render(){
+ const found=data.groups.filter(matches);
+ renderChampionFilter(found);$('counter').textContent=found.length+' / 40 nhóm';
+ results.replaceChildren();const fragment=document.createDocumentFragment();
+ found.forEach(g=>{
+   const article=document.createElement('article');article.className='group';if(selected.size)article.classList.add('match');
+   const head=document.createElement('div');head.className='grouphead';
+   const h=document.createElement('h2');h.textContent='NHÓM '+String(g.group).padStart(2,'0');
+   const small=document.createElement('small');small.textContent=g.champions.length+' tướng';head.append(h,small);
+   const people=document.createElement('div');people.className='people';g.champions.forEach(c=>people.append(btn(c)));
+   article.append(head,people);fragment.append(article)
+ });
+ if(!found.length){const e=document.createElement('div');e.className='empty';const b=document.createElement('strong');b.textContent=cost==='7'?'Không có nhóm giá 7 vàng':'Không tìm thấy nhóm Collab';const n=document.createElement('span');n.textContent=cost==='7'?'Trong dữ liệu 40 nhóm hiện tại, không có tướng 7 vàng. Sona 7 vàng là thành viên riêng.':'Thử bỏ bớt tướng đã chọn hoặc xóa bộ lọc.';e.append(b,n);fragment.append(e)}
+ results.append(fragment);
+ const pane=$('selected');pane.hidden=!selected.size;const chips=$('selectedChips');chips.replaceChildren();[...selected].forEach(n=>{const b=document.createElement('button');b.className='selected-chip';b.textContent=n+' ×';b.addEventListener('click',()=>{selected.delete(n);render()});chips.append(b)})
+ root.querySelectorAll('.cost').forEach(b=>{const on=b.dataset.cost===cost;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))})
+}
+$('search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();render()});
+$('championFilterSearch').addEventListener('input',e=>{championQuery=e.target.value.trim().toLowerCase();render()});
+$('toggleChampionFilter').addEventListener('click',()=>{const pane=$('championFilterContent'),button=$('toggleChampionFilter');pane.hidden=!pane.hidden;button.textContent=pane.hidden?'MỞ BỘ LỌC ▾':'THU GỌN ▴';button.setAttribute('aria-expanded',String(!pane.hidden));});
+root.querySelectorAll('.cost').forEach(b=>b.addEventListener('click',()=>{cost=b.dataset.cost;render()}));
+$('reset').addEventListener('click',()=>{cost='all';query='';championQuery='';selected.clear();$('search').value='';$('championFilterSearch').value='';render()});
+window.tftCollabRender=render;
+render();
 })();
 

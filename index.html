@@ -27,7 +27,6 @@
 .actions{display:flex;gap:6px;margin-top:10px}.smallbtn{border:1px solid #e1deef;background:#fbfaff;color:#504291;border-radius:7px;padding:6px 8px;font-size:11px;font-weight:800;flex:1}.smallbtn:hover{background:#e8e3ff}.noresults{padding:30px;border:1px solid #e1e3ed;background:white;border-radius:13px;text-align:center;color:#718095}
 .footer{border-top:1px solid #d7deeb;padding-top:16px;margin-top:30px;color:#657086;font-size:12px}.footer a{color:#5341a7}
 dialog{width:min(560px,calc(100vw - 22px));border:1px solid #d9dbec;border-radius:18px;padding:23px;max-height:90vh;overflow:auto;box-shadow:0 22px 90px #10122d7a;color:#1d2845}dialog::backdrop{background:#111426b8;backdrop-filter:blur(3px)}.dialoghead{display:flex;gap:13px;align-items:start}.dialoghead img{width:114px;height:85px;object-fit:cover;border-radius:9px}.dialoghead h3{font-size:23px;margin:0 0 4px;line-height:1.15}.dialogcontent{display:grid;gap:13px;margin:16px 0 18px}.dlabel{font-size:11px;font-weight:950;color:#747d93;letter-spacing:.08em;margin-bottom:5px}.chipbox{display:flex;gap:6px;flex-wrap:wrap}.dtext{font-size:13px;color:#505c78}.dialogclose{margin-left:auto;border:0;border-radius:7px;background:#f1eff8;padding:3px 10px;font-size:21px;color:#5b4e8a}.dialogfooter{display:flex;gap:8px;justify-content:flex-end;border-top:1px solid #e1e5ed;padding-top:14px}
-body.quiz .cardname{filter:blur(6px)}body.quiz .card:hover .cardname{filter:none}
 @media(max-width:1050px){.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.filters{position:static}}
 @media(max-width:720px){.app{padding:10px 9px 45px}.hero{padding:23px 20px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pic{height:112px}.cardname{font-size:12px}.grouphead h2{font-size:18px}.row-label{width:100%}.search{min-width:100%;max-width:100%}.filters{padding:11px}.group{scroll-margin-top:12px}}
 @media print{body{background:white}.app{max-width:none;padding:0}.hero{border-radius:0;box-shadow:none;padding:15px}.filters,.quicknav,.actions,.footer,.statusline,.dialogfooter{display:none!important}.group{break-before:page}.group:first-child{break-before:auto}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.card{break-inside:avoid;box-shadow:none}.pic{height:105px}body.quiz .cardname{filter:none}}
@@ -624,7 +623,6 @@ body.dark-mode .builder-capacity-controls button:disabled {
       <div class="filter-top">
         <button class="btn primary" id="byCost" type="button">THEO GIÁ VÀNG</button>
         <button class="btn" id="byRole" type="button">THEO VAI TRÒ</button>
-        <button class="btn" id="quiz" type="button">ẨN TÊN ĐỂ HỌC</button>
         <button class="btn ghost" id="reset" type="button">XÓA BỘ LỌC</button>
         <span class="space"></span>
         <input class="search" id="search" aria-label="Tìm tướng" type="search" placeholder="Tìm tên tướng..." />
@@ -825,6 +823,10 @@ body.dark-mode .builder-capacity-controls button:disabled {
         <div class="skillinfo"><span class="skillmana" id="dskillmana"></span></div>
         <p class="skilldescription" id="dskillsummary"></p>
         <span class="skillkeyword" id="dskillkey"></span>
+        <div class="heartsteel-bias" id="dheartsteel" hidden>
+          <div class="heartsteel-bias-label">HEARTSTEEL BIAS</div>
+          <p class="heartsteel-bias-text" id="dheartsteelText"></p>
+        </div>
       </section>
     </div>
     <div class="dialogfooter">
@@ -1063,7 +1065,32 @@ function renderUnlock(u){
   const source=el('a','unlock-source','Nguồn điều kiện: Mobalytics · 18/11/2026');source.href=unlockSource;source.target='_blank';source.rel='noopener noreferrer';panel.append(source);
 }
 
-function showCard(u){selectedUnit=u;const dg=$('details');$('dimage').src=imgs[u.id];$('dname').textContent=u.name;$('dmeta').textContent=u.cost+' VÀNG · '+roleVi[u.role]+' '+(u.damage==='Magic'?'PHÉP':'VẬT LÝ');$('dlock').textContent=u.locked?'🔒 CẦN MỞ KHÓA':'✓ CÓ SẴN TRONG CỬA HÀNG';renderUnlock(u);const sk=skills[u.id];$('dskillmana').textContent='Năng lượng: '+sk.mana;$('dskillsummary').textContent=sk.summary;$('dskillkey').textContent=sk.key;$('dtraits').replaceChildren(...u.traits.map(traitChip));$('deffects').replaceChildren(...(u.effects.length?u.effects.map(effChip):[el('span','dtext','Không có hiệu ứng nằm trong bộ lọc hiện tại')]));$('deffectnote').textContent=u.effects.map(k=>defs[k].desc).join(' ');
+// Chỉ dữ liệu Bias, không trộn vào mô tả kỹ năng gốc.
+// Nguồn tham khảo: tactics.tools/info/set-update (PBE mùa 19).
+const heartsteelBiasByName = Object.freeze({
+  Kayn: 'Khi máu còn 70%, hóa Sát Thủ Bóng Tối, tạm thời không thể bị chọn làm mục tiêu và gây thêm 35% sát thương phép trong phần còn lại của giao tranh.',
+  Sett: 'Cứ mỗi 4 giây hồi 4% máu tối đa; lượng hồi tăng theo lượng máu đã mất, tối đa gấp đôi.',
+  Ezreal: 'Vụ nổ gây thêm 25% sát thương; cứ mỗi lần tung chiêu thứ ba, vụ nổ tác động trong phạm vi 2 ô.',
+  "K'Sante": 'Nhận 25 Giáp và 25 Kháng Phép; đòn đánh gây thêm sát thương vật lý theo Giáp và Kháng Phép.',
+  Alune: 'Bắn thêm 5 luồng sáng vào mục tiêu, gây sát thương phép.',
+  Yone: 'Kỹ năng chém thêm 2 lần và bỏ qua 25% Giáp của mục tiêu.',
+  Aphelios: 'Bắt đầu giao tranh với sẵn 5 Chakram.'
+});
+
+function renderHeartsteelBias(unit, skill) {
+  const panel = $('dheartsteel');
+  const description = $('dheartsteelText');
+  const name = unit.name.replace(/[\u2018\u2019]/g, "'").trim();
+  const isHeartsteel = unit.traits.some(trait => trait.toLowerCase() === 'heartsteel');
+  const bias = isHeartsteel
+    ? (skill.heartsteelBias || heartsteelBiasByName[name] || '')
+    : '';
+
+  description.textContent = bias;
+  panel.hidden = !bias;
+}
+
+function showCard(u){selectedUnit=u;const dg=$('details');$('dimage').src=imgs[u.id];$('dname').textContent=u.name;$('dmeta').textContent=u.cost+' VÀNG · '+roleVi[u.role]+' '+(u.damage==='Magic'?'PHÉP':'VẬT LÝ');$('dlock').textContent=u.locked?'🔒 CẦN MỞ KHÓA':'✓ CÓ SẴN TRONG CỬA HÀNG';renderUnlock(u);const sk=skills[u.id];$('dskillmana').textContent='Năng lượng: '+sk.mana;$('dskillsummary').textContent=sk.summary;$('dskillkey').textContent=sk.key;renderHeartsteelBias(u,sk);$('dtraits').replaceChildren(...u.traits.map(traitChip));$('deffects').replaceChildren(...(u.effects.length?u.effects.map(effChip):[el('span','dtext','Không có hiệu ứng nằm trong bộ lọc hiện tại')]));$('deffectnote').textContent=u.effects.map(k=>defs[k].desc).join(' ');
 if(!dg.open)dg.showModal()}
 function card(u){const c=el('article','card'),p=el('div','pic'),im=el('img');im.src=imgs[u.id];im.alt=u.name;im.loading='lazy';p.append(im,el('span','cost',u.cost+' VÀNG'));if(u.locked){const lk=el('span','lock');lk.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> KHÓA';p.append(lk)}p.onclick=()=>showCard(u);
 const body=el('div','cardbody');body.append(el('h3','cardname',u.name),el('div','meta',roleVi[u.role]+' · '+(u.damage==='Magic'?'Phép':'Vật lý')));const tl=el('div','traitline');u.traits.forEach(t=>tl.append(traitChip(t)));body.append(tl);if(u.effects.length){const tags=el('div','tags');u.effects.forEach(k=>tags.append(effChip(k)));body.append(tags)}const acts=el('div','actions'),btn=el('button','smallbtn',u.locked?'🔒 XEM CÁCH MỞ KHÓA':'XEM KỸ NĂNG · TỘC/HỆ');btn.onclick=()=>showCard(u);acts.append(btn);body.append(acts);c.append(p,body);return c}
@@ -1361,17 +1388,6 @@ $('byRole').onclick = () => {
   $('byCost').classList.remove('primary');
 
   render();
-};
-
-
-$('quiz').onclick = () => {
-  ui.quiz = !ui.quiz;
-
-  document.body.classList.toggle('quiz', ui.quiz);
-  $('quiz').classList.toggle('active', ui.quiz);
-
-  $('quiz').textContent =
-    ui.quiz ? 'HIỆN TÊN' : 'ẨN TÊN ĐỂ HỌC';
 };
 
 

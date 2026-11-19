@@ -1,0 +1,1509 @@
+{
+  "set": 19,
+  "trait": "Collab",
+  "groups": [
+    {
+      "group": 1,
+      "champions": [
+        {
+          "id": "tft11",
+          "name": "Taric",
+          "cost": 1,
+          "image": "assets/champions/tft11.jpg"
+        },
+        {
+          "id": "tft18",
+          "name": "Camille",
+          "cost": 2,
+          "image": "assets/champions/tft18.jpg"
+        },
+        {
+          "id": "tft19",
+          "name": "Ezreal",
+          "cost": 2,
+          "image": "assets/champions/tft19.jpg"
+        },
+        {
+          "id": "tft45",
+          "name": "Senna",
+          "cost": 3,
+          "image": "assets/champions/tft45.jpg"
+        },
+        {
+          "id": "tft48",
+          "name": "Tibbers",
+          "cost": 3,
+          "image": "assets/champions/tft48.jpg"
+        },
+        {
+          "id": "tft75",
+          "name": "Dr. Mundo",
+          "cost": 5,
+          "image": "assets/champions/tft75.jpg"
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "champions": [
+        {
+          "id": "tft02",
+          "name": "Gnar",
+          "cost": 1,
+          "image": "assets/champions/tft02.jpg"
+        },
+        {
+          "id": "tft18",
+          "name": "Camille",
+          "cost": 2,
+          "image": "assets/champions/tft18.jpg"
+        },
+        {
+          "id": "tft27",
+          "name": "Nasus",
+          "cost": 2,
+          "image": "assets/champions/tft27.jpg"
+        },
+        {
+          "id": "tft62",
+          "name": "Shyvana",
+          "cost": 4,
+          "image": "assets/champions/tft62.jpg"
+        },
+        {
+          "id": "tft70",
+          "name": "Yuumi",
+          "cost": 4,
+          "image": "assets/champions/tft70.jpg"
+        }
+      ]
+    },
+    {
+      "group": 3,
+      "champions": [
+        {
+          "id": "tft05",
+          "name": "Kennen",
+          "cost": 1,
+          "image": "assets/champions/tft05.jpg"
+        },
+        {
+          "id": "tft10",
+          "name": "Sett",
+          "cost": 1,
+          "image": "assets/champions/tft10.jpg"
+        },
+        {
+          "id": "tft23",
+          "name": "Karthus",
+          "cost": 2,
+          "image": "assets/champions/tft23.jpg"
+        },
+        {
+          "id": "tft35",
+          "name": "Bard",
+          "cost": 3,
+          "image": "assets/champions/tft35.jpg"
+        },
+        {
+          "id": "tft40",
+          "name": "Evelynn",
+          "cost": 3,
+          "image": "assets/champions/tft40.jpg"
+        },
+        {
+          "id": "tft87",
+          "name": "Twisted Fate",
+          "cost": 5,
+          "image": "assets/champions/tft87.jpg"
+        }
+      ]
+    },
+    {
+      "group": 4,
+      "champions": [
+        {
+          "id": "tft07",
+          "name": "Lillia",
+          "cost": 1,
+          "image": "assets/champions/tft07.jpg"
+        },
+        {
+          "id": "tft18",
+          "name": "Camille",
+          "cost": 2,
+          "image": "assets/champions/tft18.jpg"
+        },
+        {
+          "id": "tft23",
+          "name": "Karthus",
+          "cost": 2,
+          "image": "assets/champions/tft23.jpg"
+        },
+        {
+          "id": "tft36",
+          "name": "Braum",
+          "cost": 3,
+          "image": "assets/champions/tft36.jpg"
+        },
+        {
+          "id": "tft53",
+          "name": "Aurora",
+          "cost": 4,
+          "image": "assets/champions/tft53.jpg"
+        }
+      ]
+    },
+    {
+      "group": 5,
+      "champions": [
+        {
+          "id": "tft04",
+          "name": "Kayn",
+          "cost": 1,
+          "image": "assets/champions/tft04.jpg"
+        },
+        {
+          "id": "tft11",
+          "name": "Taric",
+          "cost": 1,
+          "image": "assets/champions/tft11.jpg"
+        },
+        {
+          "id": "tft29",
+          "name": "Renata Glasc",
+          "cost": 2,
+          "image": "assets/champions/tft29.jpg"
+        },
+        {
+          "id": "tft35",
+          "name": "Bard",
+          "cost": 3,
+          "image": "assets/champions/tft35.jpg"
+        },
+        {
+          "id": "tft62",
+          "name": "Shyvana",
+          "cost": 4,
+          "image": "assets/champions/tft62.jpg"
+        }
+      ]
+    },
+    {
+      "group": 6,
+      "champions": [
+        {
+          "id": "tft02",
+          "name": "Gnar",
+          "cost": 1,
+          "image": "assets/champions/tft02.jpg"
+        },
+        {
+          "id": "tft05",
+          "name": "Kennen",
+          "cost": 1,
+          "image": "assets/champions/tft05.jpg"
+        },
+        {
+          "id": "tft20",
+          "name": "Gragas",
+          "cost": 2,
+          "image": "assets/champions/tft20.jpg"
+        },
+        {
+          "id": "tft34",
+          "name": "Amumu",
+          "cost": 3,
+          "image": "assets/champions/tft34.jpg"
+        },
+        {
+          "id": "tft53",
+          "name": "Aurora",
+          "cost": 4,
+          "image": "assets/champions/tft53.jpg"
+        }
+      ]
+    },
+    {
+      "group": 7,
+      "champions": [
+        {
+          "id": "tft04",
+          "name": "Kayn",
+          "cost": 1,
+          "image": "assets/champions/tft04.jpg"
+        },
+        {
+          "id": "tft12",
+          "name": "Varus",
+          "cost": 1,
+          "image": "assets/champions/tft12.jpg"
+        },
+        {
+          "id": "tft21",
+          "name": "Illaoi",
+          "cost": 2,
+          "image": "assets/champions/tft21.jpg"
+        },
+        {
+          "id": "tft23",
+          "name": "Karthus",
+          "cost": 2,
+          "image": "assets/champions/tft23.jpg"
+        },
+        {
+          "id": "tft48",
+          "name": "Tibbers",
+          "cost": 3,
+          "image": "assets/champions/tft48.jpg"
+        },
+        {
+          "id": "tft55",
+          "name": "Graves",
+          "cost": 4,
+          "image": "assets/champions/tft55.jpg"
+        }
+      ]
+    },
+    {
+      "group": 8,
+      "champions": [
+        {
+          "id": "tft01",
+          "name": "Elise",
+          "cost": 1,
+          "image": "assets/champions/tft01.jpg"
+        },
+        {
+          "id": "tft04",
+          "name": "Kayn",
+          "cost": 1,
+          "image": "assets/champions/tft04.jpg"
+        },
+        {
+          "id": "tft23",
+          "name": "Karthus",
+          "cost": 2,
+          "image": "assets/champions/tft23.jpg"
+        },
+        {
+          "id": "tft44",
+          "name": "Malzahar",
+          "cost": 3,
+          "image": "assets/champions/tft44.jpg"
+        },
+        {
+          "id": "tft56",
+          "name": "Jhin",
+          "cost": 4,
+          "image": "assets/champions/tft56.jpg"
+        }
+      ]
+    },
+    {
+      "group": 9,
+      "champions": [
+        {
+          "id": "tft10",
+          "name": "Sett",
+          "cost": 1,
+          "image": "assets/champions/tft10.jpg"
+        },
+        {
+          "id": "tft13",
+          "name": "Yunara",
+          "cost": 1,
+          "image": "assets/champions/tft13.jpg"
+        },
+        {
+          "id": "tft28",
+          "name": "Qiyana",
+          "cost": 2,
+          "image": "assets/champions/tft28.jpg"
+        },
+        {
+          "id": "tft36",
+          "name": "Braum",
+          "cost": 3,
+          "image": "assets/champions/tft36.jpg"
+        },
+        {
+          "id": "tft66",
+          "name": "Xayah",
+          "cost": 4,
+          "image": "assets/champions/tft66.jpg"
+        }
+      ]
+    },
+    {
+      "group": 10,
+      "champions": [
+        {
+          "id": "tft02",
+          "name": "Gnar",
+          "cost": 1,
+          "image": "assets/champions/tft02.jpg"
+        },
+        {
+          "id": "tft05",
+          "name": "Kennen",
+          "cost": 1,
+          "image": "assets/champions/tft05.jpg"
+        },
+        {
+          "id": "tft19",
+          "name": "Ezreal",
+          "cost": 2,
+          "image": "assets/champions/tft19.jpg"
+        },
+        {
+          "id": "tft29",
+          "name": "Renata Glasc",
+          "cost": 2,
+          "image": "assets/champions/tft29.jpg"
+        },
+        {
+          "id": "tft40",
+          "name": "Evelynn",
+          "cost": 3,
+          "image": "assets/champions/tft40.jpg"
+        },
+        {
+          "id": "tft60",
+          "name": "Locke",
+          "cost": 4,
+          "image": "assets/champions/tft60.jpg"
+        }
+      ]
+    },
+    {
+      "group": 11,
+      "champions": [
+        {
+          "id": "tft04",
+          "name": "Kayn",
+          "cost": 1,
+          "image": "assets/champions/tft04.jpg"
+        },
+        {
+          "id": "tft13",
+          "name": "Yunara",
+          "cost": 1,
+          "image": "assets/champions/tft13.jpg"
+        },
+        {
+          "id": "tft27",
+          "name": "Nasus",
+          "cost": 2,
+          "image": "assets/champions/tft27.jpg"
+        },
+        {
+          "id": "tft40",
+          "name": "Evelynn",
+          "cost": 3,
+          "image": "assets/champions/tft40.jpg"
+        },
+        {
+          "id": "tft45",
+          "name": "Senna",
+          "cost": 3,
+          "image": "assets/champions/tft45.jpg"
+        },
+        {
+          "id": "tft82",
+          "name": "Nunu & Willump",
+          "cost": 5,
+          "image": "assets/champions/tft82.jpg"
+        }
+      ]
+    },
+    {
+      "group": 12,
+      "champions": [
+        {
+          "id": "tft02",
+          "name": "Gnar",
+          "cost": 1,
+          "image": "assets/champions/tft02.jpg"
+        },
+        {
+          "id": "tft13",
+          "name": "Yunara",
+          "cost": 1,
+          "image": "assets/champions/tft13.jpg"
+        },
+        {
+          "id": "tft20",
+          "name": "Gragas",
+          "cost": 2,
+          "image": "assets/champions/tft20.jpg"
+        },
+        {
+          "id": "tft28",
+          "name": "Qiyana",
+          "cost": 2,
+          "image": "assets/champions/tft28.jpg"
+        },
+        {
+          "id": "tft47",
+          "name": "Syndra",
+          "cost": 3,
+          "image": "assets/champions/tft47.jpg"
+        },
+        {
+          "id": "tft89",
+          "name": "Vladimir",
+          "cost": 5,
+          "image": "assets/champions/tft89.jpg"
+        }
+      ]
+    },
+    {
+      "group": 13,
+      "champions": [
+        {
+          "id": "tft12",
+          "name": "Varus",
+          "cost": 1,
+          "image": "assets/champions/tft12.jpg"
+        },
+        {
+          "id": "tft15",
+          "name": "Zoe",
+          "cost": 1,
+          "image": "assets/champions/tft15.jpg"
+        },
+        {
+          "id": "tft27",
+          "name": "Nasus",
+          "cost": 2,
+          "image": "assets/champions/tft27.jpg"
+        },
+        {
+          "id": "tft35",
+          "name": "Bard",
+          "cost": 3,
+          "image": "assets/champions/tft35.jpg"
+        },
+        {
+          "id": "tft38",
+          "name": "Draven",
+          "cost": 3,
+          "image": "assets/champions/tft38.jpg"
+        }
+      ]
+    },
+    {
+      "group": 14,
+      "champions": [
+        {
+          "id": "tft01",
+          "name": "Elise",
+          "cost": 1,
+          "image": "assets/champions/tft01.jpg"
+        },
+        {
+          "id": "tft02",
+          "name": "Gnar",
+          "cost": 1,
+          "image": "assets/champions/tft02.jpg"
+        },
+        {
+          "id": "tft19",
+          "name": "Ezreal",
+          "cost": 2,
+          "image": "assets/champions/tft19.jpg"
+        },
+        {
+          "id": "tft20",
+          "name": "Gragas",
+          "cost": 2,
+          "image": "assets/champions/tft20.jpg"
+        },
+        {
+          "id": "tft28",
+          "name": "Qiyana",
+          "cost": 2,
+          "image": "assets/champions/tft28.jpg"
+        },
+        {
+          "id": "tft57",
+          "name": "Jinx",
+          "cost": 4,
+          "image": "assets/champions/tft57.jpg"
+        }
+      ]
+    },
+    {
+      "group": 15,
+      "champions": [
+        {
+          "id": "tft03",
+          "name": "Katarina",
+          "cost": 1,
+          "image": "assets/champions/tft03.jpg"
+        },
+        {
+          "id": "tft26",
+          "name": "Lux",
+          "cost": 2,
+          "image": "assets/champions/tft26.jpg"
+        },
+        {
+          "id": "tft30",
+          "name": "Renekton",
+          "cost": 2,
+          "image": "assets/champions/tft30.jpg"
+        },
+        {
+          "id": "tft40",
+          "name": "Evelynn",
+          "cost": 3,
+          "image": "assets/champions/tft40.jpg"
+        },
+        {
+          "id": "tft42",
+          "name": "K'Sante",
+          "cost": 3,
+          "image": "assets/champions/tft42.jpg"
+        },
+        {
+          "id": "tft84",
+          "name": "Rell",
+          "cost": 5,
+          "image": "assets/champions/tft84.jpg"
+        }
+      ]
+    },
+    {
+      "group": 16,
+      "champions": [
+        {
+          "id": "tft07",
+          "name": "Lillia",
+          "cost": 1,
+          "image": "assets/champions/tft07.jpg"
+        },
+        {
+          "id": "tft21",
+          "name": "Illaoi",
+          "cost": 2,
+          "image": "assets/champions/tft21.jpg"
+        },
+        {
+          "id": "tft29",
+          "name": "Renata Glasc",
+          "cost": 2,
+          "image": "assets/champions/tft29.jpg"
+        },
+        {
+          "id": "tft37",
+          "name": "Briar",
+          "cost": 3,
+          "image": "assets/champions/tft37.jpg"
+        },
+        {
+          "id": "tft61",
+          "name": "Mel",
+          "cost": 4,
+          "image": "assets/champions/tft61.jpg"
+        }
+      ]
+    },
+    {
+      "group": 17,
+      "champions": [
+        {
+          "id": "tft03",
+          "name": "Katarina",
+          "cost": 1,
+          "image": "assets/champions/tft03.jpg"
+        },
+        {
+          "id": "tft15",
+          "name": "Zoe",
+          "cost": 1,
+          "image": "assets/champions/tft15.jpg"
+        },
+        {
+          "id": "tft20",
+          "name": "Gragas",
+          "cost": 2,
+          "image": "assets/champions/tft20.jpg"
+        },
+        {
+          "id": "tft44",
+          "name": "Malzahar",
+          "cost": 3,
+          "image": "assets/champions/tft44.jpg"
+        },
+        {
+          "id": "tft54",
+          "name": "Garen",
+          "cost": 4,
+          "image": "assets/champions/tft54.jpg"
+        }
+      ]
+    },
+    {
+      "group": 18,
+      "champions": [
+        {
+          "id": "tft07",
+          "name": "Lillia",
+          "cost": 1,
+          "image": "assets/champions/tft07.jpg"
+        },
+        {
+          "id": "tft10",
+          "name": "Sett",
+          "cost": 1,
+          "image": "assets/champions/tft10.jpg"
+        },
+        {
+          "id": "tft29",
+          "name": "Renata Glasc",
+          "cost": 2,
+          "image": "assets/champions/tft29.jpg"
+        },
+        {
+          "id": "tft38",
+          "name": "Draven",
+          "cost": 3,
+          "image": "assets/champions/tft38.jpg"
+        },
+        {
+          "id": "tft57",
+          "name": "Jinx",
+          "cost": 4,
+          "image": "assets/champions/tft57.jpg"
+        },
+        {
+          "id": "tft88",
+          "name": "Vi",
+          "cost": 5,
+          "image": "assets/champions/tft88.jpg"
+        }
+      ]
+    },
+    {
+      "group": 19,
+      "champions": [
+        {
+          "id": "tft07",
+          "name": "Lillia",
+          "cost": 1,
+          "image": "assets/champions/tft07.jpg"
+        },
+        {
+          "id": "tft19",
+          "name": "Ezreal",
+          "cost": 2,
+          "image": "assets/champions/tft19.jpg"
+        },
+        {
+          "id": "tft30",
+          "name": "Renekton",
+          "cost": 2,
+          "image": "assets/champions/tft30.jpg"
+        },
+        {
+          "id": "tft44",
+          "name": "Malzahar",
+          "cost": 3,
+          "image": "assets/champions/tft44.jpg"
+        },
+        {
+          "id": "tft57",
+          "name": "Jinx",
+          "cost": 4,
+          "image": "assets/champions/tft57.jpg"
+        },
+        {
+          "id": "tft90",
+          "name": "Zeri",
+          "cost": 5,
+          "image": "assets/champions/tft90.jpg"
+        }
+      ]
+    },
+    {
+      "group": 20,
+      "champions": [
+        {
+          "id": "tft03",
+          "name": "Katarina",
+          "cost": 1,
+          "image": "assets/champions/tft03.jpg"
+        },
+        {
+          "id": "tft13",
+          "name": "Yunara",
+          "cost": 1,
+          "image": "assets/champions/tft13.jpg"
+        },
+        {
+          "id": "tft30",
+          "name": "Renekton",
+          "cost": 2,
+          "image": "assets/champions/tft30.jpg"
+        },
+        {
+          "id": "tft38",
+          "name": "Draven",
+          "cost": 3,
+          "image": "assets/champions/tft38.jpg"
+        },
+        {
+          "id": "tft50",
+          "name": "Ahri",
+          "cost": 4,
+          "image": "assets/champions/tft50.jpg"
+        }
+      ]
+    },
+    {
+      "group": 21,
+      "champions": [
+        {
+          "id": "tft03",
+          "name": "Katarina",
+          "cost": 1,
+          "image": "assets/champions/tft03.jpg"
+        },
+        {
+          "id": "tft11",
+          "name": "Taric",
+          "cost": 1,
+          "image": "assets/champions/tft11.jpg"
+        },
+        {
+          "id": "tft23",
+          "name": "Karthus",
+          "cost": 2,
+          "image": "assets/champions/tft23.jpg"
+        },
+        {
+          "id": "tft41",
+          "name": "Galio",
+          "cost": 3,
+          "image": "assets/champions/tft41.jpg"
+        },
+        {
+          "id": "tft66",
+          "name": "Xayah",
+          "cost": 4,
+          "image": "assets/champions/tft66.jpg"
+        }
+      ]
+    },
+    {
+      "group": 22,
+      "champions": [
+        {
+          "id": "tft10",
+          "name": "Sett",
+          "cost": 1,
+          "image": "assets/champions/tft10.jpg"
+        },
+        {
+          "id": "tft15",
+          "name": "Zoe",
+          "cost": 1,
+          "image": "assets/champions/tft15.jpg"
+        },
+        {
+          "id": "tft29",
+          "name": "Renata Glasc",
+          "cost": 2,
+          "image": "assets/champions/tft29.jpg"
+        },
+        {
+          "id": "tft45",
+          "name": "Senna",
+          "cost": 3,
+          "image": "assets/champions/tft45.jpg"
+        },
+        {
+          "id": "tft48",
+          "name": "Tibbers",
+          "cost": 3,
+          "image": "assets/champions/tft48.jpg"
+        },
+        {
+          "id": "tft84",
+          "name": "Rell",
+          "cost": 5,
+          "image": "assets/champions/tft84.jpg"
+        }
+      ]
+    },
+    {
+      "group": 23,
+      "champions": [
+        {
+          "id": "tft13",
+          "name": "Yunara",
+          "cost": 1,
+          "image": "assets/champions/tft13.jpg"
+        },
+        {
+          "id": "tft15",
+          "name": "Zoe",
+          "cost": 1,
+          "image": "assets/champions/tft15.jpg"
+        },
+        {
+          "id": "tft21",
+          "name": "Illaoi",
+          "cost": 2,
+          "image": "assets/champions/tft21.jpg"
+        },
+        {
+          "id": "tft42",
+          "name": "K'Sante",
+          "cost": 3,
+          "image": "assets/champions/tft42.jpg"
+        },
+        {
+          "id": "tft56",
+          "name": "Jhin",
+          "cost": 4,
+          "image": "assets/champions/tft56.jpg"
+        }
+      ]
+    },
+    {
+      "group": 24,
+      "champions": [
+        {
+          "id": "tft12",
+          "name": "Varus",
+          "cost": 1,
+          "image": "assets/champions/tft12.jpg"
+        },
+        {
+          "id": "tft26",
+          "name": "Lux",
+          "cost": 2,
+          "image": "assets/champions/tft26.jpg"
+        },
+        {
+          "id": "tft30",
+          "name": "Renekton",
+          "cost": 2,
+          "image": "assets/champions/tft30.jpg"
+        },
+        {
+          "id": "tft36",
+          "name": "Braum",
+          "cost": 3,
+          "image": "assets/champions/tft36.jpg"
+        },
+        {
+          "id": "tft54",
+          "name": "Garen",
+          "cost": 4,
+          "image": "assets/champions/tft54.jpg"
+        }
+      ]
+    },
+    {
+      "group": 25,
+      "champions": [
+        {
+          "id": "tft10",
+          "name": "Sett",
+          "cost": 1,
+          "image": "assets/champions/tft10.jpg"
+        },
+        {
+          "id": "tft20",
+          "name": "Gragas",
+          "cost": 2,
+          "image": "assets/champions/tft20.jpg"
+        },
+        {
+          "id": "tft23",
+          "name": "Karthus",
+          "cost": 2,
+          "image": "assets/champions/tft23.jpg"
+        },
+        {
+          "id": "tft37",
+          "name": "Briar",
+          "cost": 3,
+          "image": "assets/champions/tft37.jpg"
+        },
+        {
+          "id": "tft70",
+          "name": "Yuumi",
+          "cost": 4,
+          "image": "assets/champions/tft70.jpg"
+        }
+      ]
+    },
+    {
+      "group": 26,
+      "champions": [
+        {
+          "id": "tft07",
+          "name": "Lillia",
+          "cost": 1,
+          "image": "assets/champions/tft07.jpg"
+        },
+        {
+          "id": "tft26",
+          "name": "Lux",
+          "cost": 2,
+          "image": "assets/champions/tft26.jpg"
+        },
+        {
+          "id": "tft28",
+          "name": "Qiyana",
+          "cost": 2,
+          "image": "assets/champions/tft28.jpg"
+        },
+        {
+          "id": "tft35",
+          "name": "Bard",
+          "cost": 3,
+          "image": "assets/champions/tft35.jpg"
+        },
+        {
+          "id": "tft69",
+          "name": "Yorick",
+          "cost": 4,
+          "image": "assets/champions/tft69.jpg"
+        }
+      ]
+    },
+    {
+      "group": 27,
+      "champions": [
+        {
+          "id": "tft01",
+          "name": "Elise",
+          "cost": 1,
+          "image": "assets/champions/tft01.jpg"
+        },
+        {
+          "id": "tft20",
+          "name": "Gragas",
+          "cost": 2,
+          "image": "assets/champions/tft20.jpg"
+        },
+        {
+          "id": "tft29",
+          "name": "Renata Glasc",
+          "cost": 2,
+          "image": "assets/champions/tft29.jpg"
+        },
+        {
+          "id": "tft38",
+          "name": "Draven",
+          "cost": 3,
+          "image": "assets/champions/tft38.jpg"
+        },
+        {
+          "id": "tft55",
+          "name": "Graves",
+          "cost": 4,
+          "image": "assets/champions/tft55.jpg"
+        }
+      ]
+    },
+    {
+      "group": 28,
+      "champions": [
+        {
+          "id": "tft02",
+          "name": "Gnar",
+          "cost": 1,
+          "image": "assets/champions/tft02.jpg"
+        },
+        {
+          "id": "tft11",
+          "name": "Taric",
+          "cost": 1,
+          "image": "assets/champions/tft11.jpg"
+        },
+        {
+          "id": "tft21",
+          "name": "Illaoi",
+          "cost": 2,
+          "image": "assets/champions/tft21.jpg"
+        },
+        {
+          "id": "tft44",
+          "name": "Malzahar",
+          "cost": 3,
+          "image": "assets/champions/tft44.jpg"
+        },
+        {
+          "id": "tft50",
+          "name": "Ahri",
+          "cost": 4,
+          "image": "assets/champions/tft50.jpg"
+        }
+      ]
+    },
+    {
+      "group": 29,
+      "champions": [
+        {
+          "id": "tft03",
+          "name": "Katarina",
+          "cost": 1,
+          "image": "assets/champions/tft03.jpg"
+        },
+        {
+          "id": "tft12",
+          "name": "Varus",
+          "cost": 1,
+          "image": "assets/champions/tft12.jpg"
+        },
+        {
+          "id": "tft21",
+          "name": "Illaoi",
+          "cost": 2,
+          "image": "assets/champions/tft21.jpg"
+        },
+        {
+          "id": "tft45",
+          "name": "Senna",
+          "cost": 3,
+          "image": "assets/champions/tft45.jpg"
+        },
+        {
+          "id": "tft48",
+          "name": "Tibbers",
+          "cost": 3,
+          "image": "assets/champions/tft48.jpg"
+        },
+        {
+          "id": "tft87",
+          "name": "Twisted Fate",
+          "cost": 5,
+          "image": "assets/champions/tft87.jpg"
+        }
+      ]
+    },
+    {
+      "group": 30,
+      "champions": [
+        {
+          "id": "tft01",
+          "name": "Elise",
+          "cost": 1,
+          "image": "assets/champions/tft01.jpg"
+        },
+        {
+          "id": "tft15",
+          "name": "Zoe",
+          "cost": 1,
+          "image": "assets/champions/tft15.jpg"
+        },
+        {
+          "id": "tft27",
+          "name": "Nasus",
+          "cost": 2,
+          "image": "assets/champions/tft27.jpg"
+        },
+        {
+          "id": "tft36",
+          "name": "Braum",
+          "cost": 3,
+          "image": "assets/champions/tft36.jpg"
+        },
+        {
+          "id": "tft68",
+          "name": "Yone",
+          "cost": 4,
+          "image": "assets/champions/tft68.jpg"
+        }
+      ]
+    },
+    {
+      "group": 31,
+      "champions": [
+        {
+          "id": "tft11",
+          "name": "Taric",
+          "cost": 1,
+          "image": "assets/champions/tft11.jpg"
+        },
+        {
+          "id": "tft12",
+          "name": "Varus",
+          "cost": 1,
+          "image": "assets/champions/tft12.jpg"
+        },
+        {
+          "id": "tft28",
+          "name": "Qiyana",
+          "cost": 2,
+          "image": "assets/champions/tft28.jpg"
+        },
+        {
+          "id": "tft37",
+          "name": "Briar",
+          "cost": 3,
+          "image": "assets/champions/tft37.jpg"
+        },
+        {
+          "id": "tft64",
+          "name": "Vayne",
+          "cost": 4,
+          "image": "assets/champions/tft64.jpg"
+        },
+        {
+          "id": "tft79",
+          "name": "Miss Fortune",
+          "cost": 5,
+          "image": "assets/champions/tft79.jpg"
+        }
+      ]
+    },
+    {
+      "group": 32,
+      "champions": [
+        {
+          "id": "tft07",
+          "name": "Lillia",
+          "cost": 1,
+          "image": "assets/champions/tft07.jpg"
+        },
+        {
+          "id": "tft13",
+          "name": "Yunara",
+          "cost": 1,
+          "image": "assets/champions/tft13.jpg"
+        },
+        {
+          "id": "tft19",
+          "name": "Ezreal",
+          "cost": 2,
+          "image": "assets/champions/tft19.jpg"
+        },
+        {
+          "id": "tft41",
+          "name": "Galio",
+          "cost": 3,
+          "image": "assets/champions/tft41.jpg"
+        },
+        {
+          "id": "tft54",
+          "name": "Garen",
+          "cost": 4,
+          "image": "assets/champions/tft54.jpg"
+        }
+      ]
+    },
+    {
+      "group": 33,
+      "champions": [
+        {
+          "id": "tft02",
+          "name": "Gnar",
+          "cost": 1,
+          "image": "assets/champions/tft02.jpg"
+        },
+        {
+          "id": "tft20",
+          "name": "Gragas",
+          "cost": 2,
+          "image": "assets/champions/tft20.jpg"
+        },
+        {
+          "id": "tft30",
+          "name": "Renekton",
+          "cost": 2,
+          "image": "assets/champions/tft30.jpg"
+        },
+        {
+          "id": "tft42",
+          "name": "K'Sante",
+          "cost": 3,
+          "image": "assets/champions/tft42.jpg"
+        },
+        {
+          "id": "tft61",
+          "name": "Mel",
+          "cost": 4,
+          "image": "assets/champions/tft61.jpg"
+        }
+      ]
+    },
+    {
+      "group": 34,
+      "champions": [
+        {
+          "id": "tft05",
+          "name": "Kennen",
+          "cost": 1,
+          "image": "assets/champions/tft05.jpg"
+        },
+        {
+          "id": "tft23",
+          "name": "Karthus",
+          "cost": 2,
+          "image": "assets/champions/tft23.jpg"
+        },
+        {
+          "id": "tft30",
+          "name": "Renekton",
+          "cost": 2,
+          "image": "assets/champions/tft30.jpg"
+        },
+        {
+          "id": "tft38",
+          "name": "Draven",
+          "cost": 3,
+          "image": "assets/champions/tft38.jpg"
+        },
+        {
+          "id": "tft68",
+          "name": "Yone",
+          "cost": 4,
+          "image": "assets/champions/tft68.jpg"
+        }
+      ]
+    },
+    {
+      "group": 35,
+      "champions": [
+        {
+          "id": "tft10",
+          "name": "Sett",
+          "cost": 1,
+          "image": "assets/champions/tft10.jpg"
+        },
+        {
+          "id": "tft12",
+          "name": "Varus",
+          "cost": 1,
+          "image": "assets/champions/tft12.jpg"
+        },
+        {
+          "id": "tft27",
+          "name": "Nasus",
+          "cost": 2,
+          "image": "assets/champions/tft27.jpg"
+        },
+        {
+          "id": "tft44",
+          "name": "Malzahar",
+          "cost": 3,
+          "image": "assets/champions/tft44.jpg"
+        },
+        {
+          "id": "tft53",
+          "name": "Aurora",
+          "cost": 4,
+          "image": "assets/champions/tft53.jpg"
+        }
+      ]
+    },
+    {
+      "group": 36,
+      "champions": [
+        {
+          "id": "tft05",
+          "name": "Kennen",
+          "cost": 1,
+          "image": "assets/champions/tft05.jpg"
+        },
+        {
+          "id": "tft15",
+          "name": "Zoe",
+          "cost": 1,
+          "image": "assets/champions/tft15.jpg"
+        },
+        {
+          "id": "tft26",
+          "name": "Lux",
+          "cost": 2,
+          "image": "assets/champions/tft26.jpg"
+        },
+        {
+          "id": "tft40",
+          "name": "Evelynn",
+          "cost": 3,
+          "image": "assets/champions/tft40.jpg"
+        },
+        {
+          "id": "tft41",
+          "name": "Galio",
+          "cost": 3,
+          "image": "assets/champions/tft41.jpg"
+        },
+        {
+          "id": "tft75",
+          "name": "Dr. Mundo",
+          "cost": 5,
+          "image": "assets/champions/tft75.jpg"
+        }
+      ]
+    },
+    {
+      "group": 37,
+      "champions": [
+        {
+          "id": "tft03",
+          "name": "Katarina",
+          "cost": 1,
+          "image": "assets/champions/tft03.jpg"
+        },
+        {
+          "id": "tft07",
+          "name": "Lillia",
+          "cost": 1,
+          "image": "assets/champions/tft07.jpg"
+        },
+        {
+          "id": "tft23",
+          "name": "Karthus",
+          "cost": 2,
+          "image": "assets/champions/tft23.jpg"
+        },
+        {
+          "id": "tft47",
+          "name": "Syndra",
+          "cost": 3,
+          "image": "assets/champions/tft47.jpg"
+        },
+        {
+          "id": "tft57",
+          "name": "Jinx",
+          "cost": 4,
+          "image": "assets/champions/tft57.jpg"
+        },
+        {
+          "id": "tft82",
+          "name": "Nunu & Willump",
+          "cost": 5,
+          "image": "assets/champions/tft82.jpg"
+        }
+      ]
+    },
+    {
+      "group": 38,
+      "champions": [
+        {
+          "id": "tft04",
+          "name": "Kayn",
+          "cost": 1,
+          "image": "assets/champions/tft04.jpg"
+        },
+        {
+          "id": "tft29",
+          "name": "Renata Glasc",
+          "cost": 2,
+          "image": "assets/champions/tft29.jpg"
+        },
+        {
+          "id": "tft30",
+          "name": "Renekton",
+          "cost": 2,
+          "image": "assets/champions/tft30.jpg"
+        },
+        {
+          "id": "tft36",
+          "name": "Braum",
+          "cost": 3,
+          "image": "assets/champions/tft36.jpg"
+        },
+        {
+          "id": "tft40",
+          "name": "Evelynn",
+          "cost": 3,
+          "image": "assets/champions/tft40.jpg"
+        },
+        {
+          "id": "tft75",
+          "name": "Dr. Mundo",
+          "cost": 5,
+          "image": "assets/champions/tft75.jpg"
+        }
+      ]
+    },
+    {
+      "group": 39,
+      "champions": [
+        {
+          "id": "tft15",
+          "name": "Zoe",
+          "cost": 1,
+          "image": "assets/champions/tft15.jpg"
+        },
+        {
+          "id": "tft18",
+          "name": "Camille",
+          "cost": 2,
+          "image": "assets/champions/tft18.jpg"
+        },
+        {
+          "id": "tft21",
+          "name": "Illaoi",
+          "cost": 2,
+          "image": "assets/champions/tft21.jpg"
+        },
+        {
+          "id": "tft35",
+          "name": "Bard",
+          "cost": 3,
+          "image": "assets/champions/tft35.jpg"
+        },
+        {
+          "id": "tft66",
+          "name": "Xayah",
+          "cost": 4,
+          "image": "assets/champions/tft66.jpg"
+        }
+      ]
+    },
+    {
+      "group": 40,
+      "champions": [
+        {
+          "id": "tft01",
+          "name": "Elise",
+          "cost": 1,
+          "image": "assets/champions/tft01.jpg"
+        },
+        {
+          "id": "tft23",
+          "name": "Karthus",
+          "cost": 2,
+          "image": "assets/champions/tft23.jpg"
+        },
+        {
+          "id": "tft28",
+          "name": "Qiyana",
+          "cost": 2,
+          "image": "assets/champions/tft28.jpg"
+        },
+        {
+          "id": "tft42",
+          "name": "K'Sante",
+          "cost": 3,
+          "image": "assets/champions/tft42.jpg"
+        },
+        {
+          "id": "tft50",
+          "name": "Ahri",
+          "cost": 4,
+          "image": "assets/champions/tft50.jpg"
+        }
+      ]
+    }
+  ],
+  "permanentChampion": {
+    "name": "Sona",
+    "cost": 7,
+    "id": "tft94",
+    "image": "assets/champions/tft94.jpg"
+  },
+  "sourceNote": "Dữ liệu 40 nhóm được lấy từ collab_set19_data.json đã cung cấp; thông tin cơ chế được đối chiếu nguồn công khai; danh sách từng nhóm chưa xác minh độc lập được với trang gốc TFT Flow."
+}

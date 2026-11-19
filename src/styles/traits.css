@@ -139,7 +139,7 @@
 #rewardsPage .foot{margin-top:25px;border-top:1px solid #3a4050;color:#8f97ad;padding:12px 3px;font-size:11px}
 #rewardsPage .measure{position:absolute;visibility:hidden;pointer-events:none;left:-9999px;top:0;display:block}
 #rewardsPage .measure>.card{margin-bottom:var(--gap)}
-@media (max-width:780px){#rewardsPage .wrap{padding:12px 9px 50px}}
+@media (max-width:780px){#rewardsPage .wrap{padding:12px 9px 50px}
 #rewardsPage .columns{grid-template-columns:1fr}
 #rewardsPage .milestone{grid-template-columns:80px 1fr}
 #rewardsPage .charmgrid{grid-template-columns:1fr}
@@ -161,6 +161,7 @@
 #rewardsPage .ionic-choice-grid .charmcard .ionic-charm-info{min-width:0}
 #rewardsPage .ionic-choice-grid .charmcard h3{overflow-wrap:anywhere}
 @media (max-width:700px){#rewardsPage .ionic-choice-grid.charmgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+}
 /* TFT Handbook rewards integration */
 #rewardsPage{display:block; color-scheme:dark; background:#14161b; color:#eef0f8; border-radius:16px; padding:1px 13px 18px; margin:12px 0 26px; --bg:#14161b;--panel:#22252d;--panel2:#292c37;--line:#414657;--fg:#eef0f8;--muted:#a7acc1;--violet:#7457c8;--icon:48px;--pad:10px;--gap:10px}
 #rewardsPage[hidden]{display:none!important}
@@ -174,3 +175,109 @@
 #rewardsPage .iconbox .glyph{display:none!important}
 #rewardsPage .reward-app :is(.number,.caption,.cashhead,.tab,.qty,.chance){color:inherit}
 @media(max-width:780px){#rewardsPage{padding:1px 8px 14px}#rewardsPage .reward-row-major{grid-template-columns:1fr}}
+
+
+/* TFT COLLAb: scoped approved 40-group UI */
+#collabPage{color-scheme:dark;--bg:#14161b;--surface:#22252d;--surface2:#292d38;--outline:#42485a;--text:#eef0fb;--soft:#abb3c9;--accent:#8264d8}
+#collabPage *{box-sizing:border-box}
+#collabPage{scroll-behavior:smooth}
+#collabPage{margin:0;background:var(--bg);color:var(--text);font:13px/1.5 Inter,"Segoe UI",system-ui,sans-serif}
+#collabPage button,#collabPage input{font:inherit}
+#collabPage button{cursor:pointer}
+#collabPage .wrap{max-width:1360px;margin:auto;padding:18px 18px 70px}
+#collabPage .hero{padding:22px 25px;border-radius:16px;background:linear-gradient(115deg,#222a4b,#4c3894);border:1px solid #6252a3}
+#collabPage .hero-top{display:flex;gap:12px;align-items:center}
+#collabPage .hero-icon{width:54px;height:54px;border-radius:13px;display:grid;place-items:center;background:#292346;border:1px solid #8071c9;font-size:30px}
+#collabPage .eyebrow{font-weight:850;letter-spacing:.12em;color:#dbceff;font-size:10px}
+#collabPage .hero h1{font-size:clamp(22px,3.3vw,31px);line-height:1.18;margin:3px 0 5px}
+#collabPage .hero p{font-size:12px;color:#e5ddfc;max-width:840px;margin:7px 0 0}
+#collabPage .metrics{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+#collabPage .metric{padding:6px 10px;border-radius:8px;border:1px solid #8b75d5;background:#ffffff13;font-weight:750;font-size:11px}
+#collabPage .sticky{position:sticky;top:0;z-index:10;margin:14px 0;background:#1c1e27f5;border:1px solid var(--outline);border-radius:12px;padding:12px;box-shadow:0 8px 18px #0008;backdrop-filter:blur(12px)}
+#collabPage .toolrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+#collabPage .search{background:#292c37;color:var(--text);border:1px solid #55566a;padding:11px 12px;min-width:200px;width:min(340px,100%);border-radius:9px;outline-color:#b3a2ff;flex:1}
+#collabPage .filter{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+#collabPage .filter>span{font-size:11px;color:var(--soft);font-weight:850;margin-right:3px}
+#collabPage .cost{color:#e1e2ef;background:#303340;border:1px solid #535668;border-radius:8px;padding:8px 10px;font-weight:850;min-width:34px}
+#collabPage .cost.active{background:#7150c1;color:white;border-color:#a393f0}
+#collabPage .cost[data-cost="7"]{color:#ffbf9b}
+#collabPage .clear{border:1px solid #65627f;background:#2a263e;color:#dbd1ff;font-weight:750;padding:8px 10px;border-radius:8px}
+#collabPage .status{font-size:11px;color:#bac0d4;display:flex;align-items:center;gap:9px;margin:10px 0 0}
+#collabPage .status strong{color:white}
+#collabPage .selected{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:10px}
+#collabPage .selected[hidden]{display:none!important}
+#collabPage .selected p{margin:0;color:#c9bedf;font-size:11px}
+#collabPage .selected-chip{border:1px solid #b59aff;color:#e9dcff;background:#382c57;border-radius:7px;padding:5px 9px;cursor:pointer}
+#collabPage .info{margin:14px 0;padding:11px 14px;background:#222537;border:1px solid #42466b;border-radius:10px;font-size:11px;color:#c9cce1}
+#collabPage .results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;align-items:stretch}
+#collabPage .group{border:1px solid var(--outline);background:var(--surface);border-radius:13px;padding:14px;min-width:0;transition:border-color .12s,background .12s}
+#collabPage .group:hover{border-color:#8775b1}
+#collabPage .group.match{border-color:#9c7cdd}
+#collabPage .grouphead{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:12px}
+#collabPage .grouphead h2{font-size:14px;margin:0;font-weight:950}
+#collabPage .grouphead small{font-size:10px;color:#b6b9c8;white-space:nowrap}
+#collabPage .mini{display:inline-flex;gap:4px;align-items:center}
+#collabPage .minidot{width:8px;height:8px;border-radius:100%;background:var(--costcolor)}
+#collabPage .people{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+#collabPage .unit{min-width:0;display:flex;align-items:center;flex-direction:column;gap:5px;padding:5px 2px 4px;border:1px solid transparent;background:none;color:var(--text);border-radius:8px}
+#collabPage .unit:hover{background:#ffffff0c;border-color:#62637a}
+#collabPage .unit.chosen{background:#4b3866;border-color:#b292f5}
+#collabPage .unit.dim{opacity:.25}
+#collabPage .portrait{width:clamp(36px,4.5vw,59px);height:clamp(36px,4.5vw,59px);border-radius:9px;display:grid;place-items:center;border:2px solid var(--costcolor);background:#24242e;position:relative;overflow:hidden;box-shadow:0 3px 10px #0005}
+#collabPage .portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:85% center}
+#collabPage .fallback{font-weight:900;color:#f1f1fb;font-size:12px}
+#collabPage .portrait img:has(+.fallback){}
+#collabPage .price{position:absolute;right:0;bottom:0;background:#14151de8;font-size:9px;font-weight:900;line-height:1;min-width:15px;text-align:center;border-radius:5px 0 0 0;padding:3px 3px;color:var(--costcolor)}
+#collabPage .unit-name{text-align:center;font-size:10px;font-weight:750;line-height:1.25;overflow-wrap:anywhere;width:100%;min-height:27px}
+#collabPage .empty{grid-column:1/-1;border:1px dashed #66617f;border-radius:12px;text-align:center;padding:34px 15px;color:#c5c0dc}
+#collabPage .empty strong{display:block;color:#eee5ff;font-size:17px;margin-bottom:5px}
+#collabPage .footer{font-size:11px;color:#929ab1;margin:18px 2px}
+@media (max-width:850px){#collabPage .results{grid-template-columns:1fr}
+#collabPage .people{grid-template-columns:repeat(6,minmax(0,1fr))}
+#collabPage .portrait{width:52px;height:52px}}
+@media (max-width:540px){#collabPage .wrap{padding:10px 9px 36px}
+#collabPage .hero{padding:17px 13px}
+#collabPage .toolrow{gap:9px}
+#collabPage .search{width:100%}
+#collabPage .sticky{padding:9px}
+#collabPage .group{padding:11px 8px}
+#collabPage .people{gap:3px}
+#collabPage .portrait{width:clamp(38px,11vw,50px);height:clamp(38px,11vw,50px)}
+#collabPage .unit-name{font-size:9px}
+#collabPage .cost{padding:8px}
+#collabPage .metric{font-size:10px}}
+#collabPage .champion-filter{border:1px solid var(--outline);background:#20232e;border-radius:13px;margin:12px 0 14px;padding:12px}
+#collabPage .champion-filter-head{display:flex;align-items:center;flex-wrap:wrap;gap:8px;justify-content:space-between}
+#collabPage .champion-filter-title{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
+#collabPage .champion-filter-title h2{font-size:13px;font-weight:950;margin:0}
+#collabPage .champion-filter-title small{font-size:11px;color:#b9c0d4}
+#collabPage .filter-collapse{border:1px solid #58566f;border-radius:8px;color:#ddd7f6;background:#343043;padding:6px 9px;font-size:11px;font-weight:800}
+#collabPage .filter-content{margin-top:11px}
+#collabPage .filter-content[hidden]{display:none!important}
+#collabPage .filter-searchrow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:11px}
+#collabPage .filter-searchrow input{border:1px solid #515369;background:#292c38;color:#eeeefa;border-radius:8px;padding:9px 10px;outline-color:#a995f1;flex:0 1 310px;max-width:100%;min-width:170px;font-size:12px}
+#collabPage .filter-help{color:#a9adc1;font-size:11px}
+#collabPage .filter-people{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:7px;max-height:330px;overflow:auto;scrollbar-color:#777293 #20232e;align-items:start;padding:4px 6px 4px 2px}
+#collabPage .filter-people .unit{padding:6px 3px 7px;border-color:#41465a;background:#292c37;height:100%;min-height:97px}
+#collabPage .filter-people .unit:hover{background:#3b344c;border-color:#9d83e7}
+#collabPage .filter-people .unit.chosen{background:#4b3866;border-color:#d2bbff;box-shadow:inset 0 0 0 1px #b695ef}
+#collabPage .filter-people .portrait{width:46px;height:46px}
+#collabPage .filter-people .unit-name{min-height:24px}
+#collabPage .filter-groupcount{font-size:9px;color:#aeb4c9;font-weight:800}
+#collabPage .filter-people .unit.chosen .filter-groupcount{color:#e7ddff}
+#collabPage .filter-nochoices{font-size:12px;padding:16px;border:1px dashed #5e5877;border-radius:9px;color:#c9c5d7;grid-column:1/-1}
+@media (max-width:1000px){#collabPage .filter-people{grid-template-columns:repeat(8,minmax(0,1fr))}}
+@media (max-width:740px){#collabPage .filter-people{grid-template-columns:repeat(6,minmax(0,1fr))}
+#collabPage .filter-people .portrait{width:42px;height:42px}}
+@media (max-width:480px){#collabPage .filter-people{grid-template-columns:repeat(4,minmax(0,1fr))}
+#collabPage .champion-filter{padding:9px}
+#collabPage .filter-people .unit-name{font-size:10px}
+#collabPage .filter-people .portrait{width:43px;height:43px}}
+
+#collabPage[hidden]{display:none!important}
+#collabPage{color:#eef0fb;background:#14161b;border:1px solid #454459;border-radius:14px;margin:14px 0 22px;overflow:clip}
+#collabPage .wrap{padding:18px 18px 32px;max-width:1320px}
+#collabPage .footer{font-size:11px;color:#929ab1;margin:18px 2px;padding:0;background:transparent;border:0}
+
+/* Isolate Collab controls from generic champion cost badge styling */
+#collabPage button.cost{position:static;inset:auto;min-width:34px;width:auto;height:auto;transform:none;opacity:1;margin:0;box-shadow:none}

@@ -823,6 +823,10 @@ body.dark-mode .builder-capacity-controls button:disabled {
         <div class="skillinfo"><span class="skillmana" id="dskillmana"></span></div>
         <p class="skilldescription" id="dskillsummary"></p>
         <span class="skillkeyword" id="dskillkey"></span>
+        <div class="heartsteel-bias" id="dheartsteel" hidden>
+          <div class="heartsteel-bias-label">HEARTSTEEL BIAS</div>
+          <p class="heartsteel-bias-text" id="dheartsteelText"></p>
+        </div>
       </section>
     </div>
     <div class="dialogfooter">
@@ -1061,7 +1065,32 @@ function renderUnlock(u){
   const source=el('a','unlock-source','Nguồn điều kiện: Mobalytics · 18/11/2026');source.href=unlockSource;source.target='_blank';source.rel='noopener noreferrer';panel.append(source);
 }
 
-function showCard(u){selectedUnit=u;const dg=$('details');$('dimage').src=imgs[u.id];$('dname').textContent=u.name;$('dmeta').textContent=u.cost+' VÀNG · '+roleVi[u.role]+' '+(u.damage==='Magic'?'PHÉP':'VẬT LÝ');$('dlock').textContent=u.locked?'🔒 CẦN MỞ KHÓA':'✓ CÓ SẴN TRONG CỬA HÀNG';renderUnlock(u);const sk=skills[u.id];$('dskillmana').textContent='Năng lượng: '+sk.mana;$('dskillsummary').textContent=sk.summary;$('dskillkey').textContent=sk.key;$('dtraits').replaceChildren(...u.traits.map(traitChip));$('deffects').replaceChildren(...(u.effects.length?u.effects.map(effChip):[el('span','dtext','Không có hiệu ứng nằm trong bộ lọc hiện tại')]));$('deffectnote').textContent=u.effects.map(k=>defs[k].desc).join(' ');
+// Chỉ dữ liệu Bias, không trộn vào mô tả kỹ năng gốc.
+// Nguồn tham khảo: tactics.tools/info/set-update (PBE mùa 19).
+const heartsteelBiasByName = Object.freeze({
+  Kayn: 'Khi máu còn 70%, hóa Sát Thủ Bóng Tối, tạm thời không thể bị chọn làm mục tiêu và gây thêm 35% sát thương phép trong phần còn lại của giao tranh.',
+  Sett: 'Cứ mỗi 4 giây hồi 4% máu tối đa; lượng hồi tăng theo lượng máu đã mất, tối đa gấp đôi.',
+  Ezreal: 'Vụ nổ gây thêm 25% sát thương; cứ mỗi lần tung chiêu thứ ba, vụ nổ tác động trong phạm vi 2 ô.',
+  "K'Sante": 'Nhận 25 Giáp và 25 Kháng Phép; đòn đánh gây thêm sát thương vật lý theo Giáp và Kháng Phép.',
+  Alune: 'Bắn thêm 5 luồng sáng vào mục tiêu, gây sát thương phép.',
+  Yone: 'Kỹ năng chém thêm 2 lần và bỏ qua 25% Giáp của mục tiêu.',
+  Aphelios: 'Bắt đầu giao tranh với sẵn 5 Chakram.'
+});
+
+function renderHeartsteelBias(unit, skill) {
+  const panel = $('dheartsteel');
+  const description = $('dheartsteelText');
+  const name = unit.name.replace(/[\u2018\u2019]/g, "'").trim();
+  const isHeartsteel = unit.traits.some(trait => trait.toLowerCase() === 'heartsteel');
+  const bias = isHeartsteel
+    ? (skill.heartsteelBias || heartsteelBiasByName[name] || '')
+    : '';
+
+  description.textContent = bias;
+  panel.hidden = !bias;
+}
+
+function showCard(u){selectedUnit=u;const dg=$('details');$('dimage').src=imgs[u.id];$('dname').textContent=u.name;$('dmeta').textContent=u.cost+' VÀNG · '+roleVi[u.role]+' '+(u.damage==='Magic'?'PHÉP':'VẬT LÝ');$('dlock').textContent=u.locked?'🔒 CẦN MỞ KHÓA':'✓ CÓ SẴN TRONG CỬA HÀNG';renderUnlock(u);const sk=skills[u.id];$('dskillmana').textContent='Năng lượng: '+sk.mana;$('dskillsummary').textContent=sk.summary;$('dskillkey').textContent=sk.key;renderHeartsteelBias(u,sk);$('dtraits').replaceChildren(...u.traits.map(traitChip));$('deffects').replaceChildren(...(u.effects.length?u.effects.map(effChip):[el('span','dtext','Không có hiệu ứng nằm trong bộ lọc hiện tại')]));$('deffectnote').textContent=u.effects.map(k=>defs[k].desc).join(' ');
 if(!dg.open)dg.showModal()}
 function card(u){const c=el('article','card'),p=el('div','pic'),im=el('img');im.src=imgs[u.id];im.alt=u.name;im.loading='lazy';p.append(im,el('span','cost',u.cost+' VÀNG'));if(u.locked){const lk=el('span','lock');lk.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> KHÓA';p.append(lk)}p.onclick=()=>showCard(u);
 const body=el('div','cardbody');body.append(el('h3','cardname',u.name),el('div','meta',roleVi[u.role]+' · '+(u.damage==='Magic'?'Phép':'Vật lý')));const tl=el('div','traitline');u.traits.forEach(t=>tl.append(traitChip(t)));body.append(tl);if(u.effects.length){const tags=el('div','tags');u.effects.forEach(k=>tags.append(effChip(k)));body.append(tags)}const acts=el('div','actions'),btn=el('button','smallbtn',u.locked?'🔒 XEM CÁCH MỞ KHÓA':'XEM KỸ NĂNG · TỘC/HỆ');btn.onclick=()=>showCard(u);acts.append(btn);body.append(acts);c.append(p,body);return c}
